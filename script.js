@@ -620,3 +620,154 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj1 = { a: 1, b: { c: 2, d: 3 } };
+// const obj2 = { b: { c: 3, e: 4 }, f: 5 };
+
+// const mergedObj = (o1, o2) => {
+//     for(let key1 in o1) {
+//         if(!o2[key1]){
+//             o2[key1] = o1[key1];
+//         }else{
+//             mergedObj(o1[key1], o2[key1]);
+//         }
+//     }
+
+//     return o2;
+// };
+
+// console.log(mergedObj(obj1, obj2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const mergeObj = (str, value) => {
+//     const arr = str.split(".");
+//     const obj = {};
+//     let current = obj
+
+//     for(let i=0; i<arr.length; i++) {
+//         if(i === arr.length - 1) { 
+//             current[arr[i]] = value;
+//         }else{
+//             current[arr[i]] = {};
+//             current = current[arr[i]]; 
+//         }
+//     }
+
+//     return obj;
+// };
+
+// console.log(mergeObj("b.c", 2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = { a: 1, b: 2, c: 3 };
+
+// const arr = Object.keys(obj);
+
+// const transformedObj = arr.reduce((acc, item) => {
+//     acc[item] = Number(obj[item]) * 2;
+//     return acc;
+// }, {}); 
+
+// console.log(transformedObj)
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const keys = ['a', 'b', 'c'];
+// const values = [1, 2, 3];
+
+// const resultObj = keys.reduce((acc,item,index) => {
+//     acc[item] = values[index]
+
+//     return acc;
+// }, {});
+
+// console.log(resultObj); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const objectToQueryString = (params) => {
+//     let query = "";
+
+//     for(let key in params) {
+//         query += `${key}=${params[key]}&`;
+//     }
+
+//     let arr = query.split("");
+//     arr.pop();
+//     let newStr = arr.join("");
+
+//     return newStr;
+// };
+
+// const obj = { search: 'test', page: 1, size: 20 };
+
+// console.log(objectToQueryString(obj));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const data = [
+//     { name: 'Alice', group: 'A' },
+//     { name: 'Bob', group: 'B' },
+//     { name: 'Charlie', group: 'A' },
+// ];
+
+// const obj = data.reduce((acc,item) => {
+//     const { group } = item;
+
+//     if(!acc[group]) {
+//         acc[group] = [{ ...item }]
+//     }else{
+//         acc[group] = [...acc[group], { ...item }]
+//     }
+
+//     return acc;
+// }, {});
+
+// console.log(obj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const nested = { a: 1, b: { c: 2, d: { e: 3 } } };
+
+// const obj = {};
+
+// function getNestedObj(outerObj, outerKey) {
+//     let str = `${outerKey}`;
+
+//     for(let key in outerObj) {
+//         if(typeof outerObj[key] === 'object') {
+//             str += `.${key}`;
+//             getNestedObj(outerObj[key], str);
+//         }else{
+//             obj[`${str}.${key}`] = outerObj[key];
+//         }
+//     }
+// };
+
+// for(let key in nested) {
+//     if(typeof nested[key] === 'object') {
+//         getNestedObj(nested[key], key);
+//     }else{  
+//         obj[key] = nested[key];
+//     }
+// }
+
+// console.log(obj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
