@@ -771,3 +771,357 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const flatObj = { 'a': 1, 'b.c': 2, 'b.d.e': 3 };
+
+// const obj = {};
+
+// const getNestedObj = (str, val) => {
+//     const arr = str.split(".");
+//     let current = obj;
+
+//     arr.forEach((key, index) => {
+//         if (index === arr.length - 1) {
+//             current[key] = val;
+//         } else {
+//             current[key] = current[key] || {};
+//             current = current[key];
+//         }
+//     });
+// };
+
+// for (let key in flatObj) {
+//     if (!key.includes(".")) {
+//         obj[key] = flatObj[key];
+//     } else {
+//         getNestedObj(key, flatObj[key]);
+//     }
+// }
+
+// console.log(obj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arr1 = ["I want to become", "a professional front end", "developer"];
+
+// const arr2 = arr1.map((item,index) => {
+//     if(index === arr1.length - 1) {
+//         return item;
+//     }
+
+//     // const startItem = item.padEnd(item.length + 1, " ");
+    
+//     // return startItem;
+
+//     return item + " ";
+// });
+
+// const str = arr2.join("");
+
+// const resultArr = str.split(" ");
+
+// console.log(resultArr);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const products = [
+//     { id: 1, category: 'electronics', name: 'Laptop', price: 1000 },
+//     { id: 2, category: 'electronics', name: 'Smartphone', price: 700 },
+//     { id: 3, category: 'furniture', name: 'Chair', price: 100 },
+//     { id: 4, category: 'furniture', name: 'Table', price: 150 },
+// ];
+  
+// function groupByCategory(products) {
+//     const newObj = Object.groupBy(products, (item) => item.category);
+
+//     return newObj;
+// };
+
+// console.log(groupByCategory(products));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const original = {
+//     name: 'John',
+//     age: 30,
+//     address: {
+//       city: 'New York',
+//       zip: '10001'
+//     },
+//     hobbies: ['reading', 'traveling'],
+// };
+  
+// function deepClone(obj) {
+//     return JSON.parse(JSON.stringify(obj));
+// }
+  
+// const cloned = deepClone(original);
+// cloned.name = 'Ilkin';
+// console.log(cloned);  
+// console.log(original);  
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const users = [
+//     { id: 1, name: 'Alice', age: 25 },
+//     { id: 2, name: 'Bob', age: 30 },
+//     { id: 3, name: 'Alice', age: 22 },
+//     { id: 4, name: 'Charlie', age: 30 },
+// ];
+  
+// function uniqueByProperty(arr) {
+//     return arr.filter((item, index) => {
+//         const { name } = item;
+
+//         const findedIndex = arr.findLastIndex((obj) => obj.name === name);
+
+//         if(findedIndex === index) {
+//             return item;
+//         }
+//     });
+// }
+  
+// const uniqueUsers = uniqueByProperty(users);
+// console.log(uniqueUsers);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const nestedArray = [1, [2, 3, [4, [5, 6, [3,5]]]], 7];
+
+// function flattenArray(arr) {
+//   return arr.flat(4);
+// }
+
+// const flatArray = flattenArray(nestedArray);
+// console.log(flatArray); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const transactions = [
+//     { id: 1, type: 'deposit', amount: 100 },
+//     { id: 2, type: 'withdrawal', amount: 50 },
+//     { id: 3, type: 'deposit', amount: 200 },
+//     { id: 4, type: 'deposit', amount: 150 },
+//     { id: 5, type: 'withdrawal', amount: 100 },
+// ];
+
+// function mostFrequent(arr) {
+//     let maxCount = 0;
+//     let selectedKey;
+    
+//     const newObj = arr.reduce((acc,item) => {
+//         const { type } = item;
+
+//         if(!acc[type]) acc[type] = 1;
+//         else acc[type] += 1;
+
+//         return acc;
+//     }, {});
+
+//     for(let key in newObj) {
+//         if(maxCount < newObj[key]) {
+//             maxCount = newObj[key];
+//             selectedKey = key;
+//         }
+//     }
+
+//     return selectedKey;
+// }
+
+// const mostFrequentType = mostFrequent(transactions);
+// console.log(mostFrequentType);  
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = { a: 1, b: 2, c: 3, d: 4 };
+// const keys = ['a', 'c'];
+// const filteredObj = Object.keys(obj);
+
+// const resultObj = filteredObj.reduce((acc,item) => {
+//     if(keys.includes(item)) {
+//         acc[item] = obj[item];
+//     }
+
+//     return acc;
+// }, {});
+
+// console.log(resultObj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function hasNestedProperty(obj, path) {
+//     return path.split('.').reduce((o, key) => (o && o.hasOwnProperty(key) ? o[key] : undefined), obj) !== undefined;
+// }
+  
+// const obj = { a: { b: { c: 1 } } };
+// console.log(hasNestedProperty(obj, 'a.b.c')); // true
+// console.log(hasNestedProperty(obj, 'a.b.d')); // false
+  
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = { a: 1, b: 2, c: 3 };  // Result: { 1: 'a', 2: 'b', 3: 'c' };
+
+// const arr = Object.entries(obj);
+
+// const newArr = arr.map((item) => [item[1], item[0]]);
+
+// const newObj = Object.fromEntries(newArr);
+
+// console.log(newObj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const data = [
+//     { name: 'Alice', role: 'admin' },
+//     { name: 'Bob', role: 'user' },
+//     { name: 'Charlie', role: 'admin' },
+// ];
+
+
+// SOLUTION 1
+
+// const resultObj = data.reduce((acc,item) => {
+//     const { role } = item;
+
+//     if(!acc[role]) acc[role] = [item];
+
+//     else acc[role] = [ ...acc[role], {...item} ];
+
+//     return acc;
+// }, {});
+
+// console.log(resultObj); 
+
+
+// SOLUTION 2
+
+// const resultObj = Object.groupBy(data, (item) => item.role);
+// console.log(resultObj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const sentence = "hello world from chatgpt";
+
+// const arr = sentence.split(" ");
+
+// const newArr = arr.map((item) => {
+//     const itemArr = item.split("");
+
+//     const upArr = itemArr.map((element, index) => {
+//         if(index === 0) {
+//             return element.toLocaleUpperCase();
+//         }
+
+//         return element;
+//     });
+
+//     const str = upArr.join("");
+
+//     return str;
+// });
+
+// console.log(newArr.join(" "));
+
+
+// function capitalizeWords(str) {
+//     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+// }
+  
+// const sentence = "hello world from chatgpt";
+// console.log(capitalizeWords(sentence)); 
+  
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+  
+// const arr1 = [1,2,3,4,5];
+// const arr2 = [3,4,5,6,7];
+
+// const mergedArray = arr1.concat(arr2);
+
+// const newSet = new Set([...mergedArray]);
+
+// console.log(Array.from(newSet));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arr1 = [1,2,3,4,5];
+// const arr2 = [3,4,5,6,7];
+
+// const mergedArray = arr1.concat(arr2);
+
+// const newArr = mergedArray.filter((item,index) => mergedArray.lastIndexOf(item) !== index)
+
+// console.log(newArr);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3
+// };
+
+// const keys = Object.keys(obj);
+
+// const newObj = keys.reduce((acc,item) => {
+//     acc[item] = obj[item] * 3;
+//     return acc;
+// }, {});
+
+// console.log(newObj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const users = [
+//     { name: "Alice", age: 22, city: "New York" },
+//     { name: "Bob", age: 27, city: "San Francisco" },
+//     { name: "Charlie", age: 30, city: "Chicago" },
+//     { name: "David", age: 23, city: "Los Angeles" },
+//     { name: "Eve", age: 28, city: "New York" }
+// ];
+
+// const namesUsingFilterMap = users.filter(user => user.age > 25).map(user => user.name);
+
+// console.log(namesUsingFilterMap);
+
+// const namesUsingReduce = users.reduce((acc, user) => {
+//     if (user.age > 25) {
+//         acc.push(user.name);
+//     }
+//     return acc;
+// }, []);
+
+// console.log(namesUsingReduce); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
