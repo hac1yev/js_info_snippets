@@ -1125,3 +1125,40 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const data = [
+//     {
+//         name: 'Ilkin', 
+//         age: 24, 
+//         married: false,
+//         jobs: ["Frontend", "Backend", "Software"]
+//     },
+//     {
+//         name: 'Elvin', 
+//         age: 25, 
+//         married: true,
+//         jobs: ["HR", "Backend", "Insaat"]
+//     },
+//     {
+//         name: 'Cavid', 
+//         age: 24, 
+//         married: false,
+//         jobs: ["Televoting", "Backend", "Software"]
+//     }
+// ];
+
+// const allJobs = data.flatMap(item => item.jobs);
+
+// const jobCounts = allJobs.reduce((counts, job) => {
+//     counts[job] = (counts[job] || 0) + 1;
+//     return counts;
+// }, {});
+
+// const numberOfPeople = data.length;
+// const commonJobs = Object.keys(jobCounts).filter(job => jobCounts[job] === numberOfPeople);
+
+// console.log(commonJobs);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
