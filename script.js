@@ -68,6 +68,9 @@
 
 
 // const reverseInteger = (num) => {
+//     if(num > (2 ** 31) - 1 || num < -(2 ** 31)) {
+//         return 0;
+//     }
 //     if(num < 0) {
 //         const newNum = Math.abs(num);
 //         const str = newNum.toString();
@@ -83,7 +86,7 @@
 
 // };
 
-// console.log(reverseInteger(-204980));
+// console.log(reverseInteger(1534236469));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -1159,6 +1162,130 @@
 // const commonJobs = Object.keys(jobCounts).filter(job => jobCounts[job] === numberOfPeople);
 
 // console.log(commonJobs);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arr1 = [1, 2, 2, 4];
+// const arr2 = [4, 3, 2, 1];
+
+// const isEqual = arr1.length === arr2.length && arr1.sort().every((item, index) => item === arr2.sort()[index]);
+
+// console.log(isEqual); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arr1 = ["Ilkin", "Abi", "Fariz"];
+// const arr2 = ["Fariz", "Abi", "Ilkin"];
+
+// const isEqual = arr1.length === arr2.length && arr1.sort().every((item,index) => item === arr2.sort()[index]);
+
+// console.log(isEqual);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var lengthOfLongestSubstring = function(s) {
+//     let maxCount = 0;
+//     let start = 0;
+//     let charIndexMap = new Map();
+
+//     for (let end = 0; end < s.length; end++) {
+//         if (charIndexMap.has(s[end])) {
+//             start = Math.max(charIndexMap.get(s[end]) + 1, start);
+//         }
+//         charIndexMap.set(s[end], end);
+//         maxCount = Math.max(maxCount, end - start + 1);
+//     }
+
+//     return maxCount;
+// };
+
+// console.log(lengthOfLongestSubstring("dfdv"));
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const a = {};
+// const b = { key: "b" };
+// const c = { key: "c" };
+
+// a[b] = 213;
+// a[c] = 413;
+
+// console.log(a);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var searchRange = function(nums, target) {
+//     const findFirst = nums.findIndex((item) => item === target);
+//     const findLast = nums.findLastIndex((item) => item === target);
+
+//     return [findFirst, findLast];
+// };
+
+// console.log(searchRange([5,7,7,8,8,10], 8));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var multiply = function(num1, num2) {
+//     const int1 = BigInt(num1);
+//     const int2 = BigInt(num2);
+
+//     const hasil = int1 * int2;
+//     return hasil.toString();
+// };
+
+// console.log(multiply("123456789", "987654321"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const data = [
+//     {
+//         name: 'Ilkin', 
+//         age: 24, 
+//         married: false,
+//         jobs: ["HR", "Backend", "Software"]
+//     },
+//     {
+//         name: 'Elvin', 
+//         age: 25, 
+//         married: true,
+//         jobs: ["HR", "Backend", "Insaat"]
+//     },
+//     {
+//         name: 'Cavid', 
+//         age: 24, 
+//         married: false,
+//         jobs: ["Insaat", "Backend", "Software"]
+//     }
+// ];
+
+// const newArr = data.map((item) => {
+//     const { jobs } = item;
+//     const [ el1,el2,el3 ] = jobs.map((element) => element);
+
+//     return {
+//         ...item,
+//         [el1]: el1,
+//         [el2]: el2,
+//         [el3]: el3,
+//     }
+// });
+
+// console.log(newArr);
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
