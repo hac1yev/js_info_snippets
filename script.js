@@ -1314,3 +1314,111 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var minimumLength = function(s) {
+//     if(s.length > 2 * Math.pow(10, 5)) {
+//         return 0;
+//     }
+//     const arr = s.split("");
+
+//     for(let i=0; i<arr.length; i++) {
+//         const starArr = arr.toSpliced(i, 1, "*");
+//         const newStr = starArr.join("");
+//         const newArr = newStr.split("*");
+        
+//         if(newArr[0].includes(arr[i]) && newArr[1].includes(arr[i])) {
+//             const index1 = newArr[0].split("").findIndex((item) => item === arr[i]);
+//             const index2 = newArr[1].split("").findIndex((item) => item === arr[i]) + newArr[0].length;
+            
+//             arr.splice(index1, 1);
+//             arr.splice(index2, 1);
+//             i = 0;
+//         }
+//     }
+
+//     return arr.join("");
+// };
+
+// console.log(minimumLength("npmrundevn"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var compress = function(chars) {
+//     if(chars.length > 2000 || chars.length === 0) {
+//         return 0;
+//     }
+
+//     const newObj = chars.reduce((acc,item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+
+//         return acc;
+//     }, {});
+
+//     let resultStr = "";
+
+//     for(let key in newObj) {
+//         if(newObj[key] === 1) {
+//             resultStr += key;
+//         }else{
+//             resultStr += `${key}${newObj[key]}`
+//         }
+//     }
+
+//     const arr = resultStr.split("");
+
+//     arr.forEach((item,index) => {
+//         chars[index] = item;
+//     });
+
+//     return resultStr.length;
+// };
+
+// console.log(compress(["a","a","a","b","b","a","a"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var compress = function(chars) {
+//     if(chars.length > 2000 || chars.length === 0) {
+//         return 0;
+//     }
+
+//     let str = "";
+//     let count = 0;
+    
+//     for(let i=0; i<chars.length; i+=count) {
+//         count = 0;
+
+//         for(let j=i; j<chars.length; j++) {
+//             if(chars[i] === chars[j]) {
+//                 count++;
+//             }else{
+//                 break;
+//             }
+//         }
+
+//         if(count > 1) {
+//             str += (chars[i] + count);
+//         }else{
+//             str += chars[i];
+//         }
+//     }
+
+//     const newArr = str.split("");
+
+//     newArr.forEach((item,index) => {
+//         chars[index] = item;
+//     });
+
+//     return str.length;
+// };
+
+// console.log(compress(["a","a","a","b","b","a","a"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
