@@ -1422,3 +1422,46 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var frequencySort = function(s) {
+//     if(s.lenght > 5 * Math.pow(10,5) || s.lenght === 0) return "";
+
+//     const arr = s.split("");
+//     let resultArr = [];
+//     let maxCount = 0;
+
+//     const obj = arr.reduce((acc,item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+
+//         return acc;
+//     }, {});
+
+    
+//     const entries = Object.entries(obj);
+    
+//     entries.sort((a,b) => b[1]-a[1]);
+    
+//     const sortedObj = Object.fromEntries(entries);
+
+//     for(let key in sortedObj) {
+//         if(sortedObj[key] >= maxCount) {
+//             maxCount = sortedObj[key];
+//             for(let i=0; i<sortedObj[key]; i++) {
+//                 resultArr.unshift(key);
+//             }
+//         }else{
+//             for(let i=0; i<sortedObj[key]; i++) {
+//                 resultArr.push(key);
+//             }
+//         }
+//     }
+
+//     return resultArr.join("");
+// };
+
+// console.log(frequencySort("2a554442f544asfasssffffasss"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
