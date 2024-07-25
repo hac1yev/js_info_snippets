@@ -1465,3 +1465,72 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var deleteDuplicates = function(head) {
+//     const frequency = {};
+    
+//     for (let i=0; i<head.length; i++) {
+//         frequency[head[i]] = (frequency[head[i]] || 0) + 1;
+//     }
+    
+//     const newArr = head.filter(element => frequency[element] === 1);
+    
+//     return newArr;
+// };
+
+// console.log(deleteDuplicates([1,2,3,3,4,4,5]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var partition = function(head, x) {
+//     let lessThanX = [];
+//     let greaterThanOrEqualX = [];
+
+//     head.forEach(item => {
+//         if (item < x) {
+//             lessThanX.push(item);
+//         } else {
+//             greaterThanOrEqualX.push(item);
+//         }
+//     });
+
+//     return lessThanX.concat(greaterThanOrEqualX);
+// };
+
+// console.log(partition([1,4,3,2,5,2], 3));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var subsetsWithDup = function(nums) {
+//     if(nums.length === 0) {
+//         return [];
+//     }
+
+//     const result = [[]];
+
+//     for(let i=0; i<nums.length; i++) {
+//         let arr = [];
+        
+//         for(let j=i; j<nums.length; j++) {
+//             const newArr = arr.concat(nums[j]);
+//             newArr.sort((a,b) => a-b);
+//             arr.push(nums[j]);
+
+//             if(!JSON.stringify(result).includes(JSON.stringify(newArr))) {
+//                 result.push(newArr);
+//             }
+//         }
+//     }
+
+//     return result;
+// };
+
+// console.log(subsetsWithDup([1,2,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
