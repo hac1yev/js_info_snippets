@@ -1534,3 +1534,68 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var longestPalindrome = function(s) {
+//     if(s.length > 1000 || s.length < 1) {
+//         return "";
+//     };
+
+//     const palindromeTexts = [];
+
+//     function isPalindrome(text) {
+//         const reversedText = text.split("").reverse().join("");
+
+//         if(text === reversedText) {
+//             palindromeTexts.push(text);
+//         }
+//     };
+
+    
+//     for(let i=0; i<s.length; i++) {
+//         let content = "";
+//         for(let j=i; j<s.length; j++) {
+//             content += s[j];
+//             if(content.length >= 1) {
+//                 isPalindrome(content);
+//             }
+//         }
+//     };
+
+//     let longestPlndrm = "";
+
+//     palindromeTexts.forEach((item) => {
+//         if(item.length > longestPlndrm.length) {
+//             longestPlndrm = item;
+//         }
+//     });
+
+//     return longestPlndrm;
+// };
+
+// console.log(longestPalindrome("babad"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var intersect = function(nums1, nums2) {
+//     let arr = [];
+
+//     for(let i=0; i<nums1.length; i++) {
+//         for(let j=0; j<nums2.length; j++) {
+//             if(nums1[i] === nums2[j]) {
+//                 nums2.splice(j, 1);
+//                 arr.push(nums1[i]);
+//                 break;
+//             }
+//         }
+//     }
+
+//     return arr;
+// };
+
+// console.log(intersect([12,3,4],[12,3,5]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */

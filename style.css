@@ -1,3 +1,16 @@
 body {
     background-color: #444;
 }
+
+.outer {
+    padding: 50px;
+    background-color: lightcoral;
+}
+.middle {
+    padding: 50px;
+    background-color: lightseagreen;
+}
+.inner {
+    padding: 50px;
+    background-color: lightgoldenrodyellow;
+}
