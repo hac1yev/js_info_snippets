@@ -1612,3 +1612,44 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function miniMaxSum(arr) {
+//     arr.sort((a, b) => a - b);
+    
+//     let minSum = arr.slice(0, 4).reduce((sum, num) => sum + num, 0);
+    
+//     let maxSum = arr.slice(1, 5).reduce((sum, num) => sum + num, 0);
+    
+//     return [minSum, maxSum];
+// }
+
+// console.log(miniMaxSum([1,2,5,63,2,34]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function kangaroo(x1, v1, x2, v2) {
+//     let differ = Math.abs(x1-x2);
+
+//     for(let i=0; i<Infinity; i++) {
+//         x1+=v1;
+//         x2+=v2;
+//         if(x1 === x2) {
+//             return "YES";
+//         }else{
+//             if(differ > Math.abs(x1-x2)) {
+//                 differ = Math.abs(x1-x2);
+//                 continue;
+//             }else{
+//                 return "NO";
+//             }
+//         }
+//     }
+// }
+
+// console.log(kangaroo(0,3,4,2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
