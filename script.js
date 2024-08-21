@@ -1691,3 +1691,26 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function bonAppetit(bill, k, b) {
+//     bill.splice(k,1);
+    
+//     const totalSum = bill.reduce((total,item) => {
+//         total += item;
+//         return total;
+//     }, 0);
+    
+//     const resultSum = b - (totalSum / 2);
+
+//     if(resultSum === 0) {
+//         console.log("Bon Appetit");        
+//     }else{
+//         console.log(resultSum);
+//     }
+// };
+
+// console.log(bonAppetit([3,10,2,9], 1, 7));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
