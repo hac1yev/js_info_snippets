@@ -1653,3 +1653,41 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function migratoryBirds(arr) {
+//     let minNum = Infinity;
+
+//     const obj = arr.reduce((acc,item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+//         return acc;
+//     }, {});
+    
+//     const arrValues = Object.values(obj);
+
+//     let max = Math.max(...arrValues);
+    
+//     const arrEntries = Object.entries(obj);
+     
+//     const filteredArr = arrEntries.filter((item) => {
+//         const [key,value] = item;
+
+//         return value === max;
+//     });
+
+//     filteredArr.forEach((item) => {
+//         let [key] = item;
+
+//         if(key < minNum) {
+//             minNum = key;
+//         }
+//     });  
+
+//     return parseInt(minNum);
+// }
+
+// console.log(migratoryBirds([1,2,2,2,4,4,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
