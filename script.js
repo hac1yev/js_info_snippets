@@ -1714,3 +1714,28 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function sockMerchant(n, ar) {
+    const obj = ar.reduce((acc,item) => {
+        if(!acc[item]) acc[item] = 1;
+        else acc[item] += 1;
+        return acc;
+    }, {});
+
+    let sum = 0;
+
+    for(let key in obj) {
+        if(obj[key] > 1) {
+            const total = Math.floor(obj[key] / 2);
+            sum += total;
+        }
+    }
+
+    return sum;
+}
+
+console.log(sockMerchant(9,[10,20,20,10,10,10,30,50,20]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
