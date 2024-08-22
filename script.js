@@ -1949,3 +1949,24 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function getMoneySpent(keyboards, drives, b) {
+    let mostExpensive = -1;
+    
+    keyboards.forEach((k) => {
+        drives.forEach((d) => {
+            let cost = k + d;
+            if (cost <= b && cost > mostExpensive) {
+                mostExpensive = cost;
+            }
+        });
+    })
+    
+    return mostExpensive;
+}
+
+console.log(getMoneySpent([40,50,60], [5,8,12], 60));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
