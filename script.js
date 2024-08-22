@@ -1805,3 +1805,43 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function pickingNumbers(a) {
+//     let maxLength = 0;
+//     const absoluteNums = [];
+//     const checkedNums = [];
+//     a.sort((a,b) => a-b);  // [1,1,2,2,2,3]
+    
+//     for(let i=0; i<a.length; i++) {
+//         const arr = [];
+//         if(!checkedNums.includes(a[i])) {
+//             for(let j=i; j<a.length; j++) {
+//                 if(a[j] - a[i] <= 1) {
+//                     arr.push(a[j]);
+//                 }
+//             }
+//         }else{
+//             continue;
+//         }
+        
+//         absoluteNums.push(arr);
+//         checkedNums.push(a[i]);
+//     }
+
+//     const newSet = new Set(absoluteNums.map((item) => JSON.stringify(item)));
+//     const filteredArr = Array.from(newSet).map(item => JSON.parse(item));
+
+//     filteredArr.forEach((item) => {
+//         if(item.length >= maxLength) {
+//             maxLength = item.length;
+//         }
+//     })
+
+//     return maxLength;
+// };
+
+// console.log(pickingNumbers([1,2,2,3,1,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
