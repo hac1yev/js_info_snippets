@@ -1716,26 +1716,92 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function sockMerchant(n, ar) {
-    const obj = ar.reduce((acc,item) => {
-        if(!acc[item]) acc[item] = 1;
-        else acc[item] += 1;
-        return acc;
-    }, {});
+// function sockMerchant(n, ar) {
+//     const obj = ar.reduce((acc,item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+//         return acc;
+//     }, {});
 
-    let sum = 0;
+//     let sum = 0;
 
-    for(let key in obj) {
-        if(obj[key] > 1) {
-            const total = Math.floor(obj[key] / 2);
-            sum += total;
-        }
-    }
+//     for(let key in obj) {
+//         if(obj[key] > 1) {
+//             const total = Math.floor(obj[key] / 2);
+//             sum += total;
+//         }
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
 
-console.log(sockMerchant(9,[10,20,20,10,10,10,30,50,20]));
+// console.log(sockMerchant(9,[10,20,20,10,10,10,30,50,20]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function pageCount(n, p) {
+//     let count = 0;
+//     let startPage = 1;
+//     let endPage = n;
+//     const halfOfPages = n / 2;
+
+//     for(let i=0; i<halfOfPages; i++) {
+//         if(1 <= p && p <= halfOfPages) {
+//             if(startPage >= p) {
+//                 return count;
+//             }
+//             startPage += 2;
+//             count++;
+//         }else if(halfOfPages <= p && p <= n) {
+//             if(endPage <= p) {
+//                 return count;
+//             }
+//             if(n % 2 === 1){
+//                 if(n - p <= 1) {
+//                     return count;
+//                 }
+//                 endPage -= 3;
+//             }else{
+//                 endPage -= 2;
+//             }
+//             count++;
+//         }
+//     }
+// };
+
+// console.log(pageCount(5, 4));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function gradingStudents(grades) {  
+//     const finalGrade = [];
+
+//     grades.forEach((item) => {
+//         if(item >= 40) {
+//             if(item % 5 < 3) {
+//                 finalGrade.push(item);
+//             }else if(item % 5 >= 3) {
+//                 const resultGrade = Math.ceil(item / 5) * 5;
+//                 finalGrade.push(resultGrade);
+//             }
+//         }else{
+//             if(item > 37) {
+//                 finalGrade.push(40);
+//             }else{
+//                 finalGrade.push(item);
+//             }
+//         }
+//     });
+
+//     return finalGrade;
+// };
+
+// console.log(gradingStudents([73,67,38,33]));
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
