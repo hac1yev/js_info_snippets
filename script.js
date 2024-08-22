@@ -1837,3 +1837,40 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//     const aCordinates = [];
+//     const bCordinates = [];
+//     let aCount = 0;
+//     let bCount = 0;
+
+//     for(let i=0; i<apples.length; i++) {
+//         aCordinates.push(a + apples[i]);
+//     } 
+
+//     for(let i=0; i<oranges.length; i++) {
+//         bCordinates.push(b + oranges[i]);
+//     } 
+
+    
+//     aCordinates.forEach((item) => {
+//         if(s <= item && item <= t) {
+//             aCount++;
+//         } 
+//     });
+    
+//     bCordinates.forEach((item) => {
+//         if(s >= item && item <= t) {
+//             bCount++;
+//         } 
+//     });
+
+//     console.log(aCount);
+//     console.log(bCount);
+// };
+
+// console.log(countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
