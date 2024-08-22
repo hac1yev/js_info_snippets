@@ -1951,22 +1951,41 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function getMoneySpent(keyboards, drives, b) {
-    let mostExpensive = -1;
+// function getMoneySpent(keyboards, drives, b) {
+//     let mostExpensive = -1;
     
-    keyboards.forEach((k) => {
-        drives.forEach((d) => {
-            let cost = k + d;
-            if (cost <= b && cost > mostExpensive) {
-                mostExpensive = cost;
-            }
-        });
-    })
+//     keyboards.forEach((k) => {
+//         drives.forEach((d) => {
+//             let cost = k + d;
+//             if (cost <= b && cost > mostExpensive) {
+//                 mostExpensive = cost;
+//             }
+//         });
+//     })
     
-    return mostExpensive;
-}
+//     return mostExpensive;
+// }
 
-console.log(getMoneySpent([40,50,60], [5,8,12], 60));
+// console.log(getMoneySpent([40,50,60], [5,8,12], 60));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function catAndMouse(x, y, z) {
+    let distanceCatA = Math.abs(x - z); 
+    let distanceCatB = Math.abs(y - z); 
+    
+    if (distanceCatA < distanceCatB) {
+        return "Cat A";
+    } else if (distanceCatB < distanceCatA) {
+        return "Cat B";
+    } else {
+        return "Mouse C";
+    }
+};
+
+console.log(catAndMouse(1,2,3));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
