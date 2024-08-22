@@ -1744,7 +1744,7 @@
 // function pageCount(n, p) {
 //     let count = 0;
 //     let startPage = 1;
-//     let endPage = n;
+//     let endPage = n % 2 === 0 ? n : n - 1;
 //     const halfOfPages = n / 2;
 
 //     for(let i=0; i<halfOfPages; i++) {
@@ -1758,14 +1758,7 @@
 //             if(endPage <= p) {
 //                 return count;
 //             }
-//             if(n % 2 === 1){
-//                 if(n - p <= 1) {
-//                     return count;
-//                 }
-//                 endPage -= 3;
-//             }else{
-//                 endPage -= 2;
-//             }
+//             endPage -= 2;
 //             count++;
 //         }
 //     }
@@ -1801,7 +1794,6 @@
 // };
 
 // console.log(gradingStudents([73,67,38,33]));
-
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
