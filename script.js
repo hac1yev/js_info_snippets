@@ -1874,3 +1874,29 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function breakingRecords(scores) {
+//     const highest = [];
+//     const lowest = [];
+    
+//     scores.forEach((item) => {
+//         if(highest.length === 0 && lowest.length === 0) {            
+//             highest.push(item);
+//             lowest.push(item);
+//         }else {            
+//             if(highest.at(-1) < item) {
+//                 highest.push(item);
+//             }else if(lowest.at(-1) > item) {
+//                 lowest.push(item);
+//             }
+//         }
+//     });
+
+//     return [highest.length - 1, lowest.length - 1];
+// };
+
+// console.log(breakingRecords([10,5,20,20,4,5,2,25,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
