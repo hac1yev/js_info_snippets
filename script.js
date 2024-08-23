@@ -1972,20 +1972,43 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function catAndMouse(x, y, z) {
-    let distanceCatA = Math.abs(x - z); 
-    let distanceCatB = Math.abs(y - z); 
+// function catAndMouse(x, y, z) {
+//     let distanceCatA = Math.abs(x - z); 
+//     let distanceCatB = Math.abs(y - z); 
     
-    if (distanceCatA < distanceCatB) {
-        return "Cat A";
-    } else if (distanceCatB < distanceCatA) {
-        return "Cat B";
-    } else {
-        return "Mouse C";
-    }
-};
+//     if (distanceCatA < distanceCatB) {
+//         return "Cat A";
+//     } else if (distanceCatB < distanceCatA) {
+//         return "Cat B";
+//     } else {
+//         return "Mouse C";
+//     }
+// };
 
-console.log(catAndMouse(1,2,3));
+// console.log(catAndMouse(1,2,3));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function hurdleRace(k, height) {
+//     let difference = 0;
+//     const max = Math.max(...height);
+
+//     if(max > k) {
+//         difference = max - k;
+//     }
+
+//     return difference;
+// };
+
+// console.log(hurdleRace(4, [1,6,3,5,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
