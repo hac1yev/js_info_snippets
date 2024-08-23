@@ -2008,7 +2008,20 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+// function designerPdfViewer(h, word) {
+//     const letters = 'abcdefghijklmnopqrstuvwxyz';
+//     let indexValues = [];
 
+//     for(let i=0; i<word.length; i++) {
+//         const index = letters.indexOf(word[i]);
+        
+//         indexValues.push(h[index]);
+//     }
+
+//     return Math.max(...indexValues) * indexValues.length;
+// };
+
+// console.log(designerPdfViewer([1,3,1,3,1,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7],"zaba"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
