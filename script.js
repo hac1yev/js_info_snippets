@@ -2130,18 +2130,39 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function circularArrayRotation(a, k, queries) {
-    for(let i=1; i<=k; i++) {
-        const item = a.pop();
-        a.unshift(item);        
-    }    
+// function circularArrayRotation(a, k, queries) {
+//     for(let i=1; i<=k; i++) {
+//         const item = a.pop();
+//         a.unshift(item);        
+//     }    
 
-    for(let i=0; i<queries.length; i++) {
-        console.log(a[queries[i]]);
+//     for(let i=0; i<queries.length; i++) {
+//         console.log(a[queries[i]]);
+//     }
+// };
+
+// console.log(circularArrayRotation([100,200,300,400,500,600,700],2,[0,2,4,6,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function permutationEquation(p) {
+    let n = p.length;
+    let result = [];
+
+    for (let x = 1; x <= n; x++) {
+        let index1 = p.indexOf(x) + 1;
+        
+        let index2 = p.indexOf(index1) + 1;
+        
+        result.push(index2);
     }
+
+    return result;
 };
 
-console.log(circularArrayRotation([100,200,300,400,500,600,700],2,[0,2,4,6,1]));
+console.log(permutationEquation([4,3,5,1,2]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
