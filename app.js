@@ -106,28 +106,61 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
-const user = {
-  name: 'Ilkin',
-  age: 24
-};
+// const user = {
+//   name: 'Ilkin',
+//   age: 24
+// };
 
-const proxyObj = new Proxy(user, {
-  set(target,prop,value) {
-    if(value < 0) {
-      throw new Error("Age can not be negative");
-    }
-    target[prop] = value;
-    return true;
-  }
-});
+// const proxyObj = new Proxy(user, {
+//   set(target,prop,value) {
+//     if(value < 0) {
+//       throw new Error("Age can not be negative");
+//     }
+//     target[prop] = value;
+//     return true;
+//   }
+// });
 
-try {
-  proxyObj.age = -5;
-} catch (e) {
-  console.error(e.message);
-}
+// try {
+//   proxyObj.age = -5;
+// } catch (e) {
+//   console.error(e.message);
+// }
 
-console.log(proxyObj.age);
+// console.log(proxyObj.age);
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+// const apiResponse = {
+//   data: {
+//     user: {
+//       name: "Michael",
+//       age: 28,
+//     },
+//   },
+//   status: 200,
+// };
+
+// const apiProxy = new Proxy(apiResponse, {
+//   get(target, prop) {
+//     if (prop === "status" && target[prop] !== 200) {
+//       console.warn("API Yanıtında bir hata var!");
+//     }
+//     return target[prop];
+//   },
+//   set(target, prop, value) {
+//     console.log(`API yanıtı değiştirildi: ${prop} = ${value}`);
+//     target[prop] = value;
+//     return true;
+//   },
+// });
+
+// console.log(apiProxy.data.user.name);
+// apiProxy.status = 500; 
+// console.log(apiProxy.status);
+
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
