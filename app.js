@@ -104,3 +104,30 @@
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
+
+
+const user = {
+  name: 'Ilkin',
+  age: 24
+};
+
+const proxyObj = new Proxy(user, {
+  set(target,prop,value) {
+    if(value < 0) {
+      throw new Error("Age can not be negative");
+    }
+    target[prop] = value;
+    return true;
+  }
+});
+
+try {
+  proxyObj.age = -5;
+} catch (e) {
+  console.error(e.message);
+}
+
+console.log(proxyObj.age);
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */
