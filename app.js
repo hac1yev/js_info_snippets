@@ -46,3 +46,61 @@
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
+
+
+// const myPromise = new Promise((resolve, reject) => {
+//     fetch('https://my.api.mockaroo.com/players.json?key=281cec00')
+//       .then(response => {
+//         if (response.ok) {
+//           return response.json(); 
+//         } else {
+//           reject("Failed to fetch data");
+//         }
+//       })
+//       .then(data => resolve(data)) 
+//       .catch(error => reject(error)); 
+//   });
+  
+//   myPromise
+//     .then(result => console.log(result)) 
+//     .catch(err => console.log(err)); 
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+// const info = {
+//   name: 'Ilkin',
+//   surname: 'Haciyev',
+//   age: 24,
+// };
+
+// const archive = {
+//   firstName: {
+//     key: "name",
+//     value: info.name
+//   },
+//   lastName: {
+//     key: "surname",
+//     value: info.surname
+//   }
+// };
+
+// const proxyObj = new Proxy(info, {
+//   get: (target,prop) => {
+//     if(prop in archive) {
+//       console.warn(
+//         `${prop} is deprecated.`,
+//         `Use ${archive[prop].key} instead.`
+//       );
+//       return archive[prop].value;
+//     }
+
+//     return target[prop];
+//   }
+// });
+
+// console.log(proxyObj.firstName);
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */

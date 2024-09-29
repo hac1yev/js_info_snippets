@@ -102,7 +102,7 @@
 // const newArr = data.map((item) => {    
 //     const {id,description,age} = item;
 
-//     return { id, description, age, name: 'Ilkin' }
+//     return { id, description, age }
 // });
 
 // console.log(newArr);
@@ -2147,22 +2147,22 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function permutationEquation(p) {
-    let n = p.length;
-    let result = [];
+// function permutationEquation(p) {
+//     let n = p.length;
+//     let result = [];
 
-    for (let x = 1; x <= n; x++) {
-        let index1 = p.indexOf(x) + 1;
+//     for (let x = 1; x <= n; x++) {
+//         let index1 = p.indexOf(x) + 1;
         
-        let index2 = p.indexOf(index1) + 1;
+//         let index2 = p.indexOf(index1) + 1;
         
-        result.push(index2);
-    }
+//         result.push(index2);
+//     }
 
-    return result;
-};
+//     return result;
+// };
 
-console.log(permutationEquation([4,3,5,1,2]));
+// console.log(permutationEquation([4,3,5,1,2]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
