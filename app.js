@@ -195,15 +195,19 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
-const myMap = new Map();
+// let arr = [1,2,3,4,5];
 
-myMap.set(NaN, 'Value for NaN');
+// const [a1,a2] = arr;
 
-console.log(myMap.get(NaN)); 
+// console.log(a1,a2);
 
-const anotherNaN = Number('foo'); 
-console.log(myMap.get(anotherNaN)); 
+// const [,,arr3,,arr5] = arr;
 
-console.log(NaN === NaN);
+// console.log(arr3,arr5);
+
+// const [arr1, ...rest] = arr;
+
+// console.log(rest);
+
 
 /* -------------------------------------------------------------------------------------------------------------------- */
