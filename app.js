@@ -181,15 +181,29 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
-const mars = {
-    name: "Mars",
-    getName: function() {
-        return function() {
-            return this;
-        }
-    }
-};
-console.log(mars.getName()());
+// const mars = {
+//     name: "Mars",
+//     getName: function() {
+//         return function() {
+//             return this;
+//         }
+//     }
+// };
+// console.log(mars.getName()());
 
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+const myMap = new Map();
+
+myMap.set(NaN, 'Value for NaN');
+
+console.log(myMap.get(NaN)); 
+
+const anotherNaN = Number('foo'); 
+console.log(myMap.get(anotherNaN)); 
+
+console.log(NaN === NaN);
 
 /* -------------------------------------------------------------------------------------------------------------------- */
