@@ -230,27 +230,38 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
-function factorial(n) {
-  if(n == 1) {
-    return n;
-  }else{
-    return n * factorial(n-1);
-  }
-};
+// function factorial(n) {
+//   if(n == 1) {
+//     return n;
+//   }else{
+//     return n * factorial(n-1);
+//   }
+// };
 
-console.log(factorial(3));
+// console.log(factorial(3));
 
 
-function pow(x, n) {
-  if (n == 1) {
-    return x;
-  } else {
-    return x * pow(x, n - 1);
-  }
-}
+// function pow(x, n) {
+//   if (n == 1) {
+//     return x;
+//   } else {
+//     return x * pow(x, n - 1);
+//   }
+// }
 
-console.log(pow(3,4));
+// console.log(pow(3,4));
 
+
+// function fibonacci(n) {
+//   if (n == 1) {
+//     return 0;
+//   } else if (n == 2) {
+//     return 1;
+//   } else {
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+//   };
+// }
+// console.log(fibonacci(3));
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
