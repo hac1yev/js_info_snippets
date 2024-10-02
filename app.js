@@ -230,6 +230,8 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
+// RECURSIONS
+
 // function factorial(n) {
 //   if(n == 1) {
 //     return n;
@@ -262,6 +264,23 @@
 //   };
 // }
 // console.log(fibonacci(3));
+
+
+// const sumOfDigits = (num) => {
+//     if(num === 0) return 0;
+//     return (num % 10) + sumOfDigits(Math.floor(num / 10));
+// };
+
+// console.log(sumOfDigits(1234));
+
+
+// const isPalindrome = (str) => {
+//     if (str.length <= 1) return true;
+//     if (str[0] !== str[str.length - 1]) return false;
+//     return isPalindrome(str.slice(1, str.length - 1));
+// };
+
+// console.log(isPalindrome("rratarr"));
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
