@@ -284,3 +284,37 @@
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
+
+
+// function printNumbersInterval(from, to) {
+//     let current = from;
+    
+//     const intervalId = setInterval(() => {
+//       console.log(current);
+//       if (current === to) {
+//         clearInterval(intervalId); 
+//       }
+//       current++;
+//     }, 1000); 
+// }
+  
+// printNumbersInterval(1, 5);
+
+
+// function printNumbersTimeout(from, to) {
+//     let current = from;
+  
+//     function go() {
+//       console.log(current);
+//       if (current < to) {
+//         current++;
+//         setTimeout(go, 1000); 
+//       }
+//     }
+  
+//     go(); 
+// }
+  
+// printNumbersTimeout(1, 5);
+
+/* -------------------------------------------------------------------------------------------------------------------- */
