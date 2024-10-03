@@ -346,21 +346,52 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
-function askPassword(ok, fail) {
-    let password = prompt("Password?", '');
-    if (password == "rockstar") ok();
-    else fail();
-}
+// function askPassword(ok, fail) {
+//     let password = prompt("Password?", '');
+//     if (password == "rockstar") ok();
+//     else fail();
+// }
   
-let user = {
-    name: 'John',
+// let user = {
+//     name: 'John',
   
-    login(result) {
-      alert( this.name + (result ? ' logged in' : ' failed to log in') );
-    }
-};
+//     login(result) {
+//       alert( this.name + (result ? ' logged in' : ' failed to log in') );
+//     }
+// };
   
-askPassword(user.login.bind(user,true), user.login.bind(user,false)); 
+// askPassword(user.login.bind(user,true), user.login.bind(user,false)); 
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+// let group = {
+//     title: "Our Group",
+//     students: ["John", "Pete", "Alice"],
+  
+//     showList() {
+//       this.students.forEach(
+//         student => alert(this.title + ': ' + student)   // this is window object
+//       );
+//     }
+// };
+  
+// group.showList();
+
+
+// let group = {
+//     title: "Our Group",
+//     students: ["John", "Pete", "Alice"],
+  
+//     showList() {
+//       this.students.forEach(function(student){
+//         alert(this.title + ': ' + student) // this is group object
+//       });
+//     }
+// };
+  
+// group.showList();
 
 
 /* -------------------------------------------------------------------------------------------------------------------- */
