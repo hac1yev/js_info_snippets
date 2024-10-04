@@ -2168,20 +2168,34 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function findDigits(n) {
-    const arr = n.toString().split("");
-    let result = 0;
+// function findDigits(n) {
+//     const arr = n.toString().split("");
+//     let result = 0;
 
-    arr.forEach((item) => {
-        if(n % Number(item) === 0) {
-            result++;
-        }
-    });
+//     arr.forEach((item) => {
+//         if(n % Number(item) === 0) {
+//             result++;
+//         }
+//     });
 
-    return result;
+//     return result;
+// }
+
+// console.log(findDigits(124));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function extraLongFactorials(n) {
+    let bigInt = BigInt(n);
+
+    if (bigInt === 1n) return BigInt(1); 
+    else return bigInt * extraLongFactorials(bigInt - 1n); 
 }
 
-console.log(findDigits(124));
+console.log(extraLongFactorials(25));
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
