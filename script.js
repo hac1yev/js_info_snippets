@@ -2383,21 +2383,39 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const obj = {
-  name: 'Alice',
-  age: 25
-};
+// const obj = {
+//   name: 'Alice',
+//   age: 25
+// };
 
-const proxyObj = new Proxy(obj, {
-  set(target, prop, value) {
-    throw new Error("Cannot modify an immutable object");
-  },
-  deleteProperty(target,prop) {
-    throw new Error("Cannot delete properties from an immutable object");
-  }
-});
+// const proxyObj = new Proxy(obj, {
+//   set(target, prop, value) {
+//     throw new Error("Cannot modify an immutable object");
+//   },
+//   deleteProperty(target,prop) {
+//     throw new Error("Cannot delete properties from an immutable object");
+//   }
+// });
 
-delete proxyObj.age;
-proxyObj.age = 34;
+// delete proxyObj.age;
+// proxyObj.age = 34;
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const array = [10, 20, 30, 40, 50];
+
+// const negativeArrayProxy = new Proxy(array, {
+//   get(target, prop) {
+//     if(prop < 0) {
+//       target[prop] = target[target.length + +prop]
+//     }
+
+//     return target[prop];
+//   }
+// });
+
+// console.log(negativeArrayProxy[-1]);
+
 
 /* ------------------------------------------------------------------------------------------------------------------- */
