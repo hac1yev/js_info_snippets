@@ -2381,3 +2381,23 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const obj = {
+  name: 'Alice',
+  age: 25
+};
+
+const proxyObj = new Proxy(obj, {
+  set(target, prop, value) {
+    throw new Error("Cannot modify an immutable object");
+  },
+  deleteProperty(target,prop) {
+    throw new Error("Cannot delete properties from an immutable object");
+  }
+});
+
+delete proxyObj.age;
+proxyObj.age = 34;
+
+/* ------------------------------------------------------------------------------------------------------------------- */
