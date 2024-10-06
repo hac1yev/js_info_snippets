@@ -2187,15 +2187,117 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function extraLongFactorials(n) {
-    let bigInt = BigInt(n);
+// function extraLongFactorials(n) {
+//     let bigInt = BigInt(n);
 
-    if (bigInt === 1n) return BigInt(1); 
-    else return bigInt * extraLongFactorials(bigInt - 1n); 
-}
+//     if (bigInt === 1n) return BigInt(1); 
+//     else return bigInt * extraLongFactorials(bigInt - 1n); 
+// }
 
-console.log(extraLongFactorials(25));
+// console.log(extraLongFactorials(25));
 
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function appendAndDelete(s, t, k) {
+//     let commonLength = 0;
+//     for (let i = 0; i < Math.min(s.length, t.length); i++) {
+//         if (s[i] === t[i]) {
+//             commonLength++;
+//         } else {
+//             break;
+//         }
+//     }
+    
+//     const totalOperations = (s.length - commonLength) + (t.length - commonLength);
+    
+//     if (totalOperations > k) {
+//         return 'No';
+//     } else if ((k - totalOperations) % 2 === 0 || k >= s.length + t.length) {
+//         return 'Yes';
+//     } else {
+//         return 'No';
+//     }
+// };
+
+// console.log(appendAndDelete("hackerhappy", "hackerrank", 9));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// let animal = {
+//     eats: true
+// };
+
+// let rabbit = {
+//     jumps: true  
+// };
+  
+// rabbit.__proto__ = animal;
+
+// console.log(rabbit.eats);
+
+
+// let animal = {
+//     eats: true,
+//     walk() {
+//       console.log("Animal walk");
+//     }
+// };
+  
+// let rabbit = {
+//     jumps: true,
+//     __proto__: animal
+// };
+  
+// rabbit.walk();
+
+
+// let animal = {
+//     eats: true,
+//     walk() {
+//       console.log("sasdssad");
+      
+//     }
+// };
+  
+// let rabbit = {
+//     __proto__: animal
+// };
+  
+// rabbit.walk = function() {
+//     console.log("Rabbit! Bounce-bounce!");
+// };
+  
+// rabbit.walk(); 
+
+
+let user = {
+    name: "John",
+    surname: "Smith",
+  
+    set fullName(value) {        
+      [this.name, this.surname] = value.split(" ");
+    },
+  
+    get fullName() {        
+      return `${this.name} ${this.surname}`;
+    }
+};
+
+let admin = {
+    __proto__: user,
+    isAdmin: true
+};
+  
+admin.fullName; 
+  
+admin.fullName = "Alice Cooper"; 
+  
+console.log(admin.fullName);
+console.log(user.fullName); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
