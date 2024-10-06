@@ -2274,30 +2274,55 @@
 // rabbit.walk(); 
 
 
-let user = {
-    name: "John",
-    surname: "Smith",
+// let user = {
+//   name: "John",
+//   surname: "Smith",
+
+//   set fullName(value) {        
+//     [this.name, this.surname] = value.split(" ");
+//   },
+
+//   get fullName() {        
+//     return `${this.name} ${this.surname}`;
+//   }
+// };
+
+// let admin = {
+//   __proto__: user,
+//   isAdmin: true
+// };
   
-    set fullName(value) {        
-      [this.name, this.surname] = value.split(" ");
-    },
+// admin.fullName; 
   
-    get fullName() {        
-      return `${this.name} ${this.surname}`;
-    }
+// admin.fullName = "Alice Cooper"; 
+  
+// console.log(admin.fullName);
+// console.log(user.fullName); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const user = {
+  name: "John",
+  age: 20,
 };
 
-let admin = {
-    __proto__: user,
-    isAdmin: true
-};
-  
-admin.fullName; 
-  
-admin.fullName = "Alice Cooper"; 
-  
-console.log(admin.fullName);
-console.log(user.fullName); 
+const proxyObj = new Proxy(user, {
+  set(target, prop, value) {
+    if(prop === 'age' && value < 20) {
+      throw new Error('age can not be lower than 20!');
+    }
+
+    target[prop] = value;
+    return true;
+  }
+});
+
+proxyObj.age = 22;
+
+console.log(user);
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
