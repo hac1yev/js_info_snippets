@@ -2303,26 +2303,60 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const user = {
-  name: "John",
-  age: 20,
-};
+// const user = {
+//   name: "John",
+//   age: 20,
+// };
 
-const proxyObj = new Proxy(user, {
-  set(target, prop, value) {
-    if(prop === 'age' && value < 20) {
-      throw new Error('age can not be lower than 20!');
-    }
+// const proxyObj = new Proxy(user, {
+//   set(target, prop, value) {
+//     if(prop === 'age' && value < 20) {
+//       throw new Error('age can not be lower than 20!');
+//     }
 
-    target[prop] = value;
-    return true;
-  }
-});
+//     target[prop] = value;
+//     return true;
+//   }
+// });
 
-proxyObj.age = 22;
+// proxyObj.age = 22;
 
-console.log(user);
+// console.log(user);
 
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const u = {
+//   name: 'Ilkin',
+//   surname: 'Haciyev',
+
+//   set fullname(value) {
+//     [this.name, this.surname] = value.split(" ");
+//   },
+
+//   get fullname() {
+//     return `${this.name} ${this.surname}`;
+//   },
+
+//   set age(value) {
+//     if(value < 18) {
+//       throw new Error("age can not be lower than 18!");
+//     }
+
+//     this.age = value;
+//   },
+
+//   get age() {
+//     return this.age;
+//   }
+// }
+
+// u.age = 17;
+
+// console.log(u);
+
+// console.log(u.age);
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
