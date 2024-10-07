@@ -629,21 +629,76 @@
 //     this.age = 24;
 // };
   
-//   Person.prototype.fullname = function(name,surname) {
+// Person.prototype.fullname = function(name,surname) {
 //     return `${name} ${surname}`;
-//   };
-  
-//   const person1 = new Person();
-//   const person2 = new Person();
-  
-//   console.log(person1.fullname("Ilkin", "Haciyev"));
-//   console.log(person2.fullname("Cavid", "Ferzeliyev"));
+// };
+
+// const person1 = new Person();
+// const person2 = new Person();
+    
+// console.log(person1.fullname("Ilkin", "Haciyev"));
+// console.log(person2.fullname("Cavid", "Ferzeliyev"));
   
   
 /* ------------------------------------------------------------------------------------------------------------------- */
   
   
+// const obj = {
+//     name: 'Elvin',
+//     surname: 'Cabbarli',
+//     age: 24
+// };
+
+// obj.__proto__.fullName = function(){
+//     return `${this.name} ${this.surname}`
+// } 
+
+// console.log(obj.fullName());
+
   
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// class User {
+//     constructor(name) {
+//       this.name = name;
+//     }
   
+//     sayHi() {
+//       console.log(this.name);
+//     }
+
+// };
   
+// let user = new User("John");
+// console.log(user);
+
+
+// class Animal {
+//     constructor(type) {
+//       this.type = type;
+//     }
+  
+//     makeSound() {
+//       console.log('Some generic sound...');
+//     }
+// }
+  
+// class Dog extends Animal {
+//     constructor(name) {
+//       super('Dog');
+//       this.name = name;
+//     }
+  
+//     bark() {
+//       console.log('Woof! Woof!');
+//     }
+// }
+  
+// const dog = new Dog('Buddy');
+// dog.makeSound(); 
+// dog.bark();      
+  
+
+
 /* ------------------------------------------------------------------------------------------------------------------- */
