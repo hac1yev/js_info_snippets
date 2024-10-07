@@ -720,4 +720,23 @@
 //     .catch((err) => console.log(err));
 
 
+// function delay(ms) {
+//     const promise = new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve();
+//         }, ms);
+//     });
+
+//     return promise;
+// }
+  
+// delay(3000).then(() => alert('runs after 3 seconds'));
+
+
+// new Promise(function(resolve, reject) {
+//     setTimeout(() => {
+//       reject(new Error("Whoops!"))
+//     }, 1000);
+// }).catch((err) => console.log(err));
+
 /* ------------------------------------------------------------------------------------------------------------------- */
