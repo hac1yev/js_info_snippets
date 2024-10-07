@@ -397,7 +397,253 @@
 /* -------------------------------------------------------------------------------------------------------------------- */
 
 
+// let animal = {
+//     eats: true
+// };
+
+// let rabbit = {
+//     jumps: true  
+// };
+  
+// rabbit.__proto__ = animal;
+
+// console.log(rabbit.eats);
 
 
+// let animal = {
+//     eats: true,
+//     walk() {
+//       console.log("Animal walk");
+//     }
+// };
+  
+// let rabbit = {
+//     jumps: true,
+//     __proto__: animal
+// };
+  
+// rabbit.walk();
 
-/* -------------------------------------------------------------------------------------------------------------------- */
+
+// let animal = {
+//     eats: true,
+//     walk() {
+//       console.log("sasdssad");
+      
+//     }
+// };
+  
+// let rabbit = {
+//     __proto__: animal
+// };
+  
+// rabbit.walk = function() {
+//     console.log("Rabbit! Bounce-bounce!");
+// };
+  
+// rabbit.walk(); 
+
+
+// let user = {
+//   name: "John",
+//   surname: "Smith",
+
+//   set fullName(value) {        
+//     [this.name, this.surname] = value.split(" ");
+//   },
+
+//   get fullName() {        
+//     return `${this.name} ${this.surname}`;
+//   }
+// };
+
+// let admin = {
+//   __proto__: user,
+//   isAdmin: true
+// };
+  
+// admin.fullName; 
+  
+// admin.fullName = "Alice Cooper"; 
+  
+// console.log(admin.fullName);
+// console.log(user.fullName); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const user = {
+//   name: "John",
+//   age: 20,
+// };
+
+// const proxyObj = new Proxy(user, {
+//   set(target, prop, value) {
+//     if(prop === 'age' && value < 20) {
+//       throw new Error('age can not be lower than 20!');
+//     }
+
+//     target[prop] = value;
+//     return true;
+//   }
+// });
+
+// proxyObj.age = 22;
+
+// console.log(user);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const u = {
+//   name: 'Ilkin',
+//   surname: 'Haciyev',
+
+//   set fullname(value) {
+//     [this.name, this.surname] = value.split(" ");
+//   },
+
+//   get fullname() {
+//     return `${this.name} ${this.surname}`;
+//   },
+
+//   set age(value) {
+//     if(value < 18) {
+//       throw new Error("age can not be lower than 18!");
+//     }
+
+//     this.age = value;
+//   },
+
+//   get age() {
+//     return this.age;
+//   }
+// }
+
+// u.age = 17;
+
+// console.log(u);
+
+// console.log(u.age);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const user = {
+//   name: 'Ilkin',
+//   surname: 'Haciyev',
+// };
+
+// const person = {
+//   name: 'Cvvv',
+//   surname: 'dhiewr',
+//   __proto__: user,
+// }
+
+// user.__proto__.fullname = function() {
+//   return `${this.name} ${this.surname}`
+// }
+
+// console.log(person.fullname());
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = {
+//   name: 'Alice',
+//   age: 25
+// };
+
+// const proxyObj = new Proxy(obj, {
+//   set(target, prop, value) {
+//     throw new Error("Cannot modify an immutable object");
+//   },
+//   deleteProperty(target,prop) {
+//     throw new Error("Cannot delete properties from an immutable object");
+//   }
+// });
+
+// delete proxyObj.age;
+// proxyObj.age = 34;
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const array = [10, 20, 30, 40, 50];
+
+// const negativeArrayProxy = new Proxy(array, {
+//   get(target, prop) {
+//     if(prop < 0) {
+//       target[prop] = target[target.length + +prop]
+//     }
+
+//     return target[prop];
+//   }
+// });
+
+// console.log(negativeArrayProxy[-1]);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const cacheHandler = {
+//   apply(target, thisArg, args) {    
+//     const key = JSON.stringify(args);
+//     if (!target.cache) {
+//       target.cache = {};
+//     }
+//     if (target.cache[key]) {
+//       console.log("Returning from cache:", key);
+//       return target.cache[key];
+//     }
+//     const result = target.apply(thisArg, args);
+//     target.cache[key] = result;
+//     console.log("Caching result for:", key);
+//     return result;
+//   }
+// };
+
+// function expensiveFunction(x, y) {
+//   console.log("Computing...");
+//   return x * y;
+// }
+
+// const cachedExpensiveFunction = new Proxy(expensiveFunction, cacheHandler);
+
+// const binded = cachedExpensiveFunction.bind({ name: 'myContext' });
+// console.log(binded(21,2));
+// console.log(binded(21,2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function Person() {
+//     this.email = "ilkinhaciyev@gmail.com";
+//     this.password = "hilkin08"; 
+//     this.age = 24;
+// };
+  
+//   Person.prototype.fullname = function(name,surname) {
+//     return `${name} ${surname}`;
+//   };
+  
+//   const person1 = new Person();
+//   const person2 = new Person();
+  
+//   console.log(person1.fullname("Ilkin", "Haciyev"));
+//   console.log(person2.fullname("Cavid", "Ferzeliyev"));
+  
+  
+/* ------------------------------------------------------------------------------------------------------------------- */
+  
+  
+  
+  
+  
+/* ------------------------------------------------------------------------------------------------------------------- */
