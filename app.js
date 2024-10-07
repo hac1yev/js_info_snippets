@@ -700,5 +700,24 @@
 // dog.bark();      
   
 
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const promise = new Promise((resolve,reject) => {
+//     const fetchData = async () => {
+//         try {
+//             const response = await fetch("https://my.api.mockaroo.com/home_category.json?key=281cec00");
+//             const data = await response.json();
+//             resolve(data);
+//         }catch (error) {
+//             reject(error);
+//         }
+//     }
+
+//     fetchData();
+// })
+//     .then((data) => console.log(data))
+//     .catch((err) => console.log(err));
+
 
 /* ------------------------------------------------------------------------------------------------------------------- */
