@@ -2419,3 +2419,35 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const cacheHandler = {
+//   apply(target, thisArg, args) {    
+//     const key = JSON.stringify(args);
+//     if (!target.cache) {
+//       target.cache = {};
+//     }
+//     if (target.cache[key]) {
+//       console.log("Returning from cache:", key);
+//       return target.cache[key];
+//     }
+//     const result = target.apply(thisArg, args);
+//     target.cache[key] = result;
+//     console.log("Caching result for:", key);
+//     return result;
+//   }
+// };
+
+// function expensiveFunction(x, y) {
+//   console.log("Computing...");
+//   return x * y;
+// }
+
+// const cachedExpensiveFunction = new Proxy(expensiveFunction, cacheHandler);
+
+// const binded = cachedExpensiveFunction.bind({ name: 'myContext' });
+// console.log(binded(21,2));
+// console.log(binded(21,2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
