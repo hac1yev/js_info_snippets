@@ -7,7 +7,48 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+
+    <!-- Image slider start -->
+    <div>
+      <div style="width: 200px; height: 170px;">
+        <img style="width: 100%; height: 100%; object-fit: cover;" id="img" src="" alt="slider-img">
+      </div>
+     <div id="buttons">
+      <button>Prev</button>
+      <button>Next</button>
+     </div>
+    </div>
+
     <script>
+      let index = 0;
+      const images = [
+        'https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q=',
+        'https://media.istockphoto.com/id/1170916882/photo/woman-taking-picture-outdoors.jpg?s=612x612&w=0&k=20&c=C09Dk9DoDjVLR60Ztt-Jd9tyOdMo9p8WOIWUaVnfSrk=',
+        'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg',
+        'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg',
+        'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg',
+      ];
+
+      img.src = images[index];
+
+      buttons.addEventListener('click', (e) => {
+        const text = e.target.innerText;
+        
+        if(text === 'Prev') {
+          if(index === 0) index = images.length - 1;
+          else index -= 1;
+          img.src = images[index];
+        }else if(text === 'Next'){
+          if(index === images.length - 1) index = 0;
+          else index += 1;
+          img.src = images[index];
+        }
+      });
+    </script>
+    <!-- Image slider end -->
+
+    <!-- Insert table start -->
+    <!-- <script>
       const data = [
         { name: 'John', age: 25, profession: 'Engineer' },
         { name: 'Jane', age: 28, profession: 'Designer' }
@@ -27,7 +68,10 @@
       })
 
       document.body.append(table);
-    </script>
+    </script> -->
+    <!-- Insert table end -->
+
+
     <script src="script.js"></script>
     <script src="app.js"></script>
   </body>
