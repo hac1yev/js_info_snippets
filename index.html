@@ -3,17 +3,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
-
     <link rel="stylesheet" href="./style.css" />
   </head>
-  
   <body>
-      <div id="parentDiv" style="width: 100%; background-color: red;">
-        <button id="myButton">Send</button>
-      </div>
-      <script src="script.js"></script>
-      <script src="app.js"></script>
+    <script>
+      const data = [
+        { name: 'John', age: 25, profession: 'Engineer' },
+        { name: 'Jane', age: 28, profession: 'Designer' }
+      ];
+      const table = document.createElement('table');
+      const wrapper = new DocumentFragment();
+      
+      data.forEach((item) => {
+        for(let key in item){
+          const td = document.createElement('td');
+          td.append(item[key]);
+          wrapper.append(td);
+        }
+        const tr = document.createElement('tr');
+        tr.append(wrapper);
+        table.append(tr);
+      })
+
+      document.body.append(table);
+    </script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
