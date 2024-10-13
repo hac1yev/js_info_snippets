@@ -15,6 +15,24 @@ body {
     background-color: lightgoldenrodyellow;
 }
 
-p {
-    font-size: 40px;
+.error {
+    color: red;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form button {
+    width: 100px;
+}
+
+.input-group {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }

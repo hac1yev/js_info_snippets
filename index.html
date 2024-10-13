@@ -9,7 +9,8 @@
   <body>
 
     <!-- Image slider start -->
-    <div>
+
+    <!-- <div>
       <div style="width: 200px; height: 170px;">
         <img style="width: 100%; height: 100%; object-fit: cover;" id="img" src="" alt="slider-img">
       </div>
@@ -17,9 +18,9 @@
       <button>Prev</button>
       <button>Next</button>
      </div>
-    </div>
+    </div> -->
 
-    <script>
+    <!-- <script>
       let index = 0;
       const images = [
         'https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q=',
@@ -44,10 +45,12 @@
           img.src = images[index];
         }
       });
-    </script>
+    </script> -->
+  
     <!-- Image slider end -->
 
     <!-- Insert table start -->
+
     <!-- <script>
       const data = [
         { name: 'John', age: 25, profession: 'Engineer' },
@@ -69,9 +72,84 @@
 
       document.body.append(table);
     </script> -->
+   
     <!-- Insert table end -->
 
+    <!-- Form validation start -->
 
+    <form id="form">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input id="email" placeholder="Email: " type="email">
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input id="password" placeholder="Password: " type="password">
+      </div>
+      <button>Submit</button>
+    </form>
+    
+    <script> 
+      const emailError = document.createElement('p');
+      const passwordError = document.createElement('p');
+      emailError.className = 'error';
+      passwordError.className = 'error';
+
+      function validateEmail(email) {
+        if(!/\S+@\S+\.\S+/.test(email)) return 'Email address is invalid!';
+        else return;
+      };
+
+      function validatePassword(password){
+        if(password.length < 6) return 'Password should be at least 6 character!';
+        else return;
+      }
+      
+      email.addEventListener('input', (e) => {
+        email.setAttribute('value', e.target.value);
+        const invalidEmail = validateEmail(e.target.value);
+        if(!invalidEmail) {
+          emailError.remove();
+        }
+      });
+      email.addEventListener('blur', (e) => {
+        const invalidEmail = validateEmail(e.target.value);
+        if(invalidEmail) {
+          emailError.innerHTML = invalidEmail;
+          email.after(emailError);
+        }else{
+          emailError.remove();
+        }
+      });
+      password.addEventListener('input', (e) => {
+        password.setAttribute('value', e.target.value);
+        const invalidPassword = validatePassword(e.target.value);
+        if(!invalidPassword) {
+          passwordError.remove();
+        }
+      });
+      password.addEventListener('blur', (e) => {
+        const invalidPassword = validatePassword(e.target.value);
+        if(invalidPassword) {
+          passwordError.innerHTML = invalidPassword;
+          password.after(passwordError);
+        }else{
+          passwordError.remove();
+        }
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const hasEmailError = validateEmail(email.value);
+        const hasPasswordError = validatePassword(password.value);
+
+        if(hasEmailError || hasPasswordError) return;
+        else alert(`Email: ${email.value}\nPassword: ${password.value}`);
+      });
+    </script>
+
+    <!-- Form validation end -->
+    
     <script src="script.js"></script>
     <script src="app.js"></script>
   </body>
