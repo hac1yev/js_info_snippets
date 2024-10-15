@@ -49,6 +49,7 @@
   
     <!-- Image slider end -->
 
+
     <!-- Insert table start -->
 
     <!-- <script>
@@ -75,9 +76,10 @@
    
     <!-- Insert table end -->
 
+
     <!-- Form validation start -->
 
-    <form id="form">
+    <!-- <form id="form">
       <div class="input-group">
         <label for="email">Email</label>
         <input id="email" placeholder="Email: " type="email">
@@ -87,9 +89,9 @@
         <input id="password" placeholder="Password: " type="password">
       </div>
       <button>Submit</button>
-    </form>
+    </form> -->
     
-    <script> 
+    <!-- <script> 
       const emailError = document.createElement('p');
       const passwordError = document.createElement('p');
       emailError.className = 'error';
@@ -146,10 +148,44 @@
         if(hasEmailError || hasPasswordError) return;
         else alert(`Email: ${email.value}\nPassword: ${password.value}`);
       });
-    </script>
+    </script> -->
 
     <!-- Form validation end -->
+     
     
+    <!-- File Reader start -->
+
+    <!-- <div 
+      style="width: 80px; height: 80px; border-radius: 50%; cursor: pointer;"
+      onclick="document.getElementById('file-input').click()" 
+    >
+      <img 
+        id="fileImg"
+        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" 
+        style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" 
+        alt="kert"
+      >
+      <input id="file-input" type="file" accept="image/jpeg, image/png, image/gif" hidden>
+    </div>
+
+    <script>
+      const fileInput = document.querySelector("#file-input");
+
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+
+        if(file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            fileImg.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script> -->
+
+    <!-- File Reader end -->
+
     <script src="script.js"></script>
     <script src="app.js"></script>
   </body>
