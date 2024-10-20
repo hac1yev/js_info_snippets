@@ -186,6 +186,40 @@
 
     <!-- File Reader end -->
 
+
+    <!-- ArrayBuffer TextDecoder start -->
+
+    <!-- <input type="file" id="fileInput">
+    <p id="output"></p>
+
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const output = document.getElementById('output');
+
+      fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0]; 
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function(event) {
+            const arrayBuffer = event.target.result;                                    
+            output.textContent = `File size: ${arrayBuffer.byteLength} bytes`;
+            const byteArray = new Uint8Array(arrayBuffer);                  
+            const decoder = new TextDecoder('utf-8');
+            const text = decoder.decode(byteArray);
+            output.textContent = `File content:\n${text}`;
+          };
+
+          reader.readAsArrayBuffer(file);
+        } else {
+          output.textContent = 'No file selected';
+        }
+      });
+    </script> -->
+
+    <!-- ArrayBuffer TextDecder end -->
+
     <script src="script.js"></script>
     <script src="app.js"></script>
   </body>
