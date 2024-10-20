@@ -219,6 +219,29 @@
     </script> -->
 
     <!-- ArrayBuffer TextDecder end -->
+    
+    <input type="file" id="fileInput">
+    <a download="file.pdf" id="link">Click</a>
+
+    <script>
+      let data;
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+
+        if(file) {
+          const reader = new FileReader();
+          reader.readAsArrayBuffer(file);            
+
+          reader.onload = () => {
+            data = reader.result; 
+            const blob = new Blob([data], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            link.href = url;
+          }
+        
+        }
+      });      
+    </script>
 
     <script src="script.js"></script>
     <script src="app.js"></script>
