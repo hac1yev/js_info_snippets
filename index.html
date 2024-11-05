@@ -271,7 +271,7 @@
 
     <!-- Abort Controller start -->
     
-    <script>
+    <!-- <script>
       let controller = new AbortController();
       let signal = controller.signal;
       
@@ -297,9 +297,20 @@
       }
       
       fetchData();
-    </script>
+    </script> -->
 
-    <!-- Abort Controller end -->
+    <!-- Abort Controller end -->    
+
+
+    <!-- Cookies, localStorage, sessionStorage Start -->
+
+    <!-- <script>
+      document.cookie = `name=Ilkin;expires=${new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000)};secure=true;`
+      // HttpOnly is only available on the server side 
+    </script> -->
+
+    <!-- Cookies, localStorage, sessionStorage End -->
+
 
 <script src="script.js"></script>
     <script src="app.js"></script>
