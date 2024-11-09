@@ -299,7 +299,7 @@
       fetchData();
     </script> -->
 
-    <!-- Abort Controller end -->    
+    <!-- Abort Controller end -->   
 
 
     <!-- Cookies, localStorage, sessionStorage Start -->
@@ -312,7 +312,91 @@
     <!-- Cookies, localStorage, sessionStorage End -->
 
 
-<script src="script.js"></script>
+    <!-- Fetch Download Progress Start -->
+
+    <!-- <a download="image.png" id="link">Click</a> -->
+
+    <!-- <script>
+      (async function() {
+        try {
+          const response = await fetch("https://images.pexels.com/photos/3774243/pexels-photo-3774243.jpeg?cs=srgb&dl=pexels-souvenirpixels-3774243.jpg&fm=jpg", {
+            headers: {
+              'Cache-Control': 'no-cache'
+            }
+          });
+          
+          const contentLength = response.headers.get("Content-Length");
+          const data = await response.body;          
+          const reader = await data.getReader();
+          const chunks = [];
+
+          while(true) {
+            const { done,value } = await reader.read();
+
+            if(done) {
+              break;
+            }
+
+            console.log(value);
+            console.log(value.lenght);
+          }       
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    </script> -->
+
+    <!-- Fetch Download Progress End -->
+
+
+    <!-- CORS error Start -->
+
+    <!-- <script>
+      (async function() {
+        try {
+          const response = await fetch("https://javascript.info");
+          const data = await response.json();
+          console.log(data); // CORS error. We can not send request another domain if that domain doesn't allow 
+          
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    </script> -->
+
+    <!-- CORS error End -->
+
+
+    <!-- XSS Attack Start -->
+
+    <!-- <form id="form">
+      <input id="input" type="text">
+      <button type="submit" id="button">Send</button>
+      <h1 id="result"></h1>
+    </form>
+
+    <script>
+      input.addEventListener("input", (e) => {
+        input.setAttribute("value", e.target.value);
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const location = window.location;
+
+        const url = new URL(location)
+
+        url.searchParams.append("search", input.value);
+        result.innerHTML = input.value; // Don't use innerHTML. If attacker input <img src onerror="alert(document.cookie)"> in input field he can reach  
+
+        window.history.pushState({}, "", url);
+      })
+    </script> -->
+
+    <!-- XSS Attack End -->
+
+    <script src="script.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
