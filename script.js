@@ -2225,3 +2225,45 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var findRelativeRanks = function(score) {
+//     let max = Math.max(...score);    
+//     let result = [];
+
+//     function lessFunc(n) {
+//         let count = 0;
+
+//         score.forEach((item) => {
+//             if(n < item) {
+//                 count++;
+//             }
+//         })
+
+//         return count;
+//     }
+
+//     score.forEach((item) => {
+//         if(item === max){
+//             result.push("Gold Medal");
+//         }else{
+//             const place = lessFunc(item) + 1;
+
+//             if(place === 2) {
+//                 result.push("Silver Medal");
+//             }else if(place === 3) {
+//                 result.push("Bronze Medal");
+//             }else{
+//                 result.push(`${place}`)
+//             }
+//         }
+//     });
+
+//     return result;
+// };
+
+// console.log(findRelativeRanks([5,4,3,2,1]));
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */

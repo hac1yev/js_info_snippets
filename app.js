@@ -759,7 +759,16 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-
+// const specificDateTime = new Date();
+// console.log(specificDateTime.toDateString()); //  Thu Nov 28 2024
+// console.log(specificDateTime.toLocaleString()); //  28.11.2024 16:01:11
+// console.log(specificDateTime.toTimeString()); //  16:01:18 GMT+0400 (Azerbaycan Standart Saati)
+// console.log(specificDateTime.toISOString()); //  2024-11-28T12:01:28.184Z
+// console.log(specificDateTime.toJSON()); //  2024-11-28T12:01:35.960Z
+// console.log(specificDateTime.toLocaleDateString()); //  28.11.2024
+// console.log(specificDateTime.toLocaleTimeString()); //  16:01:48
+// console.log(specificDateTime.toTimeString()); //  16:01:57 GMT+0400 (Azerbaycan Standart Saati)
+// console.log(specificDateTime.toUTCString()); //  Thu, 28 Nov 2024 12:02:02 GMT
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
