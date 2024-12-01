@@ -396,7 +396,7 @@
 
     <!-- XSS Attack End -->
 
-    <div id="list">
+    <!-- <div id="list">
       <h6>sdsa</h6>
       <span>wqerfds</span>
       <p>sdsds</p>
@@ -408,9 +408,34 @@
       console.log(list.firstChild); //text
       console.log(list.firstElementChild); // h6
       console.log(list.lastChild); // text
-      console.log(list.lastElementChild); // p
-      
+      console.log(list.lastElementChild); // p  
+    </script> -->
+
+
+    <script>
+      const fragment = new DocumentFragment();
+      const data = ["Manchester United", "Liverpool", "Arsenal", "Manchester City", "Chelsea","Tottenham"];
+
+      data.forEach((item,index) => {
+        const p = document.createElement("p");
+        p.innerHTML = item;
+        p.id = `item${index + 1}`;
+        fragment.append(p);
+      });
+
+      document.body.append(fragment);
+      const first = document.querySelector("#item1");
+      const second = document.querySelector("#item2");
+      const clone1 = first.cloneNode(true);
+      const clone2 = second.cloneNode(true);
+      clone1.innerHTML = "Real Madrid";
+      clone1.id = "clone_item1";
+      clone2.innerHTML = "Barcelona";
+      clone2.id = "clone_item2";
+      first.append(clone1);
+      second.prepend(clone2);
     </script>
+
 
     <script src="script.js"></script>
     <script src="app.js"></script>
