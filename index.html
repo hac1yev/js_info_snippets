@@ -388,13 +388,29 @@
         const url = new URL(location)
 
         url.searchParams.append("search", input.value);
-        result.innerHTML = input.value; // Don't use innerHTML. If attacker input <img src onerror="alert(document.cookie)"> in input field he can reach  
+        result.innerHTML = input.value; // Don't use innerHTML. If attacker input <img src onerror="alert(document.cookie)"> in input field he can reach your cookies  
 
         window.history.pushState({}, "", url);
       })
     </script> -->
 
     <!-- XSS Attack End -->
+
+    <div id="list">
+      <h6>sdsa</h6>
+      <span>wqerfds</span>
+      <p>sdsds</p>
+    </div>
+
+    <script>
+      console.log(list.nextSibling); // text
+      console.log(list.nextElementSibling); // script
+      console.log(list.firstChild); //text
+      console.log(list.firstElementChild); // h6
+      console.log(list.lastChild); // text
+      console.log(list.lastElementChild); // p
+      
+    </script>
 
     <script src="script.js"></script>
     <script src="app.js"></script>
