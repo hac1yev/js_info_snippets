@@ -774,7 +774,18 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+// const person = {
+//     name: 'Ilkin',
+//     surname: 'Haciyev',
+//     fullName: function() {
+//         return this.name + " " + this.surname
+//     }
+// };
 
+// const person2 = Object.create(person);
+// person2.name = "Həsən";
+// person2.surname = "Beyandir";
+// console.log(person2.fullName()); // Həsən Beyandir
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
