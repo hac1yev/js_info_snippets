@@ -438,9 +438,33 @@
       second.prepend(clone2);
     </script> -->
 
+
+    <div id="div">
+      <span>
+        asdasdas
+        <button id="button">
+          Click
+        </button>
+      </span>
+    </div>
+
+    <script>
+      window.onload = () => {
+        console.log("ONLOAD");
+      }
+    </script>
+    <script async src="async.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM Content Loaded");
+      })
+    </script>
+    <script defer src="defer.js"></script>
+    <script src="normal.js"></script>
+
     <!-- DOM BASICS END -->
 
-    <script src="script.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="script.js"></script>
+    <script src="app.js"></script> -->
   </body>
 </html>
