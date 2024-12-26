@@ -2268,7 +2268,51 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+function promiseFunc() {
+    return new Promise((resolve, reject) => {
+      if (Math.random() > 0.7) {
+        resolve("Promise success");
+      } else {
+        reject("Promise error");
+      }
+    });
+  }
 
+  function retryPromise(fn, options = {}) {
+    const {
+      retries = 3, 
+      delay = 1000, 
+      onRetry = () => {}, 
+    } = options;
+
+    let attempt = 1;
+
+    return new Promise((resolve, reject) => {
+      const attemptExecution = () => {
+        fn()
+          .then(resolve)
+          .catch((error) => {
+            if (attempt < retries) {
+              onRetry(attempt);
+              attempt++;
+              setTimeout(attemptExecution, delay); 
+            } else {
+              reject(error); 
+            }
+          });
+      };
+
+      attemptExecution(); 
+    });
+  }
+
+  retryPromise(promiseFunc, {
+    retries: 5,
+    delay: 500,
+    onRetry: (attempt) => console.log(`Retrying: ${attempt}`),
+  })
+    .then(console.log)
+    .catch(console.error);
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
