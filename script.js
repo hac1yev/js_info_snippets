@@ -2220,20 +2220,59 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const arr = [2,7,11,15];
-const target = 17;
+// const arr = [2,7,11,15];
+// const target = 17;
 
-const getArrayIndex = (arr,target) => {
-    for(let i=0; i<arr.length; i++) {
-        for(let j=i+1; j<arr.length; j++) {
-            if(arr[i] + arr[j] === target) {
-                return [i,j]
+// const getArrayIndex = (arr,target) => {
+//     for(let i=0; i<arr.length; i++) {
+//         for(let j=i+1; j<arr.length; j++) {
+//             if(arr[i] + arr[j] === target) {
+//                 return [i,j]
+//             }
+//         }
+//     }
+// };
+
+// console.log(getArrayIndex(arr,target));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const isValid = (s) => {
+    let parantheses = {
+        "(": ")",
+        "[": "]",
+        "{": "}"
+    };
+
+    const arr = [];
+
+    for(let i=0; i<s.length; i++) {
+        if(parantheses[s[i]]){
+            arr.push(s[i]);
+        }else{
+            let searchedKey;
+            for(let key in parantheses) {
+                if(parantheses[key] === s[i]) {
+                    searchedKey = key;
+                }
+            }
+
+            if(!arr.includes(searchedKey)){
+                return false
+            }
+
+            if(arr.at(-1) === searchedKey) {
+                arr.pop()
             }
         }
     }
+
+    return arr.length === 0;
 };
 
-console.log(getArrayIndex(arr,target));
+console.log(isValid("([]){}(]"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
