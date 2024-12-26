@@ -2113,41 +2113,127 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const students = [
-    { name: "Alice", grades: [85, 92, 88], city: "New York" },
-    { name: "Bob", grades: [70, 75, 78], city: "Los Angeles" },
-    { name: "Charlie", grades: [90, 95, 92], city: "New York" },
-    { name: "Dave", grades: [60, 58, 65], city: "Los Angeles" },
-    { name: "Eve", grades: [88, 85, 91], city: "New York" }
-];
+// const students = [
+//     { name: "Alice", grades: [85, 92, 88], city: "New York" },
+//     { name: "Bob", grades: [70, 75, 78], city: "Los Angeles" },
+//     { name: "Charlie", grades: [90, 95, 92], city: "New York" },
+//     { name: "Dave", grades: [60, 58, 65], city: "Los Angeles" },
+//     { name: "Eve", grades: [88, 85, 91], city: "New York" }
+// ];
   
-const threshold = 80;
+// const threshold = 80;
 
-const filteredStudents = students.filter((student) => {
-    const { grades } = student;
-    const total = grades.reduce((total,num) => {
-        total += num;
-        return total;
-    });
+// const filteredStudents = students.filter((student) => {
+//     const { grades } = student;
+//     const total = grades.reduce((total,num) => {
+//         total += num;
+//         return total;
+//     });
 
-    const avarageGrade = Math.trunc(total / 3);
+//     const avarageGrade = Math.trunc(total / 3);
 
-    if(avarageGrade >= threshold) return student;
-});
+//     if(avarageGrade >= threshold) return student;
+// });
 
-const obj = filteredStudents.reduce((acc, item) => {
-    const { city,name } = item;
+// const obj = filteredStudents.reduce((acc, item) => {
+//     const { city,name } = item;
 
-    if(city in acc) {
-        acc[city].push(name);
-    }else{
-        acc[city] = [name];
+//     if(city in acc) {
+//         acc[city].push(name);
+//     }else{
+//         acc[city] = [name];
+//     }
+
+//     return acc;
+// }, {});
+
+// console.log(obj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const people = [
+//     { name: "Alice", age: 25, city: "New York" },
+//     { name: "Bob", age: 22, city: "London" },
+//     { name: "Charlie", age: 30, city: "New York" },
+//     { name: "Dave", age: 23, city: "London" },
+//     { name: "Eve", age: 28, city: "Paris" },
+// ];
+
+
+// SOLUTION 1 
+// const obj = Object.groupBy(people, (item) => item.city);
+
+// console.log(obj);
+
+
+// SOLUTION 2
+// const obj = people.reduce((acc,item) => {
+//     const { city } = item;
+
+//     if(acc[city]) acc[city].push(item)
+//     else acc[city] = [item]
+
+//     return acc;
+// }, {});
+
+// console.log(obj);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const findLongestString = (str) => {
+//     const chars = [];
+//     let count = 0;
+//     let char = "";
+//     let longestChar = "";
+
+//     for(let i=0; i<str.length; i++) {
+//         for(let j=i; j<str.length; j++) {
+//             if(char.includes(str[j])) count++
+
+//             if(count === 1) {
+//                 chars.push(char);
+//                 char = "";
+//                 count = 0;
+//                 break;
+//             }else{
+//                 char += str[j];
+//             }
+//         }
+
+//         if(chars.at(-1).length > str.length - (i+1)) break;
+//     }
+
+//     chars.forEach((char) => {
+//         if(char.length > longestChar.length) longestChar = char;
+//     }); 
+    
+//     return longestChar;
+// };
+
+// console.log(findLongestString("pwwkew"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const arr = [2,7,11,15];
+const target = 17;
+
+const getArrayIndex = (arr,target) => {
+    for(let i=0; i<arr.length; i++) {
+        for(let j=i+1; j<arr.length; j++) {
+            if(arr[i] + arr[j] === target) {
+                return [i,j]
+            }
+        }
     }
+};
 
-    return acc;
-}, {});
-
-console.log(obj);
+console.log(getArrayIndex(arr,target));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
