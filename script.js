@@ -2239,40 +2239,54 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const isValid = (s) => {
-    let parantheses = {
-        "(": ")",
-        "[": "]",
-        "{": "}"
-    };
+// const isValid = (s) => {
+//     let parantheses = {
+//         "(": ")",
+//         "[": "]",
+//         "{": "}"
+//     };
 
-    const arr = [];
+//     const arr = [];
 
-    for(let i=0; i<s.length; i++) {
-        if(parantheses[s[i]]){
-            arr.push(s[i]);
-        }else{
-            let searchedKey;
-            for(let key in parantheses) {
-                if(parantheses[key] === s[i]) {
-                    searchedKey = key;
-                }
-            }
+//     for(let i=0; i<s.length; i++) {
+//         if(parantheses[s[i]]){
+//             arr.push(s[i]);
+//         }else{
+//             let searchedKey;
+//             for(let key in parantheses) {
+//                 if(parantheses[key] === s[i]) {
+//                     searchedKey = key;
+//                 }
+//             }
 
-            if(!arr.includes(searchedKey)){
-                return false
-            }
+//             if(!arr.includes(searchedKey)){
+//                 return false
+//             }
 
-            if(arr.at(-1) === searchedKey) {
-                arr.pop()
-            }
-        }
+//             if(arr.at(-1) === searchedKey) {
+//                 arr.pop()
+//             }
+//         }
+//     }
+
+//     return arr.length === 0;
+// };
+
+// console.log(isValid("([]){}(]"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var divide = function(dividend, divisor) {
+    if(dividend < 0 || divisor < 0) {
+        return Math.ceil(dividend / divisor);
+    }else if(dividend > 0 || divisor > 0){
+        return Math.floor(dividend / divisor);
     }
-
-    return arr.length === 0;
 };
 
-console.log(isValid("([]){}(]"));
+console.log(divide(-2147483648, -1));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
