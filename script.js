@@ -2422,26 +2422,54 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var myAtoi = function(s) {
-    let str = s.trim();
+// var myAtoi = function(s) {
+//     let str = s.trim();
 
-    if (!str || (!/^[0-9+-]/.test(str[0]))) {
-        return 0;
-    }
+//     if (!str || (!/^[0-9+-]/.test(str[0]))) {
+//         return 0;
+//     }
     
-    const num = parseInt(str, 10);
+//     const num = parseInt(str, 10);
 
-    if (isNaN(num)) {
-        return 0;
+//     if (isNaN(num)) {
+//         return 0;
+//     }
+
+//     if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31); 
+//     if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1; 
+
+//     return parseInt(str);
+// };
+
+// console.log(myAtoi("-987654323456765432"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var countAndSay = function(n) {
+    let str = "1";
+    
+    if(n === 1) return str;
+
+    for(let i=2; i<=n; i++) {
+        let count = 1;
+        let copy = str;
+        str = "";
+        for(let j=0; j<copy.length; j++) {
+            if(copy[j] === copy[j+1]) count ++;
+            else {
+                str += `${count}${copy[j]}`;
+                count = 1;
+            }        
+        }
+
     }
 
-    if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31); 
-    if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1; 
-
-    return parseInt(str);
+    return str;
 };
 
-console.log(myAtoi("-987654323456765432"));
+console.log(countAndSay(6));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
