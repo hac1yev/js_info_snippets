@@ -2278,15 +2278,120 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var divide = function(dividend, divisor) {
-    if(dividend < 0 || divisor < 0) {
-        return Math.ceil(dividend / divisor);
-    }else if(dividend > 0 || divisor > 0){
-        return Math.floor(dividend / divisor);
-    }
+// var divide = function(dividend, divisor) {
+//     if(dividend < 0 || divisor < 0) {
+//         return Math.ceil(dividend / divisor);
+//     }else if(dividend > 0 || divisor > 0){
+//         return Math.floor(dividend / divisor);
+//     }
+// };
+
+// console.log(divide(-2147483648, -1));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arrayProducts = (arr) => {
+//     const newArr = arr.map((item,index) => {
+//         let result = 1;
+//         arr.forEach((element,i) => {
+//             if(index !== i ) {
+//                 result *= element;
+//             } 
+//         });
+
+//         return result;
+//     });
+
+//     return newArr;
+// };  
+
+// console.log(arrayProducts([1,2,3,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function addTwoNumbers(l1, l2) {
+//     const dummy = { val: 0, next: null }; // Dummy head node
+//     let current = dummy;
+//     let carry = 0;
+
+//     while (l1 || l2 || carry) {
+//         const val1 = l1 ? l1.val : 0;
+//         const val2 = l2 ? l2.val : 0;
+
+//         // Calculate the sum and carry
+//         const total = val1 + val2 + carry;
+//         carry = Math.floor(total / 10);
+
+//         // Create a new node for the result
+//         current.next = { val: total % 10, next: null };
+//         current = current.next;
+
+//         // Move to the next nodes
+//         if (l1) l1 = l1.next;
+//         if (l2) l2 = l2.next;
+//     }
+
+//     return dummy.next;
+// }
+
+// function createLinkedList(arr) {
+//     const dummy = { val: 0, next: null };
+//     let current = dummy;
+//     for (const num of arr) {
+//         current.next = { val: num, next: null };
+//         current = current.next;
+//     }
+//     return dummy.next;
+// }
+
+// function printLinkedList(node) {
+//     const result = [];
+//     while (node) {
+//         result.push(node.val);
+//         node = node.next;
+//     }
+//     console.log(result.join(" -> "));
+// }
+
+// const l1 = createLinkedList([2, 4, 3]); 
+// const l2 = createLinkedList([5, 6, 4]); 
+
+// const result = addTwoNumbers(l1, l2);
+
+// console.log(printLinkedList(result));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+function isPalindrome(str) {
+    const reversedStr = str.split("").toReversed().join("");
+
+    return reversedStr === str;
 };
 
-console.log(divide(-2147483648, -1));
+var longestPalindrome = function(s) {
+    let longestPalindromeStr = "";
+
+    for(let i=0; i<s.length; i++) {
+        let str = "";
+
+        for(let j=i; j<s.length; j++) {
+            str += s[j];
+            const isItPalindrome = isPalindrome(str);
+            if(isItPalindrome && str.length > longestPalindromeStr.length) {
+                longestPalindromeStr = str;
+            }
+        }
+    }
+
+    return longestPalindromeStr;
+};
+
+console.log(longestPalindrome("cbbd"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
