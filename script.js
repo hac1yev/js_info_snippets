@@ -2447,29 +2447,48 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var countAndSay = function(n) {
-    let str = "1";
+// var countAndSay = function(n) {
+//     let str = "1";
     
-    if(n === 1) return str;
+//     if(n === 1) return str;
 
-    for(let i=2; i<=n; i++) {
-        let count = 1;
-        let copy = str;
-        str = "";
-        for(let j=0; j<copy.length; j++) {
-            if(copy[j] === copy[j+1]) count ++;
-            else {
-                str += `${count}${copy[j]}`;
-                count = 1;
-            }        
+//     for(let i=2; i<=n; i++) {
+//         let count = 1;
+//         let copy = str;
+//         str = "";
+//         for(let j=0; j<copy.length; j++) {
+//             if(copy[j] === copy[j+1]) count ++;
+//             else {
+//                 str += `${count}${copy[j]}`;
+//                 count = 1;
+//             }        
+//         }
+
+//     }
+
+//     return str;
+// };
+
+// console.log(countAndSay(6));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var rotate = function(matrix) {
+    const result = [];
+
+    matrix.reverse().forEach(element => {        
+        for(let i=0; i<element.length; i++) {
+            if(!result[i]) result[i] = [element[i]];
+            else result[i].push(element[i])         
         }
+    });
 
-    }
-
-    return str;
+    return result
 };
 
-console.log(countAndSay(6));
+console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
