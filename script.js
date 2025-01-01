@@ -2398,25 +2398,50 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var lengthOfLongestSubstring = function(s) {
-    let longestStr = "";
-    let str = "";
+// var lengthOfLongestSubstring = function(s) {
+//     let longestStr = "";
+//     let str = "";
     
-    for(let i=0; i<s.length; i++) {
-        if(!str.includes(s[i])) {
-            str += s[i];
-        }else if(str.includes(s[i])){     
-            console.log(str.split(s[i]));
+//     for(let i=0; i<s.length; i++) {
+//         if(!str.includes(s[i])) {
+//             str += s[i];
+//         }else if(str.includes(s[i])){     
+//             console.log(str.split(s[i]));
                    
-            str = str.split(s[i]).at(-1) + s[i];
-        }else if(str.includes(s[i]) && (s.length - i) < str.length) break;
-        if(str.length > longestStr.length) longestStr = str;
+//             str = str.split(s[i]).at(-1) + s[i];
+//         }else if(str.includes(s[i]) && (s.length - i) < str.length) break;
+//         if(str.length > longestStr.length) longestStr = str;
+//     }
+
+//     return longestStr;
+// };
+
+// console.log(lengthOfLongestSubstring("anviaj"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var myAtoi = function(s) {
+    let str = s.trim();
+
+    if (!str || (!/^[0-9+-]/.test(str[0]))) {
+        return 0;
+    }
+    
+    const num = parseInt(str, 10);
+
+    if (isNaN(num)) {
+        return 0;
     }
 
-    return longestStr;
+    if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31); 
+    if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1; 
+
+    return parseInt(str);
 };
 
-console.log(lengthOfLongestSubstring("anviaj"));
+console.log(myAtoi("-987654323456765432"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
