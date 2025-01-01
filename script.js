@@ -2367,31 +2367,56 @@
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-function isPalindrome(str) {
-    const reversedStr = str.split("").toReversed().join("");
 
-    return reversedStr === str;
-};
+// function isPalindrome(str) {
+//     const reversedStr = str.split("").toReversed().join("");
 
-var longestPalindrome = function(s) {
-    let longestPalindromeStr = "";
+//     return reversedStr === str;
+// };
 
+// var longestPalindrome = function(s) {
+//     let longestPalindromeStr = "";
+
+//     for(let i=0; i<s.length; i++) {
+//         let str = "";
+
+//         for(let j=i; j<s.length; j++) {
+//             str += s[j];
+//             const isItPalindrome = isPalindrome(str);
+//             if(isItPalindrome && str.length > longestPalindromeStr.length) {
+//                 longestPalindromeStr = str;
+//             }
+//         }
+//     }
+
+//     return longestPalindromeStr;
+// };
+
+// console.log(longestPalindrome("cbbd"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var lengthOfLongestSubstring = function(s) {
+    let longestStr = "";
+    let str = "";
+    
     for(let i=0; i<s.length; i++) {
-        let str = "";
-
-        for(let j=i; j<s.length; j++) {
-            str += s[j];
-            const isItPalindrome = isPalindrome(str);
-            if(isItPalindrome && str.length > longestPalindromeStr.length) {
-                longestPalindromeStr = str;
-            }
-        }
+        if(!str.includes(s[i])) {
+            str += s[i];
+        }else if(str.includes(s[i])){     
+            console.log(str.split(s[i]));
+                   
+            str = str.split(s[i]).at(-1) + s[i];
+        }else if(str.includes(s[i]) && (s.length - i) < str.length) break;
+        if(str.length > longestStr.length) longestStr = str;
     }
 
-    return longestPalindromeStr;
+    return longestStr;
 };
 
-console.log(longestPalindrome("cbbd"));
+console.log(lengthOfLongestSubstring("anviaj"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
