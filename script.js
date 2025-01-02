@@ -2475,20 +2475,40 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var rotate = function(matrix) {
-    const result = [];
+// var rotate = function(matrix) {
+//     const result = [];
 
-    matrix.reverse().forEach(element => {        
-        for(let i=0; i<element.length; i++) {
-            if(!result[i]) result[i] = [element[i]];
-            else result[i].push(element[i])         
+//     matrix.reverse().forEach(element => {        
+//         for(let i=0; i<element.length; i++) {
+//             if(!result[i]) result[i] = [element[i]];
+//             else result[i].push(element[i])         
+//         }
+//     });
+
+//     return result
+// };
+
+// console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var maxSubArray = function(nums) {
+    let current_sum = 0;
+    let max_sum = -Infinity;
+
+    nums.forEach(element => {
+        current_sum = Math.max(current_sum + element, element);
+        if(current_sum > max_sum) {
+            max_sum = Math.max(current_sum, element);
         }
-    });
-
-    return result
+    });  
+    
+    return max_sum;
 };
 
-console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
