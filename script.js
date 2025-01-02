@@ -2494,21 +2494,38 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var maxSubArray = function(nums) {
-    let current_sum = 0;
-    let max_sum = -Infinity;
+// var maxSubArray = function(nums) {
+//     let current_sum = 0;
+//     let max_sum = -Infinity;
 
-    nums.forEach(element => {
-        current_sum = Math.max(current_sum + element, element);
-        if(current_sum > max_sum) {
-            max_sum = Math.max(current_sum, element);
-        }
-    });  
+//     nums.forEach(element => {
+//         current_sum = Math.max(current_sum + element, element);
+//         if(current_sum > max_sum) {
+//             max_sum = Math.max(current_sum, element);
+//         }
+//     });  
     
-    return max_sum;
+//     return max_sum;
+// };
+
+// console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var sortColors = function(nums) {
+    let n = nums.length;
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (nums[j] > nums[j + 1]) {
+                [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
+            }
+        }
+    }
 };
 
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
+console.log(sortColors([2,0,2,1,1,0]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
