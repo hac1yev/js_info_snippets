@@ -2514,18 +2514,62 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var sortColors = function(nums) {
-    let n = nums.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (nums[j] > nums[j + 1]) {
-                [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
-            }
-        }
+// var sortColors = function(nums) {
+//     let n = nums.length;
+//     for (let i = 0; i < n - 1; i++) {
+//         for (let j = 0; j < n - i - 1; j++) {
+//             if (nums[j] > nums[j + 1]) {
+//                 [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
+//             }
+//         }
+//     }
+// };
+
+// console.log(sortColors([2,0,2,1,1,0]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var uniquePaths = function(m, n) {
+//     let count = 0;
+
+//     function backtrack(right = 0, down = 0) {
+//         if (right === n - 1 && down === m - 1) {
+//             count++;
+//             return;
+//         }
+
+//         if (right < n - 1) {
+//             backtrack(right + 1, down);
+//         }
+
+//         if (down < m - 1) {
+//             backtrack(right, down + 1);
+//         }
+//     }
+
+//     backtrack();
+//     return count;
+// };
+
+// console.log(uniquePaths(23, 12));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var findKthLargest = function(nums, k) {
+    const sortedNums = nums.toSorted((a,b) => a-b);
+
+    for(let i=1; i<k; i++) {
+        sortedNums.pop();
     }
+
+    return sortedNums.at(-1);
 };
 
-console.log(sortColors([2,0,2,1,1,0]));
+console.log(findKthLargest([3,2,3,1,2,4,5,5,6], 4));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
