@@ -2559,17 +2559,32 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var findKthLargest = function(nums, k) {
-    const sortedNums = nums.toSorted((a,b) => a-b);
+// var findKthLargest = function(nums, k) {
+//     const sortedNums = nums.toSorted((a,b) => a-b);
 
-    for(let i=1; i<k; i++) {
-        sortedNums.pop();
+//     for(let i=1; i<k; i++) {
+//         sortedNums.pop();
+//     }
+
+//     return sortedNums.at(-1);
+// };
+
+// console.log(findKthLargest([3,2,3,1,2,4,5,5,6], 4));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var missingNumber = function(nums) {
+    let len = nums.length;
+    let missingNumber = len*(len+1)/2;
+    for (let i of nums){
+        missingNumber -= i;
     }
-
-    return sortedNums.at(-1);
+    return missingNumber;
 };
 
-console.log(findKthLargest([3,2,3,1,2,4,5,5,6], 4));
+console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
