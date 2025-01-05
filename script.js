@@ -2575,16 +2575,33 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var missingNumber = function(nums) {
-    let len = nums.length;
-    let missingNumber = len*(len+1)/2;
-    for (let i of nums){
-        missingNumber -= i;
-    }
-    return missingNumber;
-};
+// var missingNumber = function(nums) {
+//     let len = nums.length;
+//     let missingNumber = len*(len+1)/2;
+//     for (let i of nums){
+//         missingNumber -= i;
+//     }
+//     return missingNumber;
+// };
 
-console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
+// console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var moveZeroes = function(nums) {
+    for(let i=nums.length-1; i>=0; i--) {
+        if(nums[i] === 0) {
+            nums.splice(i,1);
+            nums.push(0);
+        }
+    }
+
+    return nums;
+};      
+
+console.log(moveZeroes([0,0,0,0,1,1]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
