@@ -2607,27 +2607,44 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var threeSumClosest = function(nums, target) {
-    let difference = Infinity;
-    let sum;
+// var threeSumClosest = function(nums, target) {
+//     let difference = Infinity;
+//     let sum;
 
-    for(let i=0; i<nums.length; i++) {
-        for(let j=i+1; j<nums.length; j++) {
-            for(let k=j+1; k<nums.length; k++) {
-                let currentSum = nums[i] + nums[j] + nums[k];
+//     for(let i=0; i<nums.length; i++) {
+//         for(let j=i+1; j<nums.length; j++) {
+//             for(let k=j+1; k<nums.length; k++) {
+//                 let currentSum = nums[i] + nums[j] + nums[k];
                 
-                if(Math.abs(target - currentSum) < difference) {
-                    difference = Math.abs(target - currentSum);
-                    sum = currentSum;
-                }
-            }
+//                 if(Math.abs(target - currentSum) < difference) {
+//                     difference = Math.abs(target - currentSum);
+//                     sum = currentSum;
+//                 }
+//             }
+//         }
+//     }
+
+//     return sum;
+// };
+
+// console.log(threeSumClosest([1,1,1,0], -100));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var removeElement = function(nums, val) {
+    for(let i=0; i<nums.length; i++) {
+        if(nums[i] === val) {
+            nums.splice(i, 1);
+            i--;
         }
     }
 
-    return sum;
+    return nums.length;
 };
 
-console.log(threeSumClosest([1,1,1,0], -100));
+console.log(removeElement([0,1,2,2,3,0,4,2], 2));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
