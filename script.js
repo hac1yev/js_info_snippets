@@ -2590,18 +2590,44 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var moveZeroes = function(nums) {
-    for(let i=nums.length-1; i>=0; i--) {
-        if(nums[i] === 0) {
-            nums.splice(i,1);
-            nums.push(0);
+// var moveZeroes = function(nums) {
+//     for(let i=nums.length-1; i>=0; i--) {
+//         if(nums[i] === 0) {
+//             nums.splice(i,1);
+//             nums.push(0);
+//         }
+//     }
+
+//     return nums;
+// };      
+
+// console.log(moveZeroes([0,0,0,0,1,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var threeSumClosest = function(nums, target) {
+    let difference = Infinity;
+    let sum;
+
+    for(let i=0; i<nums.length; i++) {
+        for(let j=i+1; j<nums.length; j++) {
+            for(let k=j+1; k<nums.length; k++) {
+                let currentSum = nums[i] + nums[j] + nums[k];
+                
+                if(Math.abs(target - currentSum) < difference) {
+                    difference = Math.abs(target - currentSum);
+                    sum = currentSum;
+                }
+            }
         }
     }
 
-    return nums;
-};      
+    return sum;
+};
 
-console.log(moveZeroes([0,0,0,0,1,1]));
+console.log(threeSumClosest([1,1,1,0], -100));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
