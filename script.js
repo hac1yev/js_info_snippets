@@ -2724,21 +2724,42 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var countSubarrays = function(nums) {
+// var countSubarrays = function(nums) {
+//     let count = 0;
+
+//     for(let i=0; i<nums.length-2; i++) {
+//         let first = nums[i];
+//         let middle = nums[i+1];
+//         let last = nums[i+2];
+
+//         if(first + last === middle / 2) count++;
+//     }
+
+//     return count;
+// };
+
+// console.log(countSubarrays([1,2,1,4,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minimumOperations = function(nums) {
     let count = 0;
-
-    for(let i=0; i<nums.length-2; i++) {
-        let first = nums[i];
-        let middle = nums[i+1];
-        let last = nums[i+2];
-
-        if(first + last === middle / 2) count++;
+    while (new Set(nums).size !== nums.length) {
+        nums = nums.slice(3);
+        count++;
     }
-
-    return count;
+    return count; 
 };
 
-console.log(countSubarrays([1,2,1,4,1]));
+console.log(minimumOperations([4,5,6,4,4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
