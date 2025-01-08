@@ -2712,13 +2712,33 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var removeNthFromEnd = function(head, n) {
-    head.splice(head.length-n, 1);
+// var removeNthFromEnd = function(head, n) {
+//     head.splice(head.length-n, 1);
 
-    return head;
+//     return head;
+// };
+
+// console.log(removeNthFromEnd([1,4,2,3,4,5], 2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var countSubarrays = function(nums) {
+    let count = 0;
+
+    for(let i=0; i<nums.length-2; i++) {
+        let first = nums[i];
+        let middle = nums[i+1];
+        let last = nums[i+2];
+
+        if(first + last === middle / 2) count++;
+    }
+
+    return count;
 };
 
-console.log(removeNthFromEnd([1,4,2,3,4,5], 2));
+console.log(countSubarrays([1,2,1,4,1]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
