@@ -2633,18 +2633,80 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var removeElement = function(nums, val) {
-    for(let i=0; i<nums.length; i++) {
-        if(nums[i] === val) {
-            nums.splice(i, 1);
-            i--;
+// var removeElement = function(nums, val) {
+//     for(let i=0; i<nums.length; i++) {
+//         if(nums[i] === val) {
+//             nums.splice(i, 1);
+//             i--;
+//         }
+//     }
+
+//     return nums.length;
+// };
+
+// console.log(removeElement([0,1,2,2,3,0,4,2], 2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var permute = function(nums) {
+//     if (nums.length === 1) {
+//         return [nums];
+//     }
+    
+//     var res = [];
+
+//     for (var i = 0; i < nums.length; i++) {
+//         var n = nums.shift();
+//         var perms = permute([...nums]);
+
+//         for (var p of perms) {
+//             p.push(n);
+//         }
+
+//         res.push(...perms); 
+//         nums.push(n); 
+//     }
+    
+//     return res;  
+// };
+
+// console.log(permute([1,2,3]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var permute = function(nums) {
+    if (nums.length === 0) return [];
+    if (nums.length === 1) return [nums];
+
+    let result = [];
+
+    function backtrack(current = [], used = Array(nums.length).fill(false)) {
+        if(current.length === nums.length) {
+            result.push([...current]);
+            return;
+        }
+
+        for(let i=0; i<nums.length; i++) {
+            if(used[i]) continue;
+
+            current.push(nums[i]);
+            used[i] = true;
+            backtrack(current, used);
+
+            current.pop();
+            used[i] = false;
         }
     }
-
-    return nums.length;
+    
+    backtrack();
+    return result;
 };
 
-console.log(removeElement([0,1,2,2,3,0,4,2], 2));
+console.log(permute([1, 2, 3]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
