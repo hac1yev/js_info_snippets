@@ -2678,35 +2678,47 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var permute = function(nums) {
-    if (nums.length === 0) return [];
-    if (nums.length === 1) return [nums];
+// var permute = function(nums) {
+//     if (nums.length === 0) return [];
+//     if (nums.length === 1) return [nums];
 
-    let result = [];
+//     let result = [];
 
-    function backtrack(current = [], used = Array(nums.length).fill(false)) {
-        if(current.length === nums.length) {
-            result.push([...current]);
-            return;
-        }
+//     function backtrack(current = [], used = Array(nums.length).fill(false)) {
+//         if(current.length === nums.length) {
+//             result.push([...current]);
+//             return;
+//         }
 
-        for(let i=0; i<nums.length; i++) {
-            if(used[i]) continue;
+//         for(let i=0; i<nums.length; i++) {
+//             if(used[i]) continue;
 
-            current.push(nums[i]);
-            used[i] = true;
-            backtrack(current, used);
+//             current.push(nums[i]);
+//             used[i] = true;
+//             backtrack(current, used);
 
-            current.pop();
-            used[i] = false;
-        }
-    }
+//             current.pop();
+//             used[i] = false;
+//         }
+//     }
     
-    backtrack();
-    return result;
+//     backtrack();
+//     return result;
+// };
+
+// console.log(permute([1, 2, 3]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var removeNthFromEnd = function(head, n) {
+    head.splice(head.length-n, 1);
+
+    return head;
 };
 
-console.log(permute([1, 2, 3]));
+console.log(removeNthFromEnd([1,4,2,3,4,5], 2));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
