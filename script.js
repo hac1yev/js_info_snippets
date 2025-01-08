@@ -2750,16 +2750,40 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minimumOperations = function(nums) {
+// var minimumOperations = function(nums) {
+//     let count = 0;
+//     while (new Set(nums).size !== nums.length) {
+//         nums = nums.slice(3);
+//         count++;
+//     }
+//     return count; 
+// };
+
+// console.log(minimumOperations([4,5,6,4,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var maxDistinctElements = function(nums, k) {
+    nums.sort((a,b)=>(a-b));
+    const result = [];
     let count = 0;
-    while (new Set(nums).size !== nums.length) {
-        nums = nums.slice(3);
-        count++;
+
+    for(let i=0; i<nums.length; i++) {
+        for(let j=nums[i]-k; j<=nums[i]+k; j++) {            
+            if(!result.includes(j)) {                
+                result.push(j);
+                count++;
+                break;
+            }
+        }
     }
-    return count; 
+
+    return count;
 };
 
-console.log(minimumOperations([4,5,6,4,4]));
+console.log(maxDistinctElements([8,7,8,7,10], 1));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
