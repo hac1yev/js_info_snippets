@@ -2789,14 +2789,23 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var hasMatch = function(s, p) {    
-    const parts = p.split("*");
-    const indexOf = s.indexOf(parts[0]);
-    const lastIndexOf = s.lastIndexOf(parts[1]);
-    return indexOf !== -1 && lastIndexOf !== -1 && (indexOf + parts[0].length) <= lastIndexOf;
-}
+// var hasMatch = function(s, p) {    
+//     const parts = p.split("*");
+//     const indexOf = s.indexOf(parts[0]);
+//     const lastIndexOf = s.lastIndexOf(parts[1]);
+//     return indexOf !== -1 && lastIndexOf !== -1 && (indexOf + parts[0].length) <= lastIndexOf;
+// }
 
-console.log(hasMatch("jjv", "*j"));
+// console.log(hasMatch("jjv", "*j"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+function hasMatch(s, p) {
+    const [a,b] = [p.split("*")[0], p.split("*")[1]];
+    const firstIndex = s.indexOf(p.split("*")[0]);
+    const lastIndex = s.lastIndexOf(b);
+    return firstIndex >= 0 && lastIndex >= firstIndex + a.length; 
+}
+
+console.log(hasMatch("eetcode", "ee*e"));
