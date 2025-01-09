@@ -2765,25 +2765,38 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var maxDistinctElements = function(nums, k) {
-    nums.sort((a,b)=>(a-b));
-    const result = [];
-    let count = 0;
+// var maxDistinctElements = function(nums, k) {
+//     nums.sort((a,b)=>(a-b));
+//     const result = [];
+//     let count = 0;
 
-    for(let i=0; i<nums.length; i++) {
-        for(let j=nums[i]-k; j<=nums[i]+k; j++) {            
-            if(!result.includes(j)) {                
-                result.push(j);
-                count++;
-                break;
-            }
-        }
-    }
+//     for(let i=0; i<nums.length; i++) {
+//         for(let j=nums[i]-k; j<=nums[i]+k; j++) {            
+//             if(!result.includes(j)) {                
+//                 result.push(j);
+//                 count++;
+//                 break;
+//             }
+//         }
+//     }
 
-    return count;
-};
+//     return count;
+// };
 
-console.log(maxDistinctElements([8,7,8,7,10], 1));
+// console.log(maxDistinctElements([8,7,8,7,10], 1));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var hasMatch = function(s, p) {    
+    const parts = p.split("*");
+    const indexOf = s.indexOf(parts[0]);
+    const lastIndexOf = s.lastIndexOf(parts[1]);
+    return indexOf !== -1 && lastIndexOf !== -1 && (indexOf + parts[0].length) <= lastIndexOf;
+}
+
+console.log(hasMatch("jjv", "*j"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
