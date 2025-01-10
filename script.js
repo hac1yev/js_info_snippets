@@ -2852,29 +2852,49 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function jump(nums) {
-    let steps = 0;
-    let farthest = 0; 
-    let current_end = 0; 
+// function jump(nums) {
+//     let steps = 0;
+//     let farthest = 0; 
+//     let current_end = 0; 
 
-    for (let i = 0; i < nums.length - 1; i++) {
-        farthest = Math.max(farthest, i + nums[i]);
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         farthest = Math.max(farthest, i + nums[i]);
 
-        if (i === current_end) {
-            steps++;
-            current_end = farthest;
+//         if (i === current_end) {
+//             steps++;
+//             current_end = farthest;
 
-            if (current_end >= nums.length - 1) {
-                break;
-            }
+//             if (current_end >= nums.length - 1) {
+//                 break;
+//             }
+//         }
+//     }
+
+//     return steps;
+// }
+
+// console.log(jump([1, 2, 1, 3, 1, 2, 1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var isBalanced = function(num) {
+    let sumOfEven = 0;
+    let sumOfOdd = 0;
+
+    for(let i=0; i<num.length; i++) {
+        if(i % 2 === 0) {
+            sumOfEven += parseInt(num[i]);
+        }else{
+            sumOfOdd += parseInt(num[i]);
         }
     }
 
-    return steps;
-}
+    return sumOfEven === sumOfOdd;
+};
 
-console.log(jump([1, 2, 1, 3, 1, 2, 1]));
-
+console.log(isBalanced("3234"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
