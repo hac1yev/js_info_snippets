@@ -2879,22 +2879,49 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var isBalanced = function(num) {
-    let sumOfEven = 0;
-    let sumOfOdd = 0;
+// var isBalanced = function(num) {
+//     let sumOfEven = 0;
+//     let sumOfOdd = 0;
 
-    for(let i=0; i<num.length; i++) {
-        if(i % 2 === 0) {
-            sumOfEven += parseInt(num[i]);
-        }else{
-            sumOfOdd += parseInt(num[i]);
+//     for(let i=0; i<num.length; i++) {
+//         if(i % 2 === 0) {
+//             sumOfEven += parseInt(num[i]);
+//         }else{
+//             sumOfOdd += parseInt(num[i]);
+//         }
+//     }
+
+//     return sumOfEven === sumOfOdd;
+// };
+
+// console.log(isBalanced("3234"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var smallestNumber = function(n, t) {
+    let result;
+
+    while(true) {
+        const arr = n.toString().split("");
+        const product = arr.reduce((total, num) => {
+            total *= parseInt(num);
+            return total
+        }, 1);
+
+        if(product % t === 0) {
+            result = n;
+            break;
         }
+
+        n++;
     }
 
-    return sumOfEven === sumOfOdd;
+    return result;
 };
 
-console.log(isBalanced("3234"));
+console.log(smallestNumber(11,2));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
