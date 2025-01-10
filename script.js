@@ -2900,28 +2900,46 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var smallestNumber = function(n, t) {
-    let result;
+// var smallestNumber = function(n, t) {
+//     let result;
 
-    while(true) {
-        const arr = n.toString().split("");
-        const product = arr.reduce((total, num) => {
-            total *= parseInt(num);
-            return total
-        }, 1);
+//     while(true) {
+//         const arr = n.toString().split("");
+//         const product = arr.reduce((total, num) => {
+//             total *= parseInt(num);
+//             return total
+//         }, 1);
 
-        if(product % t === 0) {
-            result = n;
-            break;
+//         if(product % t === 0) {
+//             result = n;
+//             break;
+//         }
+
+//         n++;
+//     }
+
+//     return result;
+// };
+
+// console.log(smallestNumber(11,2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var canAliceWin = function(n) {
+    for(let i=10; i>0; i--) {
+        n-=i;
+        if(i % 2 === 0) {
+            if(n < 0) return false;
+            else if(n < i - 1) return true;
+        }else if(i % 2 === 1) {
+            if(n < i - 1) return false;
         }
-
-        n++;
     }
-
-    return result;
 };
 
-console.log(smallestNumber(11,2));
+console.log(canAliceWin(1));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
