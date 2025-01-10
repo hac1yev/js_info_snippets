@@ -2927,19 +2927,43 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var canAliceWin = function(n) {
-    for(let i=10; i>0; i--) {
-        n-=i;
-        if(i % 2 === 0) {
-            if(n < 0) return false;
-            else if(n < i - 1) return true;
-        }else if(i % 2 === 1) {
-            if(n < i - 1) return false;
+// var canAliceWin = function(n) {
+//     for(let i=10; i>0; i--) {
+//         n-=i;
+//         if(i % 2 === 0) {
+//             if(n < 0) return false;
+//             else if(n < i - 1) return true;
+//         }else if(i % 2 === 1) {
+//             if(n < i - 1) return false;
+//         }
+//     }
+// };
+
+// console.log(canAliceWin(1));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var buttonWithLongestTime = function(events) {
+    let selectedIndex = events[0][0];
+    let maxTime = events[0][1];
+
+    for(let i=1; i<events.length; i++) {
+        if(events[i][1] - events[i-1][1] > maxTime) {
+            maxTime = events[i][1] - events[i-1][1];
+            selectedIndex = events[i][0];
+        }else if(events[i][1] - events[i-1][1] === maxTime) {
+            if(events[i][0] < selectedIndex) {
+                selectedIndex = events[i][0];
+            }
         }
     }
+
+    return selectedIndex;
 };
 
-console.log(canAliceWin(1));
+console.log(buttonWithLongestTime([[9,4],[19,5],[2,8],[3,11],[2,15]]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
