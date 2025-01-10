@@ -2801,11 +2801,80 @@
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-function hasMatch(s, p) {
-    const [a,b] = [p.split("*")[0], p.split("*")[1]];
-    const firstIndex = s.indexOf(p.split("*")[0]);
-    const lastIndex = s.lastIndexOf(b);
-    return firstIndex >= 0 && lastIndex >= firstIndex + a.length; 
+// function hasMatch(s, p) {
+//     const [a,b] = [p.split("*")[0], p.split("*")[1]];
+//     const firstIndex = s.indexOf(p.split("*")[0]);
+//     const lastIndex = s.lastIndexOf(b);
+//     return firstIndex >= 0 && lastIndex >= firstIndex + a.length; 
+// }
+
+// console.log(hasMatch("eetcode", "ee*e"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var jump = function(nums) {
+//     let steps = 0;
+//     let current_index = 0;
+//     let n = nums[0];
+
+//     for(let i=current_index; i<nums.length; i++) {
+//         let I = current_index;
+//         let N = n;
+//         for(let j=i+1; j<=I+N; j++) {
+//             n = nums[j];
+//             current_index = n + j;
+//             if(I > 0 && (j + nums[j] < nums[j-1] + j - 1)) {
+//                 n = nums[j-1];
+//                 current_index = n + j - 1;
+//             }
+
+//             if(current_index >= nums.length - 1) {
+//                 steps++;
+//                 break;
+//             }
+//         }
+        
+//         steps++;
+
+//         if(current_index === nums.length - 1) {
+//             break;
+//         }
+//     }
+
+//     return steps;
+// };
+
+// console.log(jump([2,3,1,1,4,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function jump(nums) {
+    let steps = 0;
+    let farthest = 0; 
+    let current_end = 0; 
+
+    for (let i = 0; i < nums.length - 1; i++) {
+        farthest = Math.max(farthest, i + nums[i]);
+
+        if (i === current_end) {
+            steps++;
+            current_end = farthest;
+
+            if (current_end >= nums.length - 1) {
+                break;
+            }
+        }
+    }
+
+    return steps;
 }
 
-console.log(hasMatch("eetcode", "ee*e"));
+console.log(jump([1, 2, 1, 3, 1, 2, 1]));
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
