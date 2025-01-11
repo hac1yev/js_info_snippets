@@ -2998,19 +2998,44 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var stableMountains = function(height, threshold) {
-    const result = [];
+// var stableMountains = function(height, threshold) {
+//     const result = [];
     
-    for(let i=1; i<height.length; i++) {
-        if(height[i-1] > threshold) {
-            result.push(i);
+//     for(let i=1; i<height.length; i++) {
+//         if(height[i-1] > threshold) {
+//             result.push(i);
+//         }
+//     }
+
+//     return result;
+// };
+
+// console.log(stableMountains([10,1,10,1,10],3));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var getSneakyNumbers = function(nums) {
+    const result = [];
+
+    const obj = nums.reduce((acc,num) => {
+        if(!acc[num]) acc[num] = 1;
+        else acc[num] += 1;
+
+        return acc;
+    }, {});
+
+    for(let key in obj) {
+        if(obj[key] === 2) {
+            result.push(parseInt(key));
         }
     }
 
     return result;
 };
 
-console.log(stableMountains([10,1,10,1,10],3));
+console.log(getSneakyNumbers([0,1,0,1,2]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
