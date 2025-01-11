@@ -2969,30 +2969,48 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var lengthAfterTransformations = function(s, t) {
-    const alphabeth = "abcdefghijklmnopqrstuvwxyz";
-    let result = [s];
+// var lengthAfterTransformations = function(s, t) {
+//     const alphabeth = "abcdefghijklmnopqrstuvwxyz";
+//     let result = [s];
 
-    for(let i=1; i<=t; i++) {
-        const strArr = result[i-1].split("");
+//     for(let i=1; i<=t; i++) {
+//         const strArr = result[i-1].split("");
                 
-        for(let j=0; j<strArr.length; j++) {
-            const index = alphabeth.indexOf(strArr[j]);
+//         for(let j=0; j<strArr.length; j++) {
+//             const index = alphabeth.indexOf(strArr[j]);
 
-            if(index !== 25) {
-                strArr[j] = alphabeth[index + 1];
-            }else{
-                strArr[j] = "ab";
-            }
+//             if(index !== 25) {
+//                 strArr[j] = alphabeth[index + 1];
+//             }else{
+//                 strArr[j] = "ab";
+//             }
+//         }
+//         let str = strArr.join("");        
+//         result.push(str);
+//     }
+
+//     return result.at(-1).length;
+// };
+
+// console.log(lengthAfterTransformations("p", 16));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var stableMountains = function(height, threshold) {
+    const result = [];
+    
+    for(let i=1; i<height.length; i++) {
+        if(height[i-1] > threshold) {
+            result.push(i);
         }
-        let str = strArr.join("");        
-        result.push(str);
     }
 
-    return result.at(-1).length;
+    return result;
 };
 
-console.log(lengthAfterTransformations("p", 16));
+console.log(stableMountains([10,1,10,1,10],3));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
