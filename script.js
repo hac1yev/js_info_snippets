@@ -3016,26 +3016,53 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var getSneakyNumbers = function(nums) {
-    const result = [];
+// var getSneakyNumbers = function(nums) {
+//     const result = [];
 
-    const obj = nums.reduce((acc,num) => {
-        if(!acc[num]) acc[num] = 1;
-        else acc[num] += 1;
+//     const obj = nums.reduce((acc,num) => {
+//         if(!acc[num]) acc[num] = 1;
+//         else acc[num] += 1;
 
-        return acc;
-    }, {});
+//         return acc;
+//     }, {});
 
-    for(let key in obj) {
-        if(obj[key] === 2) {
-            result.push(parseInt(key));
+//     for(let key in obj) {
+//         if(obj[key] === 2) {
+//             result.push(parseInt(key));
+//         }
+//     }
+
+//     return result;
+// };
+
+// console.log(getSneakyNumbers([0,1,0,1,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minElement = function(nums) {
+    let minNumber = Infinity;
+
+    const newArr = nums.map((num) => {
+        const sum = num.toString().split("").reduce((total, n) => {
+            total += parseInt(n);
+            return total;
+        }, 0);
+
+        return sum;
+    });
+
+    newArr.forEach(element => {
+        if(element < minNumber) {
+            minNumber = element
         }
-    }
+    });
 
-    return result;
+    return minNumber;
 };
 
-console.log(getSneakyNumbers([0,1,0,1,2]));
+console.log(minElement([999,19,199]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
