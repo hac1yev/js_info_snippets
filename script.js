@@ -2945,25 +2945,54 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var buttonWithLongestTime = function(events) {
-    let selectedIndex = events[0][0];
-    let maxTime = events[0][1];
+// var buttonWithLongestTime = function(events) {
+//     let selectedIndex = events[0][0];
+//     let maxTime = events[0][1];
 
-    for(let i=1; i<events.length; i++) {
-        if(events[i][1] - events[i-1][1] > maxTime) {
-            maxTime = events[i][1] - events[i-1][1];
-            selectedIndex = events[i][0];
-        }else if(events[i][1] - events[i-1][1] === maxTime) {
-            if(events[i][0] < selectedIndex) {
-                selectedIndex = events[i][0];
+//     for(let i=1; i<events.length; i++) {
+//         if(events[i][1] - events[i-1][1] > maxTime) {
+//             maxTime = events[i][1] - events[i-1][1];
+//             selectedIndex = events[i][0];
+//         }else if(events[i][1] - events[i-1][1] === maxTime) {
+//             if(events[i][0] < selectedIndex) {
+//                 selectedIndex = events[i][0];
+//             }
+//         }
+//     }
+
+//     return selectedIndex;
+// };
+
+// console.log(buttonWithLongestTime([[9,4],[19,5],[2,8],[3,11],[2,15]]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var lengthAfterTransformations = function(s, t) {
+    const alphabeth = "abcdefghijklmnopqrstuvwxyz";
+    let result = [s];
+
+    for(let i=1; i<=t; i++) {
+        const strArr = result[i-1].split("");
+                
+        for(let j=0; j<strArr.length; j++) {
+            const index = alphabeth.indexOf(strArr[j]);
+
+            if(index !== 25) {
+                strArr[j] = alphabeth[index + 1];
+            }else{
+                strArr[j] = "ab";
             }
         }
+        let str = strArr.join("");        
+        result.push(str);
     }
 
-    return selectedIndex;
+    return result.at(-1).length;
 };
 
-console.log(buttonWithLongestTime([[9,4],[19,5],[2,8],[3,11],[2,15]]));
+console.log(lengthAfterTransformations("p", 16));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
