@@ -3112,24 +3112,52 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var getFinalState = function(nums, k, multiplier) {
-    while(k > 0) {
-        const min_num = Math.min(...nums);
+// var getFinalState = function(nums, k, multiplier) {
+//     while(k > 0) {
+//         const min_num = Math.min(...nums);
 
-        for(let i=0; i<nums.length; i++) {
-            if(nums[i] === min_num) {
-                nums[i] *= multiplier;
-                break; 
-            }
+//         for(let i=0; i<nums.length; i++) {
+//             if(nums[i] === min_num) {
+//                 nums[i] *= multiplier;
+//                 break; 
+//             }
+//         }
+
+//         k--;
+//     }
+
+//     return nums;
+// };
+
+// console.log(getFinalState([2,1,3,5,6], 5, 2));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var generateKey = function(num1, num2, num3) {
+    let result = "";
+    const arr = [num1.toString(),num2.toString(), num3.toString()];
+    const modifiedArr = arr.map((num) => {
+        const padNum =  num.padStart(4,0);
+        return padNum;
+    });
+
+    for(let i=0; i<4; i++) {
+        const arr = [];
+
+        for(let j=0; j<modifiedArr.length; j++) {
+            arr.push(modifiedArr[j][i]);
         }
 
-        k--;
+        const minNum = Math.min(...arr);
+        result += minNum;
     }
 
-    return nums;
+    return parseInt(result);
 };
 
-console.log(getFinalState([2,1,3,5,6], 5, 2));
+console.log(generateKey(987,879,798));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
