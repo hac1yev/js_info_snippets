@@ -3090,23 +3090,46 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var canAliceWin = function(nums) {
-    let double = 0;
-    let single = 0;
+// var canAliceWin = function(nums) {
+//     let double = 0;
+//     let single = 0;
 
-    for(let i=0; i<nums.length; i++) {
-        let isDoubleDigits = nums[i].toString().length === 2;
+//     for(let i=0; i<nums.length; i++) {
+//         let isDoubleDigits = nums[i].toString().length === 2;
 
-        if(isDoubleDigits) {
-            double += nums[i];
-        }else single += nums[i];
+//         if(isDoubleDigits) {
+//             double += nums[i];
+//         }else single += nums[i];
+//     }
+
+//     if(double === single) return false;
+//     else return true;
+// };
+
+// console.log(canAliceWin([1,2,3,4,10]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var getFinalState = function(nums, k, multiplier) {
+    while(k > 0) {
+        const min_num = Math.min(...nums);
+
+        for(let i=0; i<nums.length; i++) {
+            if(nums[i] === min_num) {
+                nums[i] *= multiplier;
+                break; 
+            }
+        }
+
+        k--;
     }
 
-    if(double === single) return false;
-    else return true;
+    return nums;
 };
 
-console.log(canAliceWin([1,2,3,4,10]));
+console.log(getFinalState([2,1,3,5,6], 5, 2));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
