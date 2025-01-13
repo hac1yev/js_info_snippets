@@ -3041,28 +3041,50 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minElement = function(nums) {
-    let minNumber = Infinity;
+// var minElement = function(nums) {
+//     let minNumber = Infinity;
 
-    const newArr = nums.map((num) => {
-        const sum = num.toString().split("").reduce((total, n) => {
-            total += parseInt(n);
-            return total;
-        }, 0);
+//     const newArr = nums.map((num) => {
+//         const sum = num.toString().split("").reduce((total, n) => {
+//             total += parseInt(n);
+//             return total;
+//         }, 0);
 
-        return sum;
-    });
+//         return sum;
+//     });
 
-    newArr.forEach(element => {
-        if(element < minNumber) {
-            minNumber = element
+//     newArr.forEach(element => {
+//         if(element < minNumber) {
+//             minNumber = element
+//         }
+//     });
+
+//     return minNumber;
+// };
+
+// console.log(minElement([999,19,199]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var maximumTotalSum = function(maximumHeight) {
+    const result = [];
+    let max_num = 0;
+
+    for(let i=0; i<maximumHeight.length; i++) {
+        for(let j=1; j<=maximumHeight[i]; j++) {
+            if(!result.includes(j) && max_num !== j) {
+                max_num = j;
+            }
         }
-    });
+        result.push(max_num);
+    }
 
-    return minNumber;
+    return result
 };
 
-console.log(minElement([999,19,199]));
+console.log(maximumTotalSum([2,3,4,3]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
