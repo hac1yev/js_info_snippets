@@ -3068,23 +3068,45 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var maximumTotalSum = function(maximumHeight) {
-    const result = [];
-    let max_num = 0;
+// var maximumTotalSum = function(maximumHeight) {
+//     const result = [];
+//     let max_num = 0;
 
-    for(let i=0; i<maximumHeight.length; i++) {
-        for(let j=1; j<=maximumHeight[i]; j++) {
-            if(!result.includes(j) && max_num !== j) {
-                max_num = j;
-            }
-        }
-        result.push(max_num);
+//     for(let i=0; i<maximumHeight.length; i++) {
+//         for(let j=1; j<=maximumHeight[i]; j++) {
+//             if(!result.includes(j) && max_num !== j) {
+//                 max_num = j;
+//             }
+//         }
+//         result.push(max_num);
+//     }
+
+//     return result
+// };
+
+// console.log(maximumTotalSum([2,3,4,3]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var canAliceWin = function(nums) {
+    let double = 0;
+    let single = 0;
+
+    for(let i=0; i<nums.length; i++) {
+        let isDoubleDigits = nums[i].toString().length === 2;
+
+        if(isDoubleDigits) {
+            double += nums[i];
+        }else single += nums[i];
     }
 
-    return result
+    if(double === single) return false;
+    else return true;
 };
 
-console.log(maximumTotalSum([2,3,4,3]));
+console.log(canAliceWin([1,2,3,4,10]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
