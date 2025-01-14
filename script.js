@@ -3202,15 +3202,51 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var findLatestTime = function(s) {
-    const arr = s.split(":");
+// var isArraySpecial = function(nums, queries) {
+//     const result = [];
 
-    for(let i=0; i<arr.length; i++) {
-        if(i === 0 && arr[i][0] === 1)
-    }
-};
+//     for(let i=0; i<queries.length; i++) {
+//         const start = queries[i][0];
+//         const end = queries[i][1];
+//         let arr = [];
 
-console.log(findLatestTime("1?:?4"));
+//         for(let j=start+1; j<=end; j++) {
+//             if(nums[j-1] % 2 !== nums[j] % 2) {
+//                 arr.push(true);
+//             }else arr.push(false);            
+//         }        
+//         result.push(arr);
+//     }
+
+//     const flat = result.map(item => {
+//         if(item.includes(false)) return false;
+//         return true;
+//     });
+
+//     return flat;
+// };
+
+// console.log(isArraySpecial([1, 4, 7, 6, 2], [[0, 3], [1, 4], [3, 4]]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function countSpecialLetters(word) {
+    const lowercase = new Set([...word].filter(c => c >= 'a' && c <= 'z'));
+    const uppercase = new Set([...word].filter(c => c >= 'A' && c <= 'Z').map(c => c.toLowerCase()));
+
+    let specialCount = 0;
+    lowercase.forEach(letter => {
+        if (uppercase.has(letter)) {
+            specialCount++;
+        }
+    });
+
+    return specialCount;
+}
+
+console.log(countSpecialLetters("aaAbcBC")); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
