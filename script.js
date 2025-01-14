@@ -3252,14 +3252,41 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var addedInteger = function(nums1, nums2) {
-    nums1.sort((a,b) => a-b);
-    nums2.sort((a,b) => a-b);
+// var addedInteger = function(nums1, nums2) {
+//     nums1.sort((a,b) => a-b);
+//     nums2.sort((a,b) => a-b);
 
-    return nums2[0] - nums1[0];
+//     return nums2[0] - nums1[0];
+// };
+
+// console.log(addedInteger([2,6,4], [9,7,5]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var jump = function(nums) {
+    if (nums.length <= 1) return 0;
+
+    let jumps = 0;
+    let current_end = 0;
+    let farthest = 0;
+
+    for (let i = 0; i < nums.length - 1; i++) {
+        farthest = Math.max(farthest, i + nums[i]);
+
+        if (i === current_end) {
+            jumps++;
+            current_end = farthest;
+
+            if (current_end >= nums.length - 1) break;
+        }
+    }
+
+    return jumps;
 };
 
-console.log(addedInteger([2,6,4], [9,7,5]));
+console.log(jump([1, 2, 3, 1, 4, 2, 2, 3, 1])); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
