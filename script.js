@@ -3232,21 +3232,34 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function countSpecialLetters(word) {
-    const lowercase = new Set([...word].filter(c => c >= 'a' && c <= 'z'));
-    const uppercase = new Set([...word].filter(c => c >= 'A' && c <= 'Z').map(c => c.toLowerCase()));
+// function countSpecialLetters(word) {
+//     const lowercase = new Set([...word].filter(c => c >= 'a' && c <= 'z'));
+//     const uppercase = new Set([...word].filter(c => c >= 'A' && c <= 'Z').map(c => c.toLowerCase()));
 
-    let specialCount = 0;
-    lowercase.forEach(letter => {
-        if (uppercase.has(letter)) {
-            specialCount++;
-        }
-    });
+//     let specialCount = 0;
+//     lowercase.forEach(letter => {
+//         if (uppercase.has(letter)) {
+//             specialCount++;
+//         }
+//     });
 
-    return specialCount;
-}
+//     return specialCount;
+// }
 
-console.log(countSpecialLetters("aaAbcBC")); 
+// console.log(countSpecialLetters("aaAbcBC")); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var addedInteger = function(nums1, nums2) {
+    nums1.sort((a,b) => a-b);
+    nums2.sort((a,b) => a-b);
+
+    return nums2[0] - nums1[0];
+};
+
+console.log(addedInteger([2,6,4], [9,7,5]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
