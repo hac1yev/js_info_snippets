@@ -3135,29 +3135,52 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var generateKey = function(num1, num2, num3) {
-    let result = "";
-    const arr = [num1.toString(),num2.toString(), num3.toString()];
-    const modifiedArr = arr.map((num) => {
-        const padNum =  num.padStart(4,0);
-        return padNum;
-    });
+// var generateKey = function(num1, num2, num3) {
+//     let result = "";
+//     const arr = [num1.toString(),num2.toString(), num3.toString()];
+//     const modifiedArr = arr.map((num) => {
+//         const padNum =  num.padStart(4,0);
+//         return padNum;
+//     });
 
-    for(let i=0; i<4; i++) {
-        const arr = [];
+//     for(let i=0; i<4; i++) {
+//         const arr = [];
 
-        for(let j=0; j<modifiedArr.length; j++) {
-            arr.push(modifiedArr[j][i]);
-        }
+//         for(let j=0; j<modifiedArr.length; j++) {
+//             arr.push(modifiedArr[j][i]);
+//         }
 
-        const minNum = Math.min(...arr);
-        result += minNum;
+//         const minNum = Math.min(...arr);
+//         result += minNum;
+//     }
+
+//     return parseInt(result);
+// };
+
+// console.log(generateKey(987,879,798));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var checkTwoChessboards = function(coordinate1, coordinate2) {
+    let letters = "abcdefgh";
+    let index1 = letters.indexOf(coordinate1[0]);
+    let index2 = letters.indexOf(coordinate2[0]);
+    let isBlack1 = false;
+    let isBlack2 = false;
+
+    if((index1 % 2 === 0 && coordinate1[1] % 2 === 1) || (index1 % 2 === 1 && coordinate1[1] % 2 === 0)) {
+        isBlack1 = true;
+    }
+    if((index2 % 2 === 1 && coordinate2[1] % 2 === 0) || (index2 % 2 === 0 && coordinate2[1] % 2 === 1)) {
+        isBlack2 = true;
     }
 
-    return parseInt(result);
+    return isBlack1 === isBlack2;
 };
 
-console.log(generateKey(987,879,798));
+console.log(checkTwoChessboards("a1", "c4"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
