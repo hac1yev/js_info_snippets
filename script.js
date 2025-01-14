@@ -3163,24 +3163,40 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var checkTwoChessboards = function(coordinate1, coordinate2) {
-    let letters = "abcdefgh";
-    let index1 = letters.indexOf(coordinate1[0]);
-    let index2 = letters.indexOf(coordinate2[0]);
-    let isBlack1 = false;
-    let isBlack2 = false;
+// var checkTwoChessboards = function(coordinate1, coordinate2) {
+//     let letters = "abcdefgh";
+//     let index1 = letters.indexOf(coordinate1[0]);
+//     let index2 = letters.indexOf(coordinate2[0]);
+//     let isBlack1 = false;
+//     let isBlack2 = false;
 
-    if((index1 % 2 === 0 && coordinate1[1] % 2 === 1) || (index1 % 2 === 1 && coordinate1[1] % 2 === 0)) {
-        isBlack1 = true;
-    }
-    if((index2 % 2 === 1 && coordinate2[1] % 2 === 0) || (index2 % 2 === 0 && coordinate2[1] % 2 === 1)) {
-        isBlack2 = true;
+//     if((index1 % 2 === 0 && coordinate1[1] % 2 === 1) || (index1 % 2 === 1 && coordinate1[1] % 2 === 0)) {
+//         isBlack1 = true;
+//     }
+//     if((index2 % 2 === 1 && coordinate2[1] % 2 === 0) || (index2 % 2 === 0 && coordinate2[1] % 2 === 1)) {
+//         isBlack2 = true;
+//     }
+
+//     return isBlack1 === isBlack2;
+// };
+
+// console.log(checkTwoChessboards("a1", "c4"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var scoreOfString = function(s) {
+    let sum = 0;
+
+    for(let i=1; i<s.length; i++) {
+        sum += Math.abs(s.charCodeAt(i) - s.charCodeAt(i-1))                
     }
 
-    return isBlack1 === isBlack2;
+    return sum;
 };
 
-console.log(checkTwoChessboards("a1", "c4"));
+console.log(scoreOfString("hello"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
