@@ -3186,17 +3186,31 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var scoreOfString = function(s) {
-    let sum = 0;
+// var scoreOfString = function(s) {
+//     let sum = 0;
 
-    for(let i=1; i<s.length; i++) {
-        sum += Math.abs(s.charCodeAt(i) - s.charCodeAt(i-1))                
+//     for(let i=1; i<s.length; i++) {
+//         sum += Math.abs(s.charCodeAt(i) - s.charCodeAt(i-1))                
+//     }
+
+//     return sum;
+// };
+
+// console.log(scoreOfString("hello"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var findLatestTime = function(s) {
+    const arr = s.split(":");
+
+    for(let i=0; i<arr.length; i++) {
+        if(i === 0 && arr[i][0] === 1)
     }
-
-    return sum;
 };
 
-console.log(scoreOfString("hello"));
+console.log(findLatestTime("1?:?4"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
