@@ -3265,28 +3265,46 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var jump = function(nums) {
-    if (nums.length <= 1) return 0;
+// var jump = function(nums) {
+//     if (nums.length <= 1) return 0;
 
-    let jumps = 0;
-    let current_end = 0;
-    let farthest = 0;
+//     let jumps = 0;
+//     let current_end = 0;
+//     let farthest = 0;
 
-    for (let i = 0; i < nums.length - 1; i++) {
-        farthest = Math.max(farthest, i + nums[i]);
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         farthest = Math.max(farthest, i + nums[i]);
 
-        if (i === current_end) {
-            jumps++;
-            current_end = farthest;
+//         if (i === current_end) {
+//             jumps++;
+//             current_end = farthest;
 
-            if (current_end >= nums.length - 1) break;
+//             if (current_end >= nums.length - 1) break;
+//         }
+//     }
+
+//     return jumps;
+// };
+
+// console.log(jump([1, 2, 3, 1, 4, 2, 2, 3, 1])); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var wordBreak = function(s, wordDict) {    
+    for(let i=0; i<wordDict.length; i++) {
+        if(s.includes(wordDict[i])) {
+            s = s.replace(wordDict[i], "");
+        }else{
+            return false;
         }
     }
 
-    return jumps;
+    return true;
 };
 
-console.log(jump([1, 2, 3, 1, 4, 2, 2, 3, 1])); 
+console.log(wordBreak("applepenapple", ["apple","pen"]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
