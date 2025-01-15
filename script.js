@@ -3310,26 +3310,49 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var singleNumber = function(nums) {
-    let result;
+// var singleNumber = function(nums) {
+//     let result;
 
-    const obj = nums.reduce((acc,num) => {
-        if(!acc[num]) acc[num] = 1;
-        else acc[num] += 1;
+//     const obj = nums.reduce((acc,num) => {
+//         if(!acc[num]) acc[num] = 1;
+//         else acc[num] += 1;
 
-        return acc;
-    }, {});
+//         return acc;
+//     }, {});
 
-    for(let key in obj) {
-        if(obj[key] === 1) {
-            result = key;
-        }
+//     for(let key in obj) {
+//         if(obj[key] === 1) {
+//             result = key;
+//         }
+//     }
+
+//     return parseInt(result);
+// };
+
+// console.log(singleNumber([2,2,3,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var fib = function(n) {
+    let previous = 0
+    let sum = 1;
+
+    if(n === 0) return 0;
+    else if(n === 1) return 1;
+
+    for(let i=2; i<=n; i++) {
+        let prev = previous;
+        previous = sum;
+        sum += prev;
     }
 
-    return parseInt(result);
+    return sum;
 };
 
-console.log(singleNumber([2,2,3,2]));
+console.log(fib(5))
 
+// 0 1 1 2 3 5 8
 
 /* ------------------------------------------------------------------------------------------------------------------- */
