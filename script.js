@@ -3292,19 +3292,44 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var wordBreak = function(s, wordDict) {    
-    for(let i=0; i<wordDict.length; i++) {
-        if(s.includes(wordDict[i])) {
-            s = s.replace(wordDict[i], "");
-        }else{
-            return false;
+// var wordBreak = function(s, wordDict) {    
+//     for(let i=0; i<wordDict.length; i++) {
+//         if(s.includes(wordDict[i])) {
+//             s = s.replace(wordDict[i], "");
+//         }else{
+//             return false;
+//         }
+//     }
+
+//     return true;
+// };
+
+// console.log(wordBreak("applepenapple", ["apple","pen"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var singleNumber = function(nums) {
+    let result;
+
+    const obj = nums.reduce((acc,num) => {
+        if(!acc[num]) acc[num] = 1;
+        else acc[num] += 1;
+
+        return acc;
+    }, {});
+
+    for(let key in obj) {
+        if(obj[key] === 1) {
+            result = key;
         }
     }
 
-    return true;
+    return parseInt(result);
 };
 
-console.log(wordBreak("applepenapple", ["apple","pen"]));
+console.log(singleNumber([2,2,3,2]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
