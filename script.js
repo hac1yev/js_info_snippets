@@ -3335,24 +3335,43 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var fib = function(n) {
-    let previous = 0
-    let sum = 1;
+// var fib = function(n) {
+//     let previous = 0
+//     let sum = 1;
 
-    if(n === 0) return 0;
-    else if(n === 1) return 1;
+//     if(n === 0) return 0;
+//     else if(n === 1) return 1;
 
-    for(let i=2; i<=n; i++) {
-        let prev = previous;
-        previous = sum;
-        sum += prev;
-    }
+//     for(let i=2; i<=n; i++) {
+//         let prev = previous;
+//         previous = sum;
+//         sum += prev;
+//     }
 
-    return sum;
+//     return sum;
+// };
+
+// console.log(fib(5))
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var detectCapitalUse = function(word) {
+    if(word === word.toUpperCase()) return true;
+
+    const arr = word.split("").map((letter,index) => {
+        if(index === 0) return letter.toUpperCase();
+        else return letter.toLowerCase();
+    });
+        
+    if(word === arr.join("")) return true;
+    if(word === word.toLowerCase()) return true;
+
+    return false;
 };
 
-console.log(fib(5))
+console.log(detectCapitalUse("UsA"));
 
-// 0 1 1 2 3 5 8
 
 /* ------------------------------------------------------------------------------------------------------------------- */
