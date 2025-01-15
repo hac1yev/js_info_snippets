@@ -3377,19 +3377,47 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var maxProfit = function(prices) {
-    let sum = 0;
+// var maxProfit = function(prices) {
+//     let sum = 0;
 
-    for(let i=1; i<prices.length; i++) {
-        if((prices[i] > prices[i-1]) && i !== 1) {
-            sum += (prices[i] - prices[i-1]);
+//     for(let i=1; i<prices.length; i++) {
+//         if((prices[i] > prices[i-1]) && i !== 1) {
+//             sum += (prices[i] - prices[i-1]);
+//         }
+//     }
+
+//     return sum;
+// };
+
+// console.log(maxProfit([7,1,5,3,6,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var combinationSum = function(candidates, target) {
+    const result = [];
+    
+    function backtrack(arr = [], sum = 0, start = 0) {
+        if(sum === target) {
+            result.push([...arr]);
+            return;
+        }
+
+        for(let i=start; i<candidates.length; i++) {
+            if (sum + candidates[i] > target) continue;
+            arr.push(candidates[i]);
+            backtrack(arr, sum + candidates[i], i); 
+            arr.pop();
         }
     }
 
-    return sum;
+    backtrack();
+    
+    return result;
 };
 
-console.log(maxProfit([7,1,5,3,6,4]));
+console.log(combinationSum([2,3,6,7], 7));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
