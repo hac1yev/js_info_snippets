@@ -3357,21 +3357,39 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var detectCapitalUse = function(word) {
-    if(word === word.toUpperCase()) return true;
+// var detectCapitalUse = function(word) {
+//     if(word === word.toUpperCase()) return true;
 
-    const arr = word.split("").map((letter,index) => {
-        if(index === 0) return letter.toUpperCase();
-        else return letter.toLowerCase();
-    });
+//     const arr = word.split("").map((letter,index) => {
+//         if(index === 0) return letter.toUpperCase();
+//         else return letter.toLowerCase();
+//     });
         
-    if(word === arr.join("")) return true;
-    if(word === word.toLowerCase()) return true;
+//     if(word === arr.join("")) return true;
+//     if(word === word.toLowerCase()) return true;
 
-    return false;
+//     return false;
+// };
+
+// console.log(detectCapitalUse("UsA"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var maxProfit = function(prices) {
+    let sum = 0;
+
+    for(let i=1; i<prices.length; i++) {
+        if((prices[i] > prices[i-1]) && i !== 1) {
+            sum += (prices[i] - prices[i-1]);
+        }
+    }
+
+    return sum;
 };
 
-console.log(detectCapitalUse("UsA"));
+console.log(maxProfit([7,1,5,3,6,4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
