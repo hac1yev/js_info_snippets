@@ -3452,23 +3452,42 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const splitArr = (arr) => {
-    const freq = {};
+// const splitArr = (arr) => {
+//     const freq = {};
 
-    for (const ele of arr) {
-        freq[ele] = (freq[ele] || 0) + 1;
+//     for (const ele of arr) {
+//         freq[ele] = (freq[ele] || 0) + 1;
+//     }
+
+//     for (const ele in freq) {
+//         if (freq[ele] > 2) {
+//             return false;
+//         }
+//     }
+//     return true;
+// };
+
+// console.log(splitArr([1,1,1,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minOperations = function(nums, k) {
+    let minNum = Math.min(...nums);
+    let count = 0;
+
+    while(minNum < k) {
+        const index = nums.indexOf(minNum);
+        nums.splice(index, 1);
+        count++;
+        minNum = Math.min(...nums);
     }
 
-    for (const ele in freq) {
-        if (freq[ele] > 2) {
-            return false;
-        }
-    }
-    return true;
+    return count;
 };
 
-console.log(splitArr([1,1,1,1]));
-
+console.log(minOperations([2,11,10,1,3], 10));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
