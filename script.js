@@ -3520,27 +3520,42 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var sumOfEncryptedInt = function(nums) {
-    let sum = 0;
+// var sumOfEncryptedInt = function(nums) {
+//     let sum = 0;
 
-    for(let i=0; i<nums.length; i++) {
-        let arr = nums[i].toString().split("").map((num) => parseInt(num));
-        const max = Math.max(...arr);
-        const newArr = arr.map((item) => {
-            if(item !== max) item = max;
+//     for(let i=0; i<nums.length; i++) {
+//         let arr = nums[i].toString().split("").map((num) => parseInt(num));
+//         const max = Math.max(...arr);
+//         const newArr = arr.map((item) => {
+//             if(item !== max) item = max;
 
-            return item;
-        });
+//             return item;
+//         });
 
-        const resultNum = parseInt(newArr.join(""));
+//         const resultNum = parseInt(newArr.join(""));
 
-        sum += resultNum;
+//         sum += resultNum;
+//     }
+
+//     return sum;
+// };
+
+// console.log((sumOfEncryptedInt([10,20,30])));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var isSubstringPresent = function(s) {
+    const reverseString = str => str.split('').reverse().join('');
+
+    for (let i = 0; i < s.length - 1; i++) {
+        const substring = s.substring(i, i + 2);
+        if (s.includes(reverseString(substring))) return true;
     }
 
-    return sum;
+    return false;
 };
-
-console.log((sumOfEncryptedInt([10,20,30])));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
