@@ -3395,29 +3395,80 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var combinationSum = function(candidates, target) {
-    const result = [];
+// var combinationSum = function(candidates, target) {
+//     const result = [];
     
-    function backtrack(arr = [], sum = 0, start = 0) {
-        if(sum === target) {
-            result.push([...arr]);
-            return;
-        }
+//     function backtrack(arr = [], sum = 0, start = 0) {
+//         if(sum === target) {
+//             result.push([...arr]);
+//             return;
+//         }
 
-        for(let i=start; i<candidates.length; i++) {
-            if (sum + candidates[i] > target) continue;
-            arr.push(candidates[i]);
-            backtrack(arr, sum + candidates[i], i); 
-            arr.pop();
-        }
+//         for(let i=start; i<candidates.length; i++) {
+//             if (sum + candidates[i] > target) continue;
+//             arr.push(candidates[i]);
+//             backtrack(arr, sum + candidates[i], i); 
+//             arr.pop();
+//         }
+//     }
+
+//     backtrack();
+    
+//     return result;
+// };
+
+// console.log(combinationSum([2,3,6,7], 7));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var generate = function(numRows) {
+//     const result = [];
+
+//     for(let i=1; i<=numRows; i++) {
+//         const arr = [];
+
+//         for(let j=1; j<=i; j++) {
+//             if(j > 1) {
+//                 arr.push(i+i-1)
+//                 if(j === i) {
+//                     arr.push(j);
+//                 }
+//             }else{
+//                 arr.push(i);
+//             }
+//         } 
+
+//         result.push(arr);
+//     }
+
+//     return result;
+// };
+
+// console.log(generate(5));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const splitArr = (arr) => {
+    const freq = {};
+
+    for (const ele of arr) {
+        freq[ele] = (freq[ele] || 0) + 1;
     }
 
-    backtrack();
-    
-    return result;
+    for (const ele in freq) {
+        if (freq[ele] > 2) {
+            return false;
+        }
+    }
+    return true;
 };
 
-console.log(combinationSum([2,3,6,7], 7));
+console.log(splitArr([1,1,1,1]));
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
