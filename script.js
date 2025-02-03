@@ -3493,28 +3493,54 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minimumBoxes = function(apple, capacity) {
-    let allApples = 0;
-    let count = 0;
-    const sortedCapacity = capacity.toSorted((a,b) => b-a);
+// var minimumBoxes = function(apple, capacity) {
+//     let allApples = 0;
+//     let count = 0;
+//     const sortedCapacity = capacity.toSorted((a,b) => b-a);
 
-    for(let i=0; i<apple.length; i++) {
-        allApples += apple[i];
-    }
+//     for(let i=0; i<apple.length; i++) {
+//         allApples += apple[i];
+//     }
 
+//     let sum = 0;
+
+//     sortedCapacity.forEach((item) => {
+//         if(sum < allApples) {
+//             count++;
+//         }
+//         sum += item;
+//     });
+
+//     return count;
+// };
+
+// console.log(minimumBoxes([9,8,8,2,3,1,6], [10,1,4,10,8,5]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var sumOfEncryptedInt = function(nums) {
     let sum = 0;
 
-    sortedCapacity.forEach((item) => {
-        if(sum < allApples) {
-            count++;
-        }
-        sum += item;
-    });
+    for(let i=0; i<nums.length; i++) {
+        let arr = nums[i].toString().split("").map((num) => parseInt(num));
+        const max = Math.max(...arr);
+        const newArr = arr.map((item) => {
+            if(item !== max) item = max;
 
-    return count;
+            return item;
+        });
+
+        const resultNum = parseInt(newArr.join(""));
+
+        sum += resultNum;
+    }
+
+    return sum;
 };
 
-console.log(minimumBoxes([9,8,8,2,3,1,6], [10,1,4,10,8,5]));
+console.log((sumOfEncryptedInt([10,20,30])));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
