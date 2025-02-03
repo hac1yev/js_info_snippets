@@ -3473,21 +3473,48 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minOperations = function(nums, k) {
-    let minNum = Math.min(...nums);
-    let count = 0;
+// var minOperations = function(nums, k) {
+//     let minNum = Math.min(...nums);
+//     let count = 0;
 
-    while(minNum < k) {
-        const index = nums.indexOf(minNum);
-        nums.splice(index, 1);
-        count++;
-        minNum = Math.min(...nums);
+//     while(minNum < k) {
+//         const index = nums.indexOf(minNum);
+//         nums.splice(index, 1);
+//         count++;
+//         minNum = Math.min(...nums);
+//     }
+
+//     return count;
+// };
+
+// console.log(minOperations([2,11,10,1,3], 10));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minimumBoxes = function(apple, capacity) {
+    let allApples = 0;
+    let count = 0;
+    const sortedCapacity = capacity.toSorted((a,b) => b-a);
+
+    for(let i=0; i<apple.length; i++) {
+        allApples += apple[i];
     }
+
+    let sum = 0;
+
+    sortedCapacity.forEach((item) => {
+        if(sum < allApples) {
+            count++;
+        }
+        sum += item;
+    });
 
     return count;
 };
 
-console.log(minOperations([2,11,10,1,3], 10));
+console.log(minimumBoxes([9,8,8,2,3,1,6], [10,1,4,10,8,5]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
