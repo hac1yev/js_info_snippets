@@ -3581,3 +3581,26 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var firstUniqChar = function(s) {    
+    const arr = s.split("");
+    const strs = [];
+
+    for(let i=0; i<arr.length; i++) {
+        const lastIndex = arr.lastIndexOf(arr[i]);
+
+        if(lastIndex === i && !strs.includes(arr[i])){
+            return i;
+        }else{
+            strs.push(arr[i]);
+        }
+    }
+
+    return -1;
+};
+
+console.log(firstUniqChar("aabb"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
