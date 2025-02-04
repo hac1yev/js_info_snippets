@@ -3546,16 +3546,38 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var isSubstringPresent = function(s) {
-    const reverseString = str => str.split('').reverse().join('');
+// var isSubstringPresent = function(s) {
+//     const reverseString = str => str.split('').reverse().join('');
 
-    for (let i = 0; i < s.length - 1; i++) {
-        const substring = s.substring(i, i + 2);
-        if (s.includes(reverseString(substring))) return true;
-    }
+//     for (let i = 0; i < s.length - 1; i++) {
+//         const substring = s.substring(i, i + 2);
+//         if (s.includes(reverseString(substring))) return true;
+//     }
 
-    return false;
-};
+//     return false;
+// };
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var exist = function(board, word) {
+//     const arr = board.map((item) => {
+//         const str = item.join("");
+
+//         return str;
+//     });
+
+//     for(let i=0; i<arr.length; i++) {
+//         for(let j=0; j<arr[i].length; j++) {
+            
+//         }
+//     }
+
+//     return arr;
+// };
+
+// console.log(exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
