@@ -3583,24 +3583,72 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var firstUniqChar = function(s) {    
-    const arr = s.split("");
-    const strs = [];
+// var firstUniqChar = function(s) {    
+//     const arr = s.split("");
+//     const strs = [];
 
-    for(let i=0; i<arr.length; i++) {
-        const lastIndex = arr.lastIndexOf(arr[i]);
+//     for(let i=0; i<arr.length; i++) {
+//         const lastIndex = arr.lastIndexOf(arr[i]);
 
-        if(lastIndex === i && !strs.includes(arr[i])){
-            return i;
-        }else{
-            strs.push(arr[i]);
-        }
+//         if(lastIndex === i && !strs.includes(arr[i])){
+//             return i;
+//         }else{
+//             strs.push(arr[i]);
+//         }
+//     }
+
+//     return -1;
+// };
+
+// console.log(firstUniqChar("aabb"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const decodeString = (s) => {
+//     let nums = [];
+//     let strings = [];
+//     let str = "";
+//     let result = "";
+
+//     for(let i=0; i<s.length; i++) {
+//         if(s[i] === "[") {
+            
+//         }else if(s[i] === "]") {
+            
+//         }else if(!isNaN(parseInt(s[i]))) {
+            
+//         }else if(isNaN(parseInt(s[i]))) {
+            
+//         }
+//     }
+// };
+
+// console.log(decodeString("3[a2[c]]"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var removeDuplicateLetters = function(s) {
+    const arr = [];
+
+    const obj = s.split("").reduce((acc,letter) => {
+        if(!acc[letter]) acc[letter] = 1;
+        else acc[letter] += 1;
+
+        return acc;
+    }, {});
+
+    for(let key in obj) {
+        arr.push(key);
     }
 
-    return -1;
+    return arr.join("");
 };
 
-console.log(firstUniqChar("aabb"));
+console.log(removeDuplicateLetters("cbacdcbc"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
