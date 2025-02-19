@@ -3684,25 +3684,50 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minimumOperations = function(nums) {
+// var minimumOperations = function(nums) {
+//     let count = 0;
+//     for(let i=0; i<nums.length; i++) {
+//         let currentNum = nums[i]
+
+//         if(currentNum % 3 !== 0) {
+//             while(currentNum % 3 !== 0) {
+//                 if(currentNum % 3 === 1) currentNum -= 1;
+//                 else if(currentNum % 3 === 2) currentNum += 1;
+
+//                 count++;
+//             }
+//         }
+//     }
+
+//     return count;
+// };
+
+// console.log(minimumOperations([1,2,3,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minimumChairs = function(s) {
     let count = 0;
-    for(let i=0; i<nums.length; i++) {
-        let currentNum = nums[i]
+    let maxCount = 0;
 
-        if(currentNum % 3 !== 0) {
-            while(currentNum % 3 !== 0) {
-                if(currentNum % 3 === 1) currentNum -= 1;
-                else if(currentNum % 3 === 2) currentNum += 1;
-
-                count++;
+    for(let i=0; i<s.length; i++) {
+        if(s[i] === 'E'){
+            count++;
+            if(maxCount < count) {
+                maxCount = count;
             }
+        }else{
+            count--;
         }
     }
 
-    return count;
+    return maxCount;
 };
 
-console.log(minimumOperations([1,2,3,4]));
+console.log(minimumChairs("ELELELELEEL"));
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
