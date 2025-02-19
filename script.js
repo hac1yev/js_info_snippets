@@ -3631,24 +3631,78 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var removeDuplicateLetters = function(s) {
-    const arr = [];
+// var removeDuplicateLetters = function(s) {
+//     const arr = [];
 
-    const obj = s.split("").reduce((acc,letter) => {
-        if(!acc[letter]) acc[letter] = 1;
-        else acc[letter] += 1;
+//     const obj = s.split("").reduce((acc,letter) => {
+//         if(!acc[letter]) acc[letter] = 1;
+//         else acc[letter] += 1;
 
-        return acc;
-    }, {});
+//         return acc;
+//     }, {});
 
-    for(let key in obj) {
-        arr.push(key);
+//     for(let key in obj) {
+//         arr.push(key);
+//     }
+
+//     return arr.join("");
+// };
+
+// console.log(removeDuplicateLetters("cbacdcbc"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var reversePrefix = function(word, ch) {
+//     if(new Set(word).size === 1) return word;
+
+//     let arr = [];
+
+//     for(let i=0; i<word.length; i++) {
+//         arr.push(word[i]);
+
+//         if(word[i] === ch) {
+//             break;
+//         }    
+//     }
+
+//     if(arr.join("") === word && !arr.includes(ch)) {
+//         return arr.join("");
+//     }
+
+//     const indexOfWord = word.indexOf(arr.join(""));
+
+//     const a = word.split("").toSpliced(indexOfWord, arr.length, arr.toReversed().join(""));
+
+//     return a.join("");
+// };
+
+// console.log(reversePrefix("xxxxxxxxxxxxxxxxx", "x"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var minimumOperations = function(nums) {
+    let count = 0;
+    for(let i=0; i<nums.length; i++) {
+        let currentNum = nums[i]
+
+        if(currentNum % 3 !== 0) {
+            while(currentNum % 3 !== 0) {
+                if(currentNum % 3 === 1) currentNum -= 1;
+                else if(currentNum % 3 === 2) currentNum += 1;
+
+                count++;
+            }
+        }
     }
 
-    return arr.join("");
+    return count;
 };
 
-console.log(removeDuplicateLetters("cbacdcbc"));
+console.log(minimumOperations([1,2,3,4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
