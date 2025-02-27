@@ -3708,26 +3708,45 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var minimumChairs = function(s) {
-    let count = 0;
-    let maxCount = 0;
+// var minimumChairs = function(s) {
+//     let count = 0;
+//     let maxCount = 0;
 
-    for(let i=0; i<s.length; i++) {
-        if(s[i] === 'E'){
-            count++;
-            if(maxCount < count) {
-                maxCount = count;
-            }
-        }else{
-            count--;
-        }
+//     for(let i=0; i<s.length; i++) {
+//         if(s[i] === 'E'){
+//             count++;
+//             if(maxCount < count) {
+//                 maxCount = count;
+//             }
+//         }else{
+//             count--;
+//         }
+//     }
+
+//     return maxCount;
+// };
+
+// console.log(minimumChairs("ELELELELEEL"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function chocolateFeast(n, c, m) {
+    let remain = Math.trunc(n / c);
+    let sum = remain;
+
+    while(remain >= m) {
+        let rem = Math.trunc(remain / m);
+        const qaliq = remain % m;
+        sum += rem;
+        remain = rem + qaliq;
     }
 
-    return maxCount;
-};
+    return sum;
+}
 
-console.log(minimumChairs("ELELELELEEL"));
-
+console.log(chocolateFeast(15,3,2)); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
