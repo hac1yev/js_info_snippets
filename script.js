@@ -3752,26 +3752,48 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function serviceLane(width, cases) {
-    const result = [];
+// function serviceLane(width, cases) {
+//     const result = [];
 
-    cases.forEach(element => {
-        const [a,b] = element;
-        let min = Infinity;
+//     cases.forEach(element => {
+//         const [a,b] = element;
+//         let min = Infinity;
 
-        for(let i=a; i<=b; i++) {
-            if(min > width[i]) {
-                min = width[i];
-            }
-        }
+//         for(let i=a; i<=b; i++) {
+//             if(min > width[i]) {
+//                 min = width[i];
+//             }
+//         }
 
-        result.push(min);
-    });
+//         result.push(min);
+//     });
 
-    return result;
+//     return result;
+// }
+
+// console.log(serviceLane([2, 3, 1, 2, 3, 2, 3, 3], [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function equalizeArray(arr) {
+    let max = 0;
+
+    const obj = arr.reduce((acc, item) => {
+        if(!acc[item]) acc[item] = 1;
+        else acc[item] += 1;
+        return acc;
+    }, {});
+
+    for(let key in obj) {
+        if(obj[key] > max) max = obj[key]
+    }
+
+    return arr.length - max;
 }
 
-console.log(serviceLane([2, 3, 1, 2, 3, 2, 3, 3], [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]));
+console.log(equalizeArray([1,2,3,3,3,2]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
