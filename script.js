@@ -3732,21 +3732,46 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function chocolateFeast(n, c, m) {
-    let remain = Math.trunc(n / c);
-    let sum = remain;
+// function chocolateFeast(n, c, m) {
+//     let remain = Math.trunc(n / c);
+//     let sum = remain;
 
-    while(remain >= m) {
-        let rem = Math.trunc(remain / m);
-        const qaliq = remain % m;
-        sum += rem;
-        remain = rem + qaliq;
-    }
+//     while(remain >= m) {
+//         let rem = Math.trunc(remain / m);
+//         const qaliq = remain % m;
+//         sum += rem;
+//         remain = rem + qaliq;
+//     }
 
-    return sum;
+//     return sum;
+// }
+
+// console.log(chocolateFeast(15,3,2)); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function serviceLane(width, cases) {
+    const result = [];
+
+    cases.forEach(element => {
+        const [a,b] = element;
+        let min = Infinity;
+
+        for(let i=a; i<=b; i++) {
+            if(min > width[i]) {
+                min = width[i];
+            }
+        }
+
+        result.push(min);
+    });
+
+    return result;
 }
 
-console.log(chocolateFeast(15,3,2)); 
+console.log(serviceLane([2, 3, 1, 2, 3, 2, 3, 3], [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
