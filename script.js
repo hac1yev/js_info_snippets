@@ -3777,23 +3777,44 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function equalizeArray(arr) {
-    let max = 0;
+// function equalizeArray(arr) {
+//     let max = 0;
 
-    const obj = arr.reduce((acc, item) => {
-        if(!acc[item]) acc[item] = 1;
-        else acc[item] += 1;
-        return acc;
-    }, {});
+//     const obj = arr.reduce((acc, item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+//         return acc;
+//     }, {});
 
-    for(let key in obj) {
-        if(obj[key] > max) max = obj[key]
+//     for(let key in obj) {
+//         if(obj[key] > max) max = obj[key]
+//     }
+
+//     return arr.length - max;
+// }
+
+// console.log(equalizeArray([1,2,3,3,3,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function permutationEquation(p) {
+    let n = p.length;
+    let result = [];
+
+    for (let x = 1; x <= n; x++) {
+        let index1 = p.indexOf(x) + 1;
+        
+        let index2 = p.indexOf(index1) + 1;
+        
+        result.push(index2);
     }
 
-    return arr.length - max;
+    return result;
 }
 
-console.log(equalizeArray([1,2,3,3,3,2]));
+console.log(permutationEquation([5,2,1,3,4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
