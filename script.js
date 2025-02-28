@@ -3820,26 +3820,56 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function climbingLeaderboard(ranked, player) {
-    const setRankedArray = Array.from(new Set([...ranked]));
-    const playerResult = [];
+// function climbingLeaderboard(ranked, player) {
+//     const setRankedArray = Array.from(new Set([...ranked]));
+//     const playerResult = [];
 
-    for(let i=0; i<player.length; i++) {
-        let rank = 1;
+//     for(let i=0; i<player.length; i++) {
+//         let rank = 1;
 
-        for(let j=0; j<setRankedArray.length; j++) {
-            if(player[i] < setRankedArray[j]) {
-                rank += 1;
-            }
-        }
+//         for(let j=0; j<setRankedArray.length; j++) {
+//             if(player[i] < setRankedArray[j]) {
+//                 rank += 1;
+//             }
+//         }
 
-        playerResult.push(rank);
+//         playerResult.push(rank);
+//     }
+
+//     return playerResult;
+// }
+
+// console.log(climbingLeaderboard([100,90,90,80], [70,80,105]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function encryption(s) {
+    const str = s.split(" ").join("");
+    const strCeilLength = Math.ceil(Math.sqrt(str.length));
+    const arr = [];
+    let result = [];
+
+    for(let i=1; i<=strCeilLength; i++) {
+        const ss = str.slice((i-1) * strCeilLength, i * strCeilLength)
+        arr.push(ss);
     }
 
-    return playerResult;
+    for(let j=0; j<strCeilLength; j++) {
+        let myResultStr = "";
+        arr.forEach((element) => {
+            if(element[j]) {
+                myResultStr += element[j]
+            }
+        })
+        result.push(myResultStr);
+    }
+    
+    return result.join(" ");
 }
 
-console.log(climbingLeaderboard([100,90,90,80], [70,80,105]));
+console.log(encryption("chill out"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
