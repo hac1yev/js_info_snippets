@@ -3799,22 +3799,47 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function permutationEquation(p) {
-    let n = p.length;
-    let result = [];
+// function permutationEquation(p) {
+//     let n = p.length;
+//     let result = [];
 
-    for (let x = 1; x <= n; x++) {
-        let index1 = p.indexOf(x) + 1;
+//     for (let x = 1; x <= n; x++) {
+//         let index1 = p.indexOf(x) + 1;
         
-        let index2 = p.indexOf(index1) + 1;
+//         let index2 = p.indexOf(index1) + 1;
         
-        result.push(index2);
+//         result.push(index2);
+//     }
+
+//     return result;
+// }
+
+// console.log(permutationEquation([5,2,1,3,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function climbingLeaderboard(ranked, player) {
+    const setRanked = new Set([...ranked]);
+    const playerResult = [];
+
+    for(let i=0; i<player.length; i++) {
+        let rank = 1;
+
+        for(let j=0; j<Array.from(setRanked).length; j++) {
+            if(player[i] < Array.from(setRanked)[j]) {
+                rank += 1;
+            }
+        }
+
+        playerResult.push(rank);
     }
 
-    return result;
+    return playerResult;
 }
 
-console.log(permutationEquation([5,2,1,3,4]));
+console.log(climbingLeaderboard([100,90,90,80], [70,80,105]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
