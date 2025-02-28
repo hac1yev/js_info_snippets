@@ -3821,14 +3821,14 @@
 
 
 function climbingLeaderboard(ranked, player) {
-    const setRanked = new Set([...ranked]);
+    const setRankedArray = Array.from(new Set([...ranked]));
     const playerResult = [];
 
     for(let i=0; i<player.length; i++) {
         let rank = 1;
 
-        for(let j=0; j<Array.from(setRanked).length; j++) {
-            if(player[i] < Array.from(setRanked)[j]) {
+        for(let j=0; j<setRankedArray.length; j++) {
+            if(player[i] < setRankedArray[j]) {
                 rank += 1;
             }
         }
