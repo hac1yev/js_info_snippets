@@ -3845,31 +3845,88 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function encryption(s) {
-    const str = s.split(" ").join("");
-    const strCeilLength = Math.ceil(Math.sqrt(str.length));
-    const arr = [];
-    let result = [];
+// function encryption(s) {
+//     const str = s.split(" ").join("");
+//     const strCeilLength = Math.ceil(Math.sqrt(str.length));
+//     const arr = [];
+//     let result = [];
 
-    for(let i=1; i<=strCeilLength; i++) {
-        const ss = str.slice((i-1) * strCeilLength, i * strCeilLength)
-        arr.push(ss);
-    }
+//     for(let i=1; i<=strCeilLength; i++) {
+//         const ss = str.slice((i-1) * strCeilLength, i * strCeilLength)
+//         arr.push(ss);
+//     }
 
-    for(let j=0; j<strCeilLength; j++) {
-        let myResultStr = "";
-        arr.forEach((element) => {
-            if(element[j]) {
-                myResultStr += element[j]
-            }
-        })
-        result.push(myResultStr);
-    }
+//     for(let j=0; j<strCeilLength; j++) {
+//         let myResultStr = "";
+//         arr.forEach((element) => {
+//             if(element[j]) {
+//                 myResultStr += element[j]
+//             }
+//         })
+//         result.push(myResultStr);
+//     }
     
-    return result.join(" ");
+//     return result.join(" ");
+// }   
+
+// console.log(encryption("chill out"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function nonDivisibleSubset(k, s) {
+    const allArr = [];
+
+    for(let i=0; i<k.length-1; i++) {
+        for(let j=i+1; j<k.length; j++) {
+            const arr = [k[i]];
+            arr.push(k[j]);
+            allArr.push(arr);
+        }
+    }
+
+    const allPossibleArr = allArr.filter((arr) => {
+        const sum = arr.reduce((total, item) => {
+            total += item;
+            return total;
+        }, 0);
+
+        if(sum % s !== 0) return arr;
+    });
+
+    const resultArr = allPossibleArr.flatMap((arr) => arr).reduce((result,item) => {
+        if(!result.includes(item)) result.push(item);
+        return result;
+    }, []);
+
+    const result = getResultArr(resultArr, s);
+
+    return result;
 }
 
-console.log(encryption("chill out"));
+function getResultArr(arr, s) {
+    let maxSubset = [];  
+
+    function backtrack(start, subset) {
+        const sum = subset.reduce((acc, num) => acc + num, 0);
+        
+        if (sum % s === 0 && subset.length > maxSubset.length) {
+            maxSubset = [...subset];
+        }
+
+        for (let i = start; i < arr.length; i++) {
+            subset.push(arr[i]);       
+            backtrack(i + 1, subset);  
+            subset.pop();              
+        }
+    }
+
+    backtrack(0, []);
+    return maxSubset;  
+}
+
+console.log(nonDivisibleSubset([2,5,7,9,3], 3));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
