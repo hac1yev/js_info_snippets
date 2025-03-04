@@ -3947,22 +3947,65 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function lilysHomework(arr) {
-    let count = 0;
-    const sortedArr = arr.toSorted((a,b) => a - b);
+// function lilysHomework(arr) {
+//     let count = 0;
+//     const sortedArr = arr.toSorted((a,b) => a - b);
 
-    for(let i=0; i<arr.length; i++) {
-        if(sortedArr[i] !== arr[i]) {
-            const index = arr.indexOf(sortedArr[i]);
-            [arr[i], arr[index]] = [arr[index], arr[i]];
-            count++;            
+//     for(let i=0; i<arr.length; i++) {
+//         if(sortedArr[i] !== arr[i]) {
+//             const index = arr.indexOf(sortedArr[i]);
+//             [arr[i], arr[index]] = [arr[index], arr[i]];
+//             count++;            
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(lilysHomework([3, 4, 2, 5, 1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function steadyGene(gene) {
+    const letters = "GATC";
+    const maxCount = Math.ceil(gene.length / 4);
+    let changes = 0;
+    let newStr = "";
+
+    function isGreaterThanNFunc(letter) {
+        let count = 0;
+
+        for(let i=0; i<newStr.length; i++) {
+            if(letter === newStr[i]) count += 1;
         }
+
+        return count >= maxCount;
     }
 
-    return count;
+    gene.split("").forEach(element => {
+        const isGreaterThanN = isGreaterThanNFunc(element);
+
+        if(isGreaterThanN) {
+            for(let i=0; i<letters.length; i++) {
+                const isGreaterThanN = isGreaterThanNFunc(letters[i]);
+
+                if(!newStr.includes(letters[i]) || !isGreaterThanN) {
+                    newStr += letters[i];
+                    break;
+                } 
+            }
+            changes += 1;
+        }else{
+            newStr += element;
+        }
+    });
+
+    return newStr;
 }
 
-console.log(lilysHomework([3, 4, 2, 5, 1]));
+console.log(steadyGene("GAAATAAA"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
