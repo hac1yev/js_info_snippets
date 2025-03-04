@@ -3875,58 +3875,94 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function nonDivisibleSubset(k, s) {
-    const allArr = [];
+// function nonDivisibleSubset(k, s) {
+//     const allArr = [];
 
-    for(let i=0; i<k.length-1; i++) {
-        for(let j=i+1; j<k.length; j++) {
-            const arr = [k[i]];
-            arr.push(k[j]);
-            allArr.push(arr);
-        }
-    }
+//     for(let i=0; i<k.length-1; i++) {
+//         for(let j=i+1; j<k.length; j++) {
+//             const arr = [k[i]];
+//             arr.push(k[j]);
+//             allArr.push(arr);
+//         }
+//     }
 
-    const allPossibleArr = allArr.filter((arr) => {
-        const sum = arr.reduce((total, item) => {
-            total += item;
-            return total;
-        }, 0);
+//     const allPossibleArr = allArr.filter((arr) => {
+//         const sum = arr.reduce((total, item) => {
+//             total += item;
+//             return total;
+//         }, 0);
 
-        if(sum % s !== 0) return arr;
-    });
+//         if(sum % s !== 0) return arr;
+//     });
 
-    const resultArr = allPossibleArr.flatMap((arr) => arr).reduce((result,item) => {
-        if(!result.includes(item)) result.push(item);
-        return result;
-    }, []);
+//     const resultArr = allPossibleArr.flatMap((arr) => arr).reduce((result,item) => {
+//         if(!result.includes(item)) result.push(item);
+//         return result;
+//     }, []);
 
-    const result = getResultArr(resultArr, s);
+//     const result = getResultArr(resultArr, s);
 
-    return result;
-}
+//     return result;
+// }
 
-function getResultArr(arr, s) {
-    let maxSubset = [];  
+// function getResultArr(arr, s) {
+//     let maxSubset = [];  
 
-    function backtrack(start, subset) {
-        const sum = subset.reduce((acc, num) => acc + num, 0);
+//     function backtrack(start, subset) {
+//         const sum = subset.reduce((acc, num) => acc + num, 0);
         
-        if (sum % s === 0 && subset.length > maxSubset.length) {
-            maxSubset = [...subset];
-        }
+//         if (sum % s === 0 && subset.length > maxSubset.length) {
+//             maxSubset = [...subset];
+//         }
 
-        for (let i = start; i < arr.length; i++) {
-            subset.push(arr[i]);       
-            backtrack(i + 1, subset);  
-            subset.pop();              
+//         for (let i = start; i < arr.length; i++) {
+//             subset.push(arr[i]);       
+//             backtrack(i + 1, subset);  
+//             subset.pop();              
+//         }
+//     }
+
+//     backtrack(0, []);
+//     return maxSubset;  
+// }
+
+// console.log(nonDivisibleSubset([2,5,7,9,3], 3));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function libraryFine(d1, m1, y1, d2, m2, y2) {
+//     const date1 = new Date(y1, m1 - 1, d1).getTime();
+//     const date2 = new Date(y2, m2 - 1, d2).getTime();
+
+//     const daysDifference = (date2 - date1) / (1000 * 60 * 60 * 24);
+
+//     return Math.abs(daysDifference) * 15;
+// }
+
+// console.log(libraryFine(9,6,2015,6,6,2015));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function lilysHomework(arr) {
+    let count = 0;
+    const sortedArr = arr.toSorted((a,b) => a - b);
+
+    for(let i=0; i<arr.length; i++) {
+        if(sortedArr[i] !== arr[i]) {
+            const index = arr.indexOf(sortedArr[i]);
+            [arr[i], arr[index]] = [arr[index], arr[i]];
+            count++;            
         }
     }
 
-    backtrack(0, []);
-    return maxSubset;  
+    return count;
 }
 
-console.log(nonDivisibleSubset([2,5,7,9,3], 3));
+console.log(lilysHomework([3, 4, 2, 5, 1]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
