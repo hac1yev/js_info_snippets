@@ -4060,25 +4060,41 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function jumpingOnClouds(c, k) {
-    let current = 100;
-    let resultIndex = (0 + k) % c.length;
+// function jumpingOnClouds(c, k) {
+//     let current = 100;
+//     let resultIndex = (0 + k) % c.length;
 
-    while(resultIndex !== 0) {
-        if(c[resultIndex] === 1) current -= 3;
-        else current -= 1;
-        resultIndex = (resultIndex + k) % c.length;
-    }
+//     while(resultIndex !== 0) {
+//         if(c[resultIndex] === 1) current -= 3;
+//         else current -= 1;
+//         resultIndex = (resultIndex + k) % c.length;
+//     }
 
-    if(resultIndex === 0) {
-        if(c[resultIndex] === 1) current -= 3;
-        else current -= 1;
-    }
+//     if(resultIndex === 0) {
+//         if(c[resultIndex] === 1) current -= 3;
+//         else current -= 1;
+//     }
 
-    return current;
+//     return current;
+// }
+
+// console.log(jumpingOnClouds([1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1], 19)); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function repeatedString(s, n) {
+    let strLength = s.length;
+    let fullRepeats = Math.floor(n / strLength);
+    let remainder = n % strLength;
+    let aCountInFullString = (s.match(/a/g) || []).length;
+    let aCountInRemainder = (s.slice(0, remainder).match(/a/g) || []).length;
+
+    return (aCountInFullString * fullRepeats) + aCountInRemainder;
 }
 
-console.log(jumpingOnClouds([1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1], 19)); 
+console.log(repeatedString("a", 1000000));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
