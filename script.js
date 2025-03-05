@@ -3968,44 +3968,117 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function steadyGene(gene) {
-    const letters = "GATC";
-    const maxCount = Math.ceil(gene.length / 4);
-    let changes = 0;
-    let newStr = "";
+// function steadyGene(gene) {
+//     const letters = "GATC";
+//     const maxCount = Math.ceil(gene.length / 4);
+//     let changes = 0;
+//     let newStr = "";
 
-    function isGreaterThanNFunc(letter) {
-        let count = 0;
+//     function isGreaterThanNFunc(letter) {
+//         let count = 0;
 
-        for(let i=0; i<newStr.length; i++) {
-            if(letter === newStr[i]) count += 1;
-        }
+//         for(let i=0; i<newStr.length; i++) {
+//             if(letter === newStr[i]) count += 1;
+//         }
 
-        return count >= maxCount;
+//         return count >= maxCount;
+//     }
+
+//     gene.split("").forEach(element => {
+//         const isGreaterThanN = isGreaterThanNFunc(element);
+
+//         if(isGreaterThanN) {
+//             for(let i=0; i<letters.length; i++) {
+//                 const isGreaterThanN = isGreaterThanNFunc(letters[i]);
+
+//                 if(!newStr.includes(letters[i]) || !isGreaterThanN) {
+//                     newStr += letters[i];
+//                     break;
+//                 } 
+//             }
+//             changes += 1;
+//         }else{
+//             newStr += element;
+//         }
+//     });
+
+//     return newStr;
+// }
+
+// console.log(steadyGene("GAAATAAA"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// HELL EDILMEYIB
+
+// function MinWindowSubstring(strArr) { 
+//     const N = strArr[0];
+//     const K = strArr[1];
+//     let objK = {};
+//     for (let char of K) objK[char] = (objK[char] || 0) + 1;
+
+//     let smallestSubStrArr = [];
+  
+//     for(let i=0; i<N.length; i++) {
+//         if(!smallestSubStrArr.includes(N[i])) {
+//             smallestSubStrArr.push(N[i]);
+//         }else{
+//             let countOfLetter = smallestSubStrArr.reduce((total,letter) => {
+//                 if(letter === N[i]) total += 1;
+//                 return total;
+//             }, 0);
+
+//             if(countOfLetter >= objK[N[i]]) {
+//                 let isThere = false;
+                
+//                 for(let key in objK) {
+//                     if(key !== N[i]) {
+//                         if(smallestSubStrArr.includes(key)) {
+//                             isThere = true;
+//                             break;
+//                         } 
+//                     }
+//                 }
+
+//                 if(!isThere) {
+//                     smallestSubStrArr.push(N[i]);
+//                     let lastIndex = smallestSubStrArr.lastIndexOf(N[i]);
+//                     smallestSubStrArr = smallestSubStrArr.slice(lastIndex);                       
+//                 }
+//             }
+//         }
+//     }
+  
+//     return smallestSubStrArr; 
+// }
+     
+// console.log(MinWindowSubstring(["aaabsaaddae", "aesd"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function jumpingOnClouds(c, k) {
+    let current = 100;
+    let resultIndex = (0 + k) % c.length;
+
+    while(resultIndex !== 0) {
+        if(c[resultIndex] === 1) current -= 3;
+        else current -= 1;
+        resultIndex = (resultIndex + k) % c.length;
     }
 
-    gene.split("").forEach(element => {
-        const isGreaterThanN = isGreaterThanNFunc(element);
+    if(resultIndex === 0) {
+        if(c[resultIndex] === 1) current -= 3;
+        else current -= 1;
+    }
 
-        if(isGreaterThanN) {
-            for(let i=0; i<letters.length; i++) {
-                const isGreaterThanN = isGreaterThanNFunc(letters[i]);
-
-                if(!newStr.includes(letters[i]) || !isGreaterThanN) {
-                    newStr += letters[i];
-                    break;
-                } 
-            }
-            changes += 1;
-        }else{
-            newStr += element;
-        }
-    });
-
-    return newStr;
+    return current;
 }
 
-console.log(steadyGene("GAAATAAA"));
+console.log(jumpingOnClouds([1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1], 19)); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
