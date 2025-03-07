@@ -4119,34 +4119,52 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function LongestWord(sen) { 
-    let longestWord = "";
-    let arr = [];
-    let maxStr = "";
+// function LongestWord(sen) { 
+//     let longestWord = "";
+//     let arr = [];
+//     let maxStr = "";
 
-    for(let i=0; i<sen.length; i++) {        
-        if((sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122)) {
-            longestWord += sen[i];
-        }else{
-            if(longestWord) {
-                arr.push(longestWord);
-                longestWord = "";
-            }
-        }
+//     for(let i=0; i<sen.length; i++) {        
+//         if((sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122)) {
+//             longestWord += sen[i];
+//         }else{
+//             if(longestWord) {
+//                 arr.push(longestWord);
+//                 longestWord = "";
+//             }
+//         }
+//     }
+
+//     if(longestWord) {
+//         arr.push(longestWord);
+//     }
+
+//     arr.forEach((word) => {
+//         if(word.length > maxStr.length) maxStr = word;
+//     })
+
+//     return maxStr;
+// }
+
+// console.log(LongestWord("fun&!! time"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function FirstFactorial(num) { 
+    if(num === 1) return 1;
+  
+    let result = 0;
+  
+    if(num > 1) {
+      result += (num * FirstFactorial(num - 1));
     }
-
-    if(longestWord) {
-        arr.push(longestWord);
-    }
-
-    arr.forEach((word) => {
-        if(word.length > maxStr.length) maxStr = word;
-    })
-
-    return maxStr;
+  
+    return result; 
 }
 
-console.log(LongestWord("fun&!! time"));
+console.log(FirstFactorial(4));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
