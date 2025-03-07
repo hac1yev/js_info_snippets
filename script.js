@@ -4084,17 +4084,69 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function repeatedString(s, n) {
-    let strLength = s.length;
-    let fullRepeats = Math.floor(n / strLength);
-    let remainder = n % strLength;
-    let aCountInFullString = (s.match(/a/g) || []).length;
-    let aCountInRemainder = (s.slice(0, remainder).match(/a/g) || []).length;
+// function repeatedString(s, n) {
+//     let strLength = s.length;
+//     let fullRepeats = Math.floor(n / strLength);
+//     let remainder = n % strLength;
+//     let aCountInFullString = (s.match(/a/g) || []).length;
+//     let aCountInRemainder = (s.slice(0, remainder).match(/a/g) || []).length;
 
-    return (aCountInFullString * fullRepeats) + aCountInRemainder;
+//     return (aCountInFullString * fullRepeats) + aCountInRemainder;
+// }
+
+// console.log(repeatedString("a", 1000000));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function cutTheSticks(arr) {
+//     const result = [];
+
+//     while (arr.some(num => num !== 0)) { 
+//         result.push(arr.filter(num => num !== 0).length); 
+
+//         let minNum = Math.min(...arr.filter(num => num !== 0)); 
+//         arr = arr.map(num => (num !== 0 ? num - minNum : 0)); 
+//     }
+
+//     return result;
+// }
+
+// console.log(cutTheSticks([5, 4, 4, 2, 2, 8]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function LongestWord(sen) { 
+    let longestWord = "";
+    let arr = [];
+    let maxStr = "";
+
+    for(let i=0; i<sen.length; i++) {        
+        if((sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122)) {
+            longestWord += sen[i];
+        }else{
+            if(longestWord) {
+                arr.push(longestWord);
+                longestWord = "";
+            }
+        }
+    }
+
+    if(longestWord) {
+        arr.push(longestWord);
+    }
+
+    arr.forEach((word) => {
+        if(word.length > maxStr.length) maxStr = word;
+    })
+
+    return maxStr;
 }
 
-console.log(repeatedString("a", 1000000));
+console.log(LongestWord("fun&!! time"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
