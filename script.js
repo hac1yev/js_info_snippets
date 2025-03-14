@@ -4152,19 +4152,62 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function FirstFactorial(num) { 
-    if(num === 1) return 1;
+// function FirstFactorial(num) { 
+//     if(num === 1) return 1;
   
-    let result = 0;
+//     let result = 0;
   
-    if(num > 1) {
-      result += (num * FirstFactorial(num - 1));
-    }
+//     if(num > 1) {
+//       result += (num * FirstFactorial(num - 1));
+//     }
   
-    return result; 
+//     return result; 
+// }
+
+// console.log(FirstFactorial(4));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function CodelandUsernameValidation(str) { 
+//     for(let i=0; i<str.length; i++) {
+//       if(
+//             (sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || 
+//             (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122) || 
+//             (sen[i].charCodeAt(0) >= 48 && sen[i].charCodeAt(0) <= 57) ||
+//             (sen[i].charCodeAt(0) === 95)){
+                
+//         }
+//     console.log("_".charCodeAt(0));
+  
+//     return str; 
+  
+//   }
+     
+// console.log(CodelandUsernameValidation("aa_"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function FirstReverse(str) { 
+  const newArr = str.split(" ").toReversed().map((item) => {
+    const arr = item.split("").toReversed();
+
+    return arr.join("");
+  })
+  
+  return newArr.join(" ");
 }
 
-console.log(FirstFactorial(4));
+console.log(FirstReverse("I Love Coding"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
