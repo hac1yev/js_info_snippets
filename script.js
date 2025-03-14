@@ -4191,23 +4191,38 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function FirstReverse(str) { 
-  const newArr = str.split(" ").toReversed().map((item) => {
-    const arr = item.split("").toReversed();
+// function FirstReverse(str) { 
+//   const newArr = str.split(" ").toReversed().map((item) => {
+//     const arr = item.split("").toReversed();
 
-    return arr.join("");
-  })
+//     return arr.join("");
+//   })
   
-  return newArr.join(" ");
-}
+//   return newArr.join(" ");
+// }
 
-console.log(FirstReverse("I Love Coding"));
+// console.log(FirstReverse("I Love Coding"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+function hackerrankInString(s) {
+  const word = "hackerrank";
+  
+  for(let i=0; i<word.length; i++) {
+      if(!s.includes(word[i])) {
+          return "NO"
+      }
+      const index = s.indexOf(word[i]);
+      s = s.slice(index + 1);
+      console.log(index,s);
+  }   
+  
+  return "YES";
+}
 
+console.log(hackerrankInString("rhackerank"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
