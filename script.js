@@ -4207,22 +4207,37 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function hackerrankInString(s) {
-  const word = "hackerrank";
+// function hackerrankInString(s) {
+//   const word = "hackerrank";
   
-  for(let i=0; i<word.length; i++) {
-      if(!s.includes(word[i])) {
-          return "NO"
-      }
-      const index = s.indexOf(word[i]);
-      s = s.slice(index + 1);
-      console.log(index,s);
-  }   
+//   for(let i=0; i<word.length; i++) {
+//       if(!s.includes(word[i])) {
+//           return "NO"
+//       }
+//       const index = s.indexOf(word[i]);
+//       s = s.slice(index + 1);
+//       console.log(index,s);
+//   }   
   
-  return "YES";
-}
+//   return "YES";
+// }
 
-console.log(hackerrankInString("rhackerank"));
+// console.log(hackerrankInString("rhackerank"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const secondBiggest = (arr) => {
+    const uniqueArr = [...new Set(arr)]; 
+
+    if (uniqueArr.length < 2) return null; 
+
+    uniqueArr.sort((a, b) => b - a); 
+    return uniqueArr[1];
+};
+
+console.log(secondBiggest([10, 5, 8, 20, 3]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
