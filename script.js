@@ -4228,16 +4228,34 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const secondBiggest = (arr) => {
-    const uniqueArr = [...new Set(arr)]; 
+// const secondBiggest = (arr) => {
+//     const uniqueArr = [...new Set(arr)]; 
 
-    if (uniqueArr.length < 2) return null; 
+//     if (uniqueArr.length < 2) return null; 
 
-    uniqueArr.sort((a, b) => b - a); 
-    return uniqueArr[1];
-};
+//     uniqueArr.sort((a, b) => b - a); 
+//     return uniqueArr[1];
+// };
 
-console.log(secondBiggest([10, 5, 8, 20, 3]));
+// console.log(secondBiggest([10, 5, 8, 20, 3]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function howManyGames(p, d, m, s) {
+    let count = 0;
+
+    while (s >= p) { 
+        s -= p;    
+        count++;   
+        p = Math.max(p - d, m);  
+    }
+
+    return count;
+}
+
+console.log(howManyGames(20,3,6,80));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
