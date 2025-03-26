@@ -4338,49 +4338,64 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const data = [
-    { id: 'e1', title: 'wre', description: "adas", age: 21 },
-    { id: 'e2', title: 'lorem', description: "adas asdasd asdasdas", age: 21 },
-    { id: 'e3', title: 'sadsa', description: "adas asdasd", age: 21 },
-    { id: 'e4', title: 'lorem', description: "adas", age: 21 },
-];
+// const data = [
+//     { id: 'e1', title: 'wre', description: "adas", age: 21 },
+//     { id: 'e2', title: 'lorem', description: "adas asdasd asdasdas", age: 21 },
+//     { id: 'e3', title: 'sadsa', description: "adas asdasd", age: 21 },
+//     { id: 'e4', title: 'lorem', description: "adas", age: 21 },
+// ];
 
-const obj = data.reduce((acc,item) => {
-    for(let key in item) {
-        if(!acc[key]) acc[key] = [];
-        acc[key].push(item[key]);
-    }
+// const obj = data.reduce((acc,item) => {
+//     for(let key in item) {
+//         if(!acc[key]) acc[key] = [];
+//         acc[key].push(item[key]);
+//     }
 
-    return acc;
-}, {});
+//     return acc;
+// }, {});
 
-const array = Object.entries(obj);
+// const array = Object.entries(obj);
 
-const result = array.reduce((obj,item) => {
-    const [key,arr] = item;
-    let max = 0;
-    let selectedStr;
+// const result = array.reduce((obj,item) => {
+//     const [key,arr] = item;
+//     let max = 0;
+//     let selectedStr;
 
-    const counts = arr.reduce((acc, el) => {
-        if(!acc[el]) acc[el] = 1;
-        else acc[el] += 1;
-        return acc;
-    }, {});
+//     const counts = arr.reduce((acc, el) => {
+//         if(!acc[el]) acc[el] = 1;
+//         else acc[el] += 1;
+//         return acc;
+//     }, {});
 
-    for(let k in counts) {
-        if(counts[k] > max) {
-            max = counts[k];
-            selectedStr = k;
-        }
-    }
+//     for(let k in counts) {
+//         if(counts[k] > max) {
+//             max = counts[k];
+//             selectedStr = k;
+//         }
+//     }
 
-    obj[key] = selectedStr;
+//     obj[key] = selectedStr;
 
-    return obj;
-}, {});
+//     return obj;
+// }, {});
 
-console.log(result);
+// console.log(result);
 
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const rotateArray = (arr,k) => {
+    k = k % arr.length;
+    if (k === 0) return arr;
+
+    const part1 = arr.slice(0, arr.length - k);
+    const part2 = arr.slice(arr.length - k);
+
+    return [...part2, ...part1];
+}
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
