@@ -4299,20 +4299,88 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const productOfArray = (arr) => {
-    return arr.map(item => {
-        let max = 1;
+// const productOfArray = (arr) => {
+//     return arr.map(item => {
+//         let max = 1;
         
-        for(let i=0; i<arr.length; i++) {
-            if(arr[i] === item) continue;
-            max *= arr[i];
+//         for(let i=0; i<arr.length; i++) {
+//             if(arr[i] === item) continue;
+//             max *= arr[i];
+//         }
+
+//         return parseInt(max);
+//     });
+// };
+
+// console.log(productOfArray([1, 2, 3, 4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var maxSubArray = function(nums) {
+//     let current_sum = 0;
+//     let max_sum = -Infinity;
+
+//     nums.forEach(element => {
+//         current_sum = Math.max(current_sum + element, element);
+//         if(current_sum > max_sum) {
+//             max_sum = current_sum
+//         }
+//     });
+
+//     return max_sum;
+// };
+
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const data = [
+    { id: 'e1', title: 'wre', description: "adas", age: 21 },
+    { id: 'e2', title: 'lorem', description: "adas asdasd asdasdas", age: 21 },
+    { id: 'e3', title: 'sadsa', description: "adas asdasd", age: 21 },
+    { id: 'e4', title: 'lorem', description: "adas", age: 21 },
+];
+
+const obj = data.reduce((acc,item) => {
+    for(let key in item) {
+        if(!acc[key]) acc[key] = [];
+        acc[key].push(item[key]);
+    }
+
+    return acc;
+}, {});
+
+const array = Object.entries(obj);
+
+const result = array.reduce((obj,item) => {
+    const [key,arr] = item;
+    let max = 0;
+    let selectedStr;
+
+    const counts = arr.reduce((acc, el) => {
+        if(!acc[el]) acc[el] = 1;
+        else acc[el] += 1;
+        return acc;
+    }, {});
+
+    for(let k in counts) {
+        if(counts[k] > max) {
+            max = counts[k];
+            selectedStr = k;
         }
+    }
 
-        return parseInt(max);
-    });
-};
+    obj[key] = selectedStr;
 
-console.log(productOfArray([1, 2, 3, 4]));
+    return obj;
+}, {});
+
+console.log(result);
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
