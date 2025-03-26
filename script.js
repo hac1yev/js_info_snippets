@@ -4261,19 +4261,39 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const containDuplicate = (arr) => {
-    const result =  [];
+// const containDuplicate = (arr) => {
+//     const result =  [];
     
-    arr.forEach((element,index) => {
-        if(!result.includes(element) && (index !== arr.lastIndexOf(element))) {
-            result.push(element);
-        }
-    });
+//     arr.forEach((element,index) => {
+//         if(!result.includes(element) && (index !== arr.lastIndexOf(element))) {
+//             result.push(element);
+//         }
+//     });
 
-    return result;
+//     return result;
+// };
+
+// console.log(containDuplicate([2,2,3,4,55,55,6,7,2,3,9,8]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const buyAndSell = (prices) => {
+    let maximumProfit = 0;
+
+    for(let i=0; i<prices.length; i++) {
+        for(let j=i+1; j<prices.length; j++) {
+            if(prices[j] - prices[i] > maximumProfit) {
+                maximumProfit = prices[j] - prices[i]; 
+            }
+        }
+    }
+
+    return maximumProfit;
 };
 
-console.log(containDuplicate([2,2,3,4,55,55,6,7,2,3,9,8]));
+console.log(buyAndSell([7, 1, 5, 3, 6, 4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
