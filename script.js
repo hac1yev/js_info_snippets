@@ -4279,21 +4279,40 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const buyAndSell = (prices) => {
-    let maximumProfit = 0;
+// const buyAndSell = (prices) => {
+//     let maximumProfit = 0;
 
-    for(let i=0; i<prices.length; i++) {
-        for(let j=i+1; j<prices.length; j++) {
-            if(prices[j] - prices[i] > maximumProfit) {
-                maximumProfit = prices[j] - prices[i]; 
-            }
+//     for(let i=0; i<prices.length; i++) {
+//         for(let j=i+1; j<prices.length; j++) {
+//             if(prices[j] - prices[i] > maximumProfit) {
+//                 maximumProfit = prices[j] - prices[i]; 
+//             }
+//         }
+//     }
+
+//     return maximumProfit;
+// };
+
+// console.log(buyAndSell([7, 1, 5, 3, 6, 4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const productOfArray = (arr) => {
+    return arr.map(item => {
+        let max = 1;
+        
+        for(let i=0; i<arr.length; i++) {
+            if(arr[i] === item) continue;
+            max *= arr[i];
         }
-    }
 
-    return maximumProfit;
+        return parseInt(max);
+    });
 };
 
-console.log(buyAndSell([7, 1, 5, 3, 6, 4]));
+console.log(productOfArray([1, 2, 3, 4]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
