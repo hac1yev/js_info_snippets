@@ -4243,19 +4243,37 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-function howManyGames(p, d, m, s) {
-    let count = 0;
+// function howManyGames(p, d, m, s) {
+//     let count = 0;
 
-    while (s >= p) { 
-        s -= p;    
-        count++;   
-        p = Math.max(p - d, m);  
-    }
+//     while (s >= p) { 
+//         s -= p;    
+//         count++;   
+//         p = Math.max(p - d, m);  
+//     }
 
-    return count;
-}
+//     return count;
+// }
 
-console.log(howManyGames(20,3,6,80));
+// console.log(howManyGames(20,3,6,80));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const containDuplicate = (arr) => {
+    const result =  [];
+    
+    arr.forEach((element,index) => {
+        if(!result.includes(element) && (index !== arr.lastIndexOf(element))) {
+            result.push(element);
+        }
+    });
+
+    return result;
+};
+
+console.log(containDuplicate([2,2,3,4,55,55,6,7,2,3,9,8]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
