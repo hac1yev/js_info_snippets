@@ -4413,7 +4413,41 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+var isValid = function(s) {
+    if(s.length % 2 === 1) return false;
 
+    let parantheses = {
+         "(": ")",
+         "[": "]",
+         "{": "}"
+    };
+    const arr = [];
+
+    for(let i=0; i<s.length; i++) {
+        if(s[i] in parantheses) {
+            arr.push(s[i]);
+        }else{
+            let selectedKey = "";
+
+            for(let key in parantheses) {
+                if(parantheses[key] === s[i]) {
+                    selectedKey = key;
+                    break;
+                }
+            }
+
+            if(arr.at(-1) === selectedKey){
+                arr.pop();
+            }else {
+                return false;
+            }
+        }
+    }
+
+    return arr.length === 0;
+}
+
+console.log(isValid("[]{}()"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
