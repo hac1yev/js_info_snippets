@@ -789,3 +789,23 @@
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function longestCommonPrefix(strs) {
+    let str = "";
+    strs.sort((a,b) => a.localeCompare(b));
+    const first = strs[0];
+    const last = strs.at(-1);
+    for(let i=0; i<first.length; i++) {
+        if(first[i] === last[i]) {
+            str += first[i];
+        }else break;
+    }
+
+    return str;
+};
+
+console.log(longestCommonPrefix(["flower","flow","flight"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
