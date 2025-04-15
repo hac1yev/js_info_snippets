@@ -4413,41 +4413,60 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var isValid = function(s) {
-    if(s.length % 2 === 1) return false;
+// var isValid = function(s) {
+//     if(s.length % 2 === 1) return false;
 
-    let parantheses = {
-         "(": ")",
-         "[": "]",
-         "{": "}"
-    };
-    const arr = [];
+//     let parantheses = {
+//          "(": ")",
+//          "[": "]",
+//          "{": "}"
+//     };
+//     const arr = [];
 
-    for(let i=0; i<s.length; i++) {
-        if(s[i] in parantheses) {
-            arr.push(s[i]);
-        }else{
-            let selectedKey = "";
+//     for(let i=0; i<s.length; i++) {
+//         if(s[i] in parantheses) {
+//             arr.push(s[i]);
+//         }else{
+//             let selectedKey = "";
 
-            for(let key in parantheses) {
-                if(parantheses[key] === s[i]) {
-                    selectedKey = key;
-                    break;
-                }
-            }
+//             for(let key in parantheses) {
+//                 if(parantheses[key] === s[i]) {
+//                     selectedKey = key;
+//                     break;
+//                 }
+//             }
 
-            if(arr.at(-1) === selectedKey){
-                arr.pop();
-            }else {
-                return false;
-            }
-        }
-    }
+//             if(arr.at(-1) === selectedKey){
+//                 arr.pop();
+//             }else {
+//                 return false;
+//             }
+//         }
+//     }
 
-    return arr.length === 0;
-}
+//     return arr.length === 0;
+// }
 
-console.log(isValid("[]{}()"));
+// console.log(isValid("[]{}()"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var sortPeople = function(names, heights) {
+    const combinedArr = names.map((name, index) => {
+        return [
+            name,
+            heights[index]
+        ];
+    });
+
+    combinedArr.sort((a,b) => b[1] - a[1]);
+
+    return combinedArr.map((person) => person[0]);
+};
+
+console.log(sortPeople(["Mary","John","Emma"],[180,165,170]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
