@@ -4453,20 +4453,41 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var sortPeople = function(names, heights) {
-    const combinedArr = names.map((name, index) => {
-        return [
-            name,
-            heights[index]
-        ];
-    });
+// var sortPeople = function(names, heights) {
+//     const combinedArr = names.map((name, index) => {
+//         return [
+//             name,
+//             heights[index]
+//         ];
+//     });
 
-    combinedArr.sort((a,b) => b[1] - a[1]);
+//     combinedArr.sort((a,b) => b[1] - a[1]);
 
-    return combinedArr.map((person) => person[0]);
+//     return combinedArr.map((person) => person[0]);
+// };
+
+// console.log(sortPeople(["Mary","John","Emma"],[180,165,170]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var removeAnagrams = function(words) {
+    const result = [words[0]];
+
+    for(let i=1; i<words.length; i++) {
+        const str = words[i].split("").sort().join("");
+        const isNotThere = result.every((item) => item.split("").toSorted().join("") !== str);
+        
+        if(isNotThere) {
+            result.push(words[i]);
+        }
+    }
+
+    return result;
 };
 
-console.log(sortPeople(["Mary","John","Emma"],[180,165,170]));
+console.log(removeAnagrams(["abba","cd","bbaa","cd","cd","baba"]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
