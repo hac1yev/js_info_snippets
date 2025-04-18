@@ -4472,22 +4472,33 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var removeAnagrams = function(words) {
-    const result = [words[0]];
+// var removeAnagrams = function(words) {
+//     const result = [words[0]];
 
-    for(let i=1; i<words.length; i++) {
-        const str = words[i].split("").sort().join("");
-        const isNotThere = result.every((item) => item.split("").toSorted().join("") !== str);
+//     for(let i=1; i<words.length; i++) {
+//         const str = words[i].split("").sort().join("");
+//         const isNotThere = result.every((item) => item.split("").toSorted().join("") !== str);
         
-        if(isNotThere) {
-            result.push(words[i]);
-        }
-    }
+//         if(isNotThere) {
+//             result.push(words[i]);
+//         }
+//     }
 
-    return result;
+//     return result;
+// };
+
+// console.log(removeAnagrams(["abba","cd","bbaa","cd","cd","baba"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+var largestNumber = function(nums) {
+    const sorted = nums.map(String).sort((a, b) => (b + a) - (a + b));
+    if (sorted[0] === "0") return "0";
+    return sorted.join("");
 };
 
-console.log(removeAnagrams(["abba","cd","bbaa","cd","cd","baba"]));
+console.log(largestNumber([34323, 3432]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
