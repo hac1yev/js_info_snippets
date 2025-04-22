@@ -4557,22 +4557,48 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const targetSum = (nums,target) => {
-    for(var i=0;i<nums.length;i++){
-        for(var j=0;j<nums.length;j++){
-            if(i !== j){
-                if(nums[i] + nums[j] === target){
-                    arr = [i,j];
-                    return arr;
-                }
-            }else{
-                continue;
+// const targetSum = (nums,target) => {
+//     for(var i=0;i<nums.length;i++){
+//         for(var j=0;j<nums.length;j++){
+//             if(i !== j){
+//                 if(nums[i] + nums[j] === target){
+//                     arr = [i,j];
+//                     return arr;
+//                 }
+//             }else{
+//                 continue;
+//             }
+//         }
+//     }
+// };
+
+// console.log(targetSum([2,7,11,15], 9));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const capitalizeWord = (str) => {
+    const arr = str.split(" ");
+
+    const newArr = arr.map((item) => {
+        const wordArr = item.split("");
+
+        const capitalizeStr = wordArr.map((letter,index) => {
+            if(index === 0) {
+                return letter.toUpperCase();
             }
-        }
-    }
+
+            return letter;
+        }).join("");
+
+        return capitalizeStr;
+    });
+
+    return newArr.join(" ");
 };
 
-console.log(targetSum([2,7,11,15], 9));
+console.log(capitalizeWord("hello world"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
