@@ -4492,13 +4492,87 @@
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-var largestNumber = function(nums) {
-    const sorted = nums.map(String).sort((a, b) => (b + a) - (a + b));
-    if (sorted[0] === "0") return "0";
-    return sorted.join("");
+
+// var largestNumber = function(nums) {
+//     const sorted = nums.map(String).sort((a, b) => (b + a) - (a + b));
+//     if (sorted[0] === "0") return "0";
+//     return sorted.join("");
+// };
+
+// console.log(largestNumber([34323, 3432]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const removeDuplicates = (arr) => {
+//     return arr.reduce((acc,el) => {
+//         if(!acc.includes(el)) acc.push(el);
+//         return acc;
+//     }, []);
+// };
+
+// console.log(removeDuplicates([1,1,2]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const longestWord = (sentence) => {
+//     let max = 0;
+//     let selectedWord = "";
+//     const arr = sentence.split(" "); 
+
+//     arr.forEach(element => {
+//         const letters = element.split("");
+//         let count = 0;
+//         let isHave = false; 
+
+//         letters.forEach((letter) => {
+//             if ((letter >= "a" && letter <= "z") || (letter >= "A" && letter <= "Z")) {
+//                 count++;        
+//             }else{
+//                 isHave = true;
+//             }
+//         })
+
+//         if(count > max) {
+//             max = count;
+//             if(isHave) {
+//                 const arr = element.split("");
+//                 arr.pop();
+//                 selectedWord = arr.join("");
+//             }else{
+//                 selectedWord = element;
+//             }
+//         }
+//     });
+
+//     return selectedWord;
+// };
+
+// console.log(longestWord("The quick brown fox jumps over the lazy dogasdsa!"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const targetSum = (nums,target) => {
+    for(var i=0;i<nums.length;i++){
+        for(var j=0;j<nums.length;j++){
+            if(i !== j){
+                if(nums[i] + nums[j] === target){
+                    arr = [i,j];
+                    return arr;
+                }
+            }else{
+                continue;
+            }
+        }
+    }
 };
 
-console.log(largestNumber([34323, 3432]));
+console.log(targetSum([2,7,11,15], 9));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
