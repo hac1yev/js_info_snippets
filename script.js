@@ -4578,27 +4578,58 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const capitalizeWord = (str) => {
-    const arr = str.split(" ");
+// const capitalizeWord = (str) => {
+//     const arr = str.split(" ");
 
-    const newArr = arr.map((item) => {
-        const wordArr = item.split("");
+//     const newArr = arr.map((item) => {
+//         const wordArr = item.split("");
 
-        const capitalizeStr = wordArr.map((letter,index) => {
-            if(index === 0) {
-                return letter.toUpperCase();
+//         const capitalizeStr = wordArr.map((letter,index) => {
+//             if(index === 0) {
+//                 return letter.toUpperCase();
+//             }
+
+//             return letter;
+//         }).join("");
+
+//         return capitalizeStr;
+//     });
+
+//     return newArr.join(" ");
+// };
+
+// console.log(capitalizeWord("hello world"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const groupAnagram = (arr) => {
+    const result = [];
+    arr.forEach((element,index1) => {
+        const a = [element];
+        const sortedEl = element.split("").toSorted((a,b) => a.localeCompare(b)).join("");
+        
+        arr.forEach((el2,index2) => {
+            const sortedEl2 = el2.split("").toSorted((a,b) => a.localeCompare(b)).join("");
+            
+            if(index1 !== index2) {
+                if(sortedEl === sortedEl2) {
+                    a.push(el2);
+                }
             }
+        });
 
-            return letter;
-        }).join("");
-
-        return capitalizeStr;
+        a.sort((a,b) => a.localeCompare(b));
+        if(!result.toString().includes(a)) {
+            result.push(a);
+        }
     });
 
-    return newArr.join(" ");
+    return result;
 };
 
-console.log(capitalizeWord("hello world"));
+console.log(groupAnagram(["eat","tea","tan","ate","nat","bat"]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
