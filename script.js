@@ -4604,32 +4604,85 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const groupAnagram = (arr) => {
-    const result = [];
-    arr.forEach((element,index1) => {
-        const a = [element];
-        const sortedEl = element.split("").toSorted((a,b) => a.localeCompare(b)).join("");
+// const groupAnagram = (arr) => {
+//     const result = [];
+//     arr.forEach((element,index1) => {
+//         const a = [element];
+//         const sortedEl = element.split("").toSorted((a,b) => a.localeCompare(b)).join("");
         
-        arr.forEach((el2,index2) => {
-            const sortedEl2 = el2.split("").toSorted((a,b) => a.localeCompare(b)).join("");
+//         arr.forEach((el2,index2) => {
+//             const sortedEl2 = el2.split("").toSorted((a,b) => a.localeCompare(b)).join("");
             
-            if(index1 !== index2) {
-                if(sortedEl === sortedEl2) {
-                    a.push(el2);
-                }
-            }
-        });
+//             if(index1 !== index2) {
+//                 if(sortedEl === sortedEl2) {
+//                     a.push(el2);
+//                 }
+//             }
+//         });
 
-        a.sort((a,b) => a.localeCompare(b));
-        if(!result.toString().includes(a)) {
-            result.push(a);
+//         a.sort((a,b) => a.localeCompare(b));
+//         if(!result.toString().includes(a)) {
+//             result.push(a);
+//         }
+//     });
+
+//     return result;
+// };
+
+// console.log(groupAnagram(["eat","tea","tan","ate","nat","bat"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var generate = function(numRows) {
+//     const triangle = [];
+
+//     for (let i = 0; i < numRows; i++) {
+//         const row = [];
+
+//         for (let j = 0; j <= i; j++) {
+//             if (j === 0 || j === i) {
+//                 row.push(1);
+//             } else {
+//                 row.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
+//             }
+//         }
+
+//         triangle.push(row);
+//     }
+
+//     return triangle;
+// };
+
+// console.log(generate(5));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const repetitions = (str) => {
+    if (!str) return 0;
+
+    let result = [];
+    let arr = [str[0]];
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] === str[i - 1]) {
+            arr.push(str[i]);
+        } else {
+            result.push(arr);
+            arr = [str[i]];
         }
-    });
+    }
 
-    return result;
-};
+    result.push(arr); 
 
-console.log(groupAnagram(["eat","tea","tan","ate","nat","bat"]));
+    const countArr = result.map(item => item.length);
+    return Math.max(...countArr);
+}
+
+console.log(repetitions("ATTCGGGA")); 
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
