@@ -4661,28 +4661,47 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const repetitions = (str) => {
-    if (!str) return 0;
+// const repetitions = (str) => {
+//     if (!str) return 0;
 
-    let result = [];
-    let arr = [str[0]];
+//     let result = [];
+//     let arr = [str[0]];
 
-    for (let i = 1; i < str.length; i++) {
-        if (str[i] === str[i - 1]) {
-            arr.push(str[i]);
-        } else {
-            result.push(arr);
-            arr = [str[i]];
+//     for (let i = 1; i < str.length; i++) {
+//         if (str[i] === str[i - 1]) {
+//             arr.push(str[i]);
+//         } else {
+//             result.push(arr);
+//             arr = [str[i]];
+//         }
+//     }
+
+//     result.push(arr); 
+
+//     const countArr = result.map(item => item.length);
+//     return Math.max(...countArr);
+// }
+
+// console.log(repetitions("ATTCGGGA")); 
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const increaseArray = (arr) => {
+    let result = 0;
+
+    for(let i=1;i<arr.length;i++) {
+        if(arr[i-1] > arr[i]) {
+            result += (arr[i-1] - arr[i]);
+            arr[i] = arr[i - 1];
         }
     }
 
-    result.push(arr); 
-
-    const countArr = result.map(item => item.length);
-    return Math.max(...countArr);
+    return result;
 }
 
-console.log(repetitions("ATTCGGGA")); 
+console.log(increaseArray([3,2,5,1,7]));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
