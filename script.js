@@ -4688,20 +4688,65 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const increaseArray = (arr) => {
-    let result = 0;
+// const increaseArray = (arr) => {
+//     let result = 0;
 
-    for(let i=1;i<arr.length;i++) {
-        if(arr[i-1] > arr[i]) {
-            result += (arr[i-1] - arr[i]);
-            arr[i] = arr[i - 1];
+//     for(let i=1;i<arr.length;i++) {
+//         if(arr[i-1] > arr[i]) {
+//             result += (arr[i-1] - arr[i]);
+//             arr[i] = arr[i - 1];
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log(increaseArray([3,2,5,1,7]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+var convert = function(s, numRows) {
+    const resultArr = [];
+    let currentArr = [];
+    let count = 0;
+    let num = numRows;
+
+    for(let i=0; i<s.length; i++) {
+        count++;
+        if(count === numRows) {
+            currentArr.push(s[i]);
+            resultArr.push(currentArr);
+        }else if(count < numRows){
+            currentArr.push(s[i]);
+            if(i === s.length - 1) {
+                resultArr.push(currentArr);
+            }
+        }
+        else {
+            currentArr = [];
+            num -= 1;
+            for(let j=1; j<=numRows; j++) {
+                if(j !== num) {
+                    currentArr.push("");
+                }else currentArr.push(s[i]);
+            }
+
+            resultArr.push(currentArr);
+
+            if(num === 2) {
+                count = 0;
+                currentArr = [];
+                num = numRows;
+            }
         }
     }
 
-    return result;
-}
+    return resultArr;
+};
 
-console.log(increaseArray([3,2,5,1,7]));
+console.log(convert("PAYPALISHIRING", 4));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
