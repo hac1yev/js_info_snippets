@@ -4743,7 +4743,17 @@ var convert = function(s, numRows) {
         }
     }
 
-    return resultArr;
+    const newArr = resultArr.reduce((arr,item) => {
+        for(let i=0; i<item.length; i++) {
+            const a = [];
+            a.push(item[i]);
+            arr.push(str);
+        }
+        
+        return arr;
+    }, []);
+
+    return newArr.join("");
 };
 
 console.log(convert("PAYPALISHIRING", 4));

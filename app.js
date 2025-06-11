@@ -811,6 +811,57 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+// const promise = new Promise((resolve,reject) => {
+//     fetch('https://my.api.mockaroo.com/home_category.json?key=281cec00')
+//         .then((res) => resolve(res))
+//         .catch((err) => reject(err))
+// })
+//     .then((res) => {
+//         (async function () {
+//             try {
+//                 const reader = res.body.getReader();
+                
+//                 while(true) {
+//                     const { done, value } = await reader.read();
+                    
+//                     if(done) {
+//                         break;
+//                     }
+
+//                     console.log(value);
+//                 }
+//             } catch (error) {
+//                 console.log(error);
+                
+//             }
+//         })()
+//     })
+//     .catch((err) => err);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const promiseAllSettle = Promise.allSettled([
+    fetch('https://my.api.mockaroo.com/home_collections.json?key=281cec00'),
+    fetch('https://my.api.mockaroo.com/home_category.json?key=281cec00')
+]).then((res) => {    
+    res.forEach((item) => {
+        const {value} = item;
+        getData(value);
+    })
+}); 
+
+async function getData(res) {
+    try {
+        const data = await res.json();
+        console.log(data);
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
