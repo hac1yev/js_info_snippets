@@ -553,7 +553,7 @@
       });
     </script> -->
 
-    <div id="palette">
+    <!-- <div id="palette">
       <button id="addColorBtn">Add Random Color</button>
       <div id="colorsContainer" style="width: 50px; height: 50px; border: 1px solid #fff;"></div>
     </div>
@@ -564,6 +564,48 @@
       addColorBtn.addEventListener('click', () => {
         const random = Math.floor(Math.random() * colors.length);
         colorsContainer.style.background = colors[random];
+      });
+    </script> -->
+
+    <input id="input" type="text" placeholder="Search...">
+    <ul id="list"></ul>
+
+    <script>
+      const input = document.getElementById('input');
+      const list = document.getElementById('list');
+      let originalData = [];
+
+      const getData = () => {
+        return new Promise((resolve, reject) => {
+          fetch('https://my.api.mockaroo.com/home_category.json?key=281cec00')
+            .then((res) => res.json())
+            .then((data) => resolve(data))
+            .catch((err) => reject(err));
+        });
+      };
+
+      const renderList = (data) => {
+        list.innerHTML = ''; 
+        data.forEach((item) => {
+          const li = document.createElement('li');
+          li.innerText = item.title;
+          list.appendChild(li);
+        });
+      };
+
+      getData()
+        .then((data) => {
+          originalData = data;
+          renderList(originalData);
+        })
+        .catch((err) => console.log(err));
+
+      input.addEventListener('input', (e) => {
+        const value = e.target.value.toLowerCase();
+        const filtered = originalData.filter((item) =>
+          item.title.toLowerCase().includes(value)
+        );
+        renderList(filtered);
       });
     </script>
 
