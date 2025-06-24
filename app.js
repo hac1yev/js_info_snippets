@@ -842,26 +842,396 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-const promiseAllSettle = Promise.allSettled([
-    fetch('https://my.api.mockaroo.com/home_collections.json?key=281cec00'),
-    fetch('https://my.api.mockaroo.com/home_category.json?key=281cec00')
-]).then((res) => {    
-    res.forEach((item) => {
-        const {value} = item;
-        getData(value);
-    })
-}); 
+// const promiseAllSettle = Promise.allSettled([
+//     fetch('https://my.api.mockaroo.com/home_collections.json?key=281cec00'),
+//     fetch('https://my.api.mockaroo.com/home_category.json?key=281cec00')
+// ]).then((res) => {    
+//     res.forEach((item) => {
+//         const {value} = item;
+//         getData(value);
+//     })
+// }); 
 
-async function getData(res) {
-    try {
-        const data = await res.json();
-        console.log(data);
+// async function getData(res) {
+//     try {
+//         const data = await res.json();
+//         console.log(data);
         
-    } catch (error) {
-        console.log(error);
+//     } catch (error) {
+//         console.log(error);
         
-    }
-}
+//     }
+// }
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const longestCommonPrefix = (strs) => {
+//     if (!strs.length) return '';
+//     let commonStr = "";
+
+//     strs.sort((a,b) => a.localeCompare(b));
+//     let first = strs[0];
+//     let last = strs.at(-1);
+
+//     for(let i=0; i<first.length; i++) {
+//         if(first[i] === last[i]) {
+//             commonStr += first[i];
+//         }else break;
+//     }
+
+//     return commonStr;
+// };
+
+// console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var findRelativeRanks = function(score) {
+//     let max = Math.max(...score);
+//     let result = [];
+
+//     function lessFunc(n) {
+//         let count = 0;
+
+//         score.forEach((item) => {
+//             if(n < item) {
+//                 count++;
+//             }
+//         })
+
+//         return count;
+//     }
+
+//     score.forEach((item) => {
+//         if(item === max){
+//             result.push("Gold Medal");
+//         }else{
+//             const place = lessFunc(item) + 1;
+
+//             if(place === 2) {
+//                 result.push("Silver Medal");
+//             }else if(place === 3) {
+//                 result.push("Bronze Medal");
+//             }else{
+//                 result.push(`${place}`)
+//             }
+//         }
+//     });
+
+//     return result;
+// };
+
+// console.log(findRelativeRanks([5,4,3,2,1]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function promiseFunc() {
+//   return new Promise((resolve, reject) => {
+//     if (Math.random() > 0.7) {
+//       resolve("Promise success");
+//     } else {
+//       reject("Promise error");
+//     }
+//   });
+// }
+
+// function retryPromise(fn, options = {}) {
+//   const { retries = 3, delay = 1000, onRetry = () => {} } = options;
+
+//   let attempt = 1;
+
+//   return new Promise((resolve, reject) => {
+//     const attemptExecution = () => {
+//       fn()
+//         .then(resolve)
+//         .catch((error) => {
+//           if (attempt < retries) {
+//             onRetry(attempt);
+//             attempt++;
+//             setTimeout(attemptExecution, delay);
+//           } else {
+//             reject(error);
+//           }
+//         });
+//     };
+
+//     attemptExecution();
+//   });
+// }
+
+// retryPromise(promiseFunc, {
+//   retries: 5,
+//   delay: 500,
+//   onRetry: (attempt) => console.log(`Retrying: ${attempt}`),
+// })
+//   .then(console.log)
+//   .catch(console.error);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const students = [
+//     { name: "Alice", grades: [85, 92, 88], city: "New York" },
+//     { name: "Bob", grades: [70, 75, 78], city: "Los Angeles" },
+//     { name: "Charlie", grades: [90, 95, 92], city: "London" },
+//     { name: "Dave", grades: [60, 58, 65], city: "Los Angeles" },
+//     { name: "Eve", grades: [88, 85, 91], city: "New York" }
+// ];
+  
+// const threshold = 80;
+
+// const avarageGradeStudent = students.filter((item) => {
+//     const { grades } = item;
+
+//     const total = grades.reduce((total, num) => {
+//         total += num;
+//         return total;
+//     }, 0);
+
+//     const avarage = Math.trunc(total / 3);
+    
+//     if(avarage >= threshold) return item;
+// });
+
+// const studentsFromNewYork = avarageGradeStudent.reduce((arr,item) => {
+//     const { city } = item;
+//     if(city === 'New York') {
+//         arr.push(city);
+//     }
+
+//     return arr;
+// }, []);
+
+// console.log(studentsFromNewYork);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const people = [
+//     { name: "Alice", age: 25, city: "New York" },
+//     { name: "Bob", age: 22, city: "London" },
+//     { name: "Charlie", age: 30, city: "New York" },
+//     { name: "Dave", age: 23, city: "London" },
+//     { name: "Eve", age: 28, city: "Paris" },
+// ];
+
+// const obj = Object.groupBy(people, (item) => item.city);
+
+// console.log(obj);
+
+// const result = people.reduce((acc, item) => {
+//     const { city } = item;
+
+//     if(!acc[city]) acc[city] = [item];
+//     else acc[city].push(item);
+
+//     return acc;
+// }, {});
+
+// console.log(result);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const isValid = (s) => {
+//     if(s.length % 2 === 1) return false;
+
+//     let parantheses = {
+//         "(": ")",
+//         "[": "]",
+//         "{": "}"
+//     };
+
+//     const arr = [];
+
+//     for(let i=0; i<s.length; i++) {
+//         const valueOfKey = parantheses[s[i]];
+
+//         if(valueOfKey) {
+//             arr.push(s[i]);
+//         }else{
+//             const last = arr.pop();
+//             if(parantheses[last] !== s[i]) return false; 
+//         }
+//     }
+    
+//     return arr.length === 0;
+// };
+
+// console.log(isValid("([]){}()"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const arrayProducts = (arr) => {
+//     const total = arr.reduce((total,n) => total *= n, 1);
+//     return arr.map((num) => total / num);
+// };  
+
+// console.log(arrayProducts([1,2,3,4]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// function isPalindromeFunc(str) {    
+//     return str === str.split("").toReversed().join("");
+// }
+
+// var longestPalindrome = function(s) {
+//     let longestPalindromeStr = "";
+
+//     for(let i=0; i<s.length; i++) {
+//         let str = "";
+
+//         for(let j=i; j<s.length; j++) {
+//             str += s[j];
+//             const isItPalindrome = isPalindromeFunc(str);
+//             if(isItPalindrome && str.length > longestPalindromeStr.length) {
+//                 longestPalindromeStr = str;
+//             }
+//         }
+//     }
+
+//     return longestPalindromeStr;
+// };
+
+// console.log(longestPalindrome("abccccddddcccc"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var lengthOfLongestSubstring = function(s) {
+//     let longestStr = "";
+//     let str = "";
+    
+//     for(let i=0; i<s.length; i++) {
+//         if(!str.includes(s[i])) {
+//             str += s[i];
+//         }else if(str.includes(s[i])){                        
+//             str = str.split(s[i]).at(-1) + s[i];
+//         }
+
+//         if(str.length > longestStr.length) longestStr = str;
+//     }
+
+//     return longestStr;
+// };
+
+// console.log(lengthOfLongestSubstring("weghdanviaj"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var myAtoi = function(s) {
+//     let str = s.trim();
+
+//     if (!str || (!/^[0-9+-]/.test(str[0]))) {
+//         return 0;
+//     }
+    
+//     const num = parseInt(str, 10);
+
+//     if (isNaN(num)) {
+//         return 0;
+//     }
+
+//     if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31); 
+//     if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1; 
+
+//     return parseInt(str);
+// };
+
+// console.log(myAtoi("342"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var countAndSay = function(n) {
+//     let str = "1";
+
+//     if(n === 1) return str;
+
+//     for(let i=2; i<=n; i++) {
+//         let count = 1;
+//         let copy = str;
+//         str = "";
+
+//         for(let j=0; j<copy.length; j++) {
+//             if(copy[j] === copy[j+1]) count++;
+//             else{
+//                 str += `${count}${copy[j]}`;
+//                 count = 1;
+//             }
+//         }
+//     }
+
+//     return str;
+// };
+
+// console.log(countAndSay(6));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// var rotate = function(matrix) {
+//     const result = [];
+
+//     matrix.reverse().forEach(element => {        
+//         for(let i=0; i<element.length; i++) {
+//             if(!result[i]) result[i] = [element[i]];
+//             else result[i].push(element[i])         
+//         }
+//     });
+
+//     return result
+// };
+
+// console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const isPalindromeAnagram = (str) => {
+//     const letterObj = str.split("").reduce((acc,item) => {
+//         if(!acc[item]) acc[item] = 1;
+//         else acc[item] += 1;
+
+//         return acc;
+//     }, {});
+
+//     let oddCount = 0;
+
+//     for(let key in letterObj) {
+//         if(letterObj[key] % 2 !== 0) oddCount++;
+//         if(oddCount > 1) return false;
+//     }
+
+//     return true;
+// }
+
+// console.log(isPalindromeAnagram("ciivc"));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */

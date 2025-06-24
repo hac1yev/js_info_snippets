@@ -2405,9 +2405,7 @@
 //     for(let i=0; i<s.length; i++) {
 //         if(!str.includes(s[i])) {
 //             str += s[i];
-//         }else if(str.includes(s[i])){     
-//             console.log(str.split(s[i]));
-                   
+//         }else if(str.includes(s[i])){                        
 //             str = str.split(s[i]).at(-1) + s[i];
 //         }else if(str.includes(s[i]) && (s.length - i) < str.length) break;
 //         if(str.length > longestStr.length) longestStr = str;
@@ -2416,7 +2414,7 @@
 //     return longestStr;
 // };
 
-// console.log(lengthOfLongestSubstring("anviaj"));
+// console.log(lengthOfLongestSubstring("ghdanviaj"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -4757,6 +4755,12 @@ var convert = function(s, numRows) {
 };
 
 console.log(convert("PAYPALISHIRING", 4));
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */

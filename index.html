@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
   </head>
   <body>
     <!-- Image slider start -->
@@ -218,25 +219,26 @@
     <!-- Upload file into Blob object start -->
 
     <!-- <input type="file" id="fileInput">
-    <a download="file.pdf" id="link">Click</a>
+    <a id="link">Click</a>
 
     <script>
-      let data;
+      const fileInput = document.getElementById('fileInput');
+      const link = document.getElementById('link');
+
       fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
 
-        if(file) {
+        if (file) {
           const reader = new FileReader();
-          reader.readAsArrayBuffer(file);            
 
           reader.onload = () => {
-            data = reader.result; 
-            const blob = new Blob([data], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            link.href = url;
-          }
+            link.href = reader.result; // base64 URL
+            link.download = file.name;
+          };
+
+          reader.readAsDataURL(file);
         }
-      });      
+      });
     </script> -->
 
     <!-- Upload file into Blob object end -->
@@ -449,7 +451,61 @@
     <script src="normal.js"></script> -->
 
     <!-- DOM BASICS END -->
+
+    <!-- <script>
+      const data = [
+        { name: 'John', age: 25, profession: 'Engineer' },
+        { name: 'Jane', age: 28, profession: 'Designer' }
+      ];
+
+      const table = document.createElement("table");
+      
+      data.forEach((item) => {
+        const tr = document.createElement("tr");
+        
+        for(let key in item){
+          const td = document.createElement("td");
+          td.innerText = item[key];
+          tr.append(td);
+        }
+
+        table.append(tr);
+      });      
+
+      document.body.append(table);
+
+    </script> -->
      
+    <!-- <div 
+      style="width: 80px; height: 80px; border-radius: 50%; cursor: pointer;"
+      onclick="document.getElementById('file-input').click()"
+    >
+      <img 
+        id="fileImg"
+        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" 
+        style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" 
+        alt="kert"
+      >
+      <input id="file-input" type="file" accept="image/jpeg, image/png, image/gif" hidden>
+    </div>
+
+    <script>
+      const input = document.getElementById('file-input');
+
+      input.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        
+        if(file) {
+          reader.readAsDataURL(file);
+
+          reader.onload = () => {            
+            const img = document.getElementById("fileImg").src = reader.result;
+          }
+        }
+      });
+    </script> -->
+
     <!-- <script src="script.js"></script> -->
     <script src="app.js"></script> 
   </body>
