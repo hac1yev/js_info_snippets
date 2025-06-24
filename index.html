@@ -506,6 +506,21 @@
       });
     </script> -->
 
+    <div id="box">
+      <button id="button">Click</button>
+    </div>
+
+    <script>
+      box.addEventListener('click', (e) => {
+        console.log('div clicked!');
+        box.style.background = 'red';
+      });
+      
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    </script>
+
     <!-- <script src="script.js"></script> -->
     <script src="app.js"></script> 
   </body>
