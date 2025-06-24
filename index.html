@@ -522,7 +522,7 @@
       });
     </script> -->
 
-    <div>
+    <!-- <div>
       <h2 id="timer">10</h2>
       <button id="startBtn">Start Countdown</button>
       <button id="pauseBtn">Pause Countdown</button>
@@ -550,6 +550,20 @@
 
       pauseBtn.addEventListener('click', () => {
         executeFunc('pause');
+      });
+    </script> -->
+
+    <div id="palette">
+      <button id="addColorBtn">Add Random Color</button>
+      <div id="colorsContainer" style="width: 50px; height: 50px; border: 1px solid #fff;"></div>
+    </div>
+
+    <script>
+      const colors = ['#123456', '#789012', '#345678', '#901234', '#567890'];
+      
+      addColorBtn.addEventListener('click', () => {
+        const random = Math.floor(Math.random() * colors.length);
+        colorsContainer.style.background = colors[random];
       });
     </script>
 
