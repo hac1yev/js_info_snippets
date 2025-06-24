@@ -433,6 +433,7 @@
         <button id="button">
           Click
         </button>
+        <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="img">
       </span>
     </div>
 
@@ -506,7 +507,7 @@
       });
     </script> -->
 
-    <div id="box">
+    <!-- <div id="box">
       <button id="button">Click</button>
     </div>
 
@@ -515,9 +516,40 @@
         console.log('div clicked!');
         box.style.background = 'red';
       });
-      
+
       button.addEventListener('click', (e) => {
         e.stopPropagation();
+      });
+    </script> -->
+
+    <div>
+      <h2 id="timer">10</h2>
+      <button id="startBtn">Start Countdown</button>
+      <button id="pauseBtn">Pause Countdown</button>
+    </div>
+
+    <script>
+      const timer = document.getElementById('timer');
+      let seconds = parseInt(timer.innerText);
+      let interval;
+
+      function executeFunc(val) {
+        if(val === 'start'){
+          interval = setInterval(() => {
+            seconds += 1;
+            timer.innerText = seconds;
+          }, 1000);
+        }else{
+          clearInterval(interval);
+        }
+      }
+
+      startBtn.addEventListener('click', () => {
+        executeFunc('start');
+      });
+
+      pauseBtn.addEventListener('click', () => {
+        executeFunc('pause');
       });
     </script>
 
