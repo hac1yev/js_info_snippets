@@ -3,9 +3,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@latest/lodash.min.js"></script>
   </head>
   <body>
     <!-- Image slider start -->
@@ -567,7 +569,7 @@
       });
     </script> -->
 
-    <input id="input" type="text" placeholder="Search...">
+    <!-- <input id="input" type="text" placeholder="Search...">
     <ul id="list"></ul>
 
     <script>
@@ -607,9 +609,42 @@
         );
         renderList(filtered);
       });
-    </script>
+    </script> -->
 
-    <!-- <script src="script.js"></script> -->
-    <script src="app.js"></script> 
+    <!-- <div class="container">
+      <div>Item A</div>
+      <div>Item B</div>
+      <div>Item C</div>
+      <div>Item A</div>
+      <div>Item B</div>
+      <div>Item C</div>
+      <div>Item A</div>
+      <div>Item B</div>
+      <div>Item C</div>
+    </div> -->
+
+    <!-- <div class="box" id="box">
+      <span>1</span>
+      <h1>4</h1>
+    </div>
+
+    <script>
+      const box = document.getElementById('box');
+      
+      box.addEventListener('click', function (event) {
+        const target = event.target;
+
+        if (target.tagName === 'SPAN') {
+          console.log('Clicked on <span>: ', target.textContent);
+        } else if (target.tagName === 'H1') {
+          console.log('Clicked on <h1>: ', target.textContent);
+        }
+      });
+    </script> -->
+    
+    <div id="log">ILk</div>
+
+    <script src="script.js"></script>
+    <!-- <script src="app.js"></script>  -->
   </body>
 </html>
