@@ -4705,62 +4705,191 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var convert = function(s, numRows) {
-    const resultArr = [];
-    let currentArr = [];
-    let count = 0;
-    let num = numRows;
+// var convert = function(s, numRows) {
+//     const resultArr = [];
+//     let currentArr = [];
+//     let count = 0;
+//     let num = numRows;
 
-    for(let i=0; i<s.length; i++) {
-        count++;
-        if(count === numRows) {
-            currentArr.push(s[i]);
-            resultArr.push(currentArr);
-        }else if(count < numRows){
-            currentArr.push(s[i]);
-            if(i === s.length - 1) {
-                resultArr.push(currentArr);
-            }
-        }
-        else {
-            currentArr = [];
-            num -= 1;
-            for(let j=1; j<=numRows; j++) {
-                if(j !== num) {
-                    currentArr.push("");
-                }else currentArr.push(s[i]);
-            }
+//     for(let i=0; i<s.length; i++) {
+//         count++;
+//         if(count === numRows) {
+//             currentArr.push(s[i]);
+//             resultArr.push(currentArr);
+//         }else if(count < numRows){
+//             currentArr.push(s[i]);
+//             if(i === s.length - 1) {
+//                 resultArr.push(currentArr);
+//             }
+//         }
+//         else {
+//             currentArr = [];
+//             num -= 1;
+//             for(let j=1; j<=numRows; j++) {
+//                 if(j !== num) {
+//                     currentArr.push("");
+//                 }else currentArr.push(s[i]);
+//             }
 
-            resultArr.push(currentArr);
+//             resultArr.push(currentArr);
 
-            if(num === 2) {
-                count = 0;
-                currentArr = [];
-                num = numRows;
-            }
-        }
-    }
+//             if(num === 2) {
+//                 count = 0;
+//                 currentArr = [];
+//                 num = numRows;
+//             }
+//         }
+//     }
 
-    const newArr = resultArr.reduce((arr,item) => {
-        for(let i=0; i<item.length; i++) {
-            const a = [];
-            a.push(item[i]);
-            arr.push(str);
-        }
+//     const newArr = resultArr.reduce((arr,item) => {
+//         for(let i=0; i<item.length; i++) {
+//             const a = [];
+//             a.push(item[i]);
+//             arr.push(str);
+//         }
         
-        return arr;
-    }, []);
+//         return arr;
+//     }, []);
 
-    return newArr.join("");
-};
+//     return newArr.join("");
+// };
 
-console.log(convert("PAYPALISHIRING", 4));
+// console.log(convert("PAYPALISHIRING", 4));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+// function Person(name) {
+//   this.name = name;
+//   this.age = 24;
+// }
 
+// const user1 = new Person("Ilkin");
+
+// Person.prototype.sayHello = function () {
+//   console.log(`Hello, I'm ${this.name}`);
+// };
+
+// Person.prototype.fullName = user1.name + " " + "Haciyev" 
+
+// user1.sayHello();
+// console.log(user1);
+// console.log(user1.__proto__ === Person.prototype);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// class Liver {
+//     pi = 3.14;
+
+//     constructor (name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     counter() {
+//         return this.pi += 1;
+//     }
+
+//     getCounter() {
+//         return this.pi;
+//     }
+// }
+
+// class Person extends Liver {
+//     constructor (name, age, surname, gender) {
+//         super(name, age);
+//         this.surname = surname;
+//         this.gender = gender;
+//     }
+
+//     getInfo() {
+//         return `My name is ${this.name} ${this.surname}. I am ${this.age} years old. My gender is ${this.gender}.`; 
+//     }
+// }
+
+// const person1 = new Person('Ilkin', 30, 'Haciyev', 'Male');
+// console.log(person1.getInfo());
+
+// const liver = new Liver('Haciyev', 34);
+// liver.counter();
+// liver.counter();
+
+// console.log(liver.getCounter());
+// console.log(document.URL);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = {
+//     name: 'Ilk',
+//     age: 23,
+//     surname: 'sadsa'
+// };
+
+// const { name, ...rest } = obj;
+
+// function Person(surname) {
+//     this.name = 'Ilkin';
+//     this.surname = surname;
+// }
+
+// Person.prototype.getFullName = function() {
+//     return `${this.name} ${this.surname}`;
+// }
+
+// const person1 = new Person('Haciyev');
+
+// console.log(Person.name);
+
+
+// class Animal {
+//     static surname = "Haciyev";
+
+//     constructor(name, gender) {
+//         this.name = name;
+//         this.gender = gender;
+//     }
+
+//     getAnimalNameGender() {
+//         return `${this.name} is a ${this.gender} animal`;
+//     }
+// }
+
+// class Tiger extends Animal {
+    
+
+//     constructor(name,gender, biteForce, color) {
+//         super(name, gender);
+//         this.biteForce = biteForce;
+//         this.color = color;
+//     }
+
+
+// }
+
+// const tiger = new Tiger('Tiger', 'Male', '1200PS', 'orange');
+
+// console.log(tiger.getAnimalNameGender());
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const outerFunc = () => {
+    const password = "hilkin";
+    return {
+        innerFunc(enteredPass) {
+            return enteredPass === password;
+        }
+    }
+};
+
+const user = outerFunc();
+console.log(user.innerFunc("asdasas"));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
