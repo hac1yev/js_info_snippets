@@ -4705,62 +4705,66 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-var convert = function(s, numRows) {
-    const resultArr = [];
-    let currentArr = [];
-    let count = 0;
-    let num = numRows;
+// var convert = function(s, numRows) {
+//     const resultArr = [];
+//     let currentArr = [];
+//     let count = 0;
+//     let num = numRows;
 
-    for(let i=0; i<s.length; i++) {
-        count++;
-        if(count === numRows) {
-            currentArr.push(s[i]);
-            resultArr.push(currentArr);
-        }else if(count < numRows){
-            currentArr.push(s[i]);
-            if(i === s.length - 1) {
-                resultArr.push(currentArr);
-            }
-        }
-        else {
-            currentArr = [];
-            num -= 1;
-            for(let j=1; j<=numRows; j++) {
-                if(j !== num) {
-                    currentArr.push("");
-                }else currentArr.push(s[i]);
-            }
+//     for(let i=0; i<s.length; i++) {
+//         count++;
+//         if(count === numRows) {
+//             currentArr.push(s[i]);
+//             resultArr.push(currentArr);
+//         }else if(count < numRows){
+//             currentArr.push(s[i]);
+//             if(i === s.length - 1) {
+//                 resultArr.push(currentArr);
+//             }
+//         }
+//         else {
+//             currentArr = [];
+//             num -= 1;
+//             for(let j=1; j<=numRows; j++) {
+//                 if(j !== num) {
+//                     currentArr.push("");
+//                 }else currentArr.push(s[i]);
+//             }
 
-            resultArr.push(currentArr);
+//             resultArr.push(currentArr);
 
-            if(num === 2) {
-                count = 0;
-                currentArr = [];
-                num = numRows;
-            }
-        }
-    }
+//             if(num === 2) {
+//                 count = 0;
+//                 currentArr = [];
+//                 num = numRows;
+//             }
+//         }
+//     }
 
-    const newArr = resultArr.reduce((arr,item) => {
-        for(let i=0; i<item.length; i++) {
-            const a = [];
-            a.push(item[i]);
-            arr.push(str);
-        }
+//     const newArr = resultArr.reduce((arr,item) => {
+//         for(let i=0; i<item.length; i++) {
+//             const a = [];
+//             a.push(item[i]);
+//             arr.push(str);
+//         }
         
-        return arr;
-    }, []);
+//         return arr;
+//     }, []);
 
-    return newArr.join("");
-};
+//     return newArr.join("");
+// };
 
-console.log(convert("PAYPALISHIRING", 4));
+// console.log(convert("PAYPALISHIRING", 4));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+let str = "hello";
+let boxed = new String(str);      
+let upper = boxed.toUpperCase(); 
 
+boxed = null;                     
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
