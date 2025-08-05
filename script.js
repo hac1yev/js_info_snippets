@@ -4760,11 +4760,144 @@
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
+<<<<<<< HEAD
 let str = "hello";
 let boxed = new String(str);      
 let upper = boxed.toUpperCase(); 
 
 boxed = null;                     
+=======
+// function Person(name) {
+//   this.name = name;
+//   this.age = 24;
+// }
+
+// const user1 = new Person("Ilkin");
+
+// Person.prototype.sayHello = function () {
+//   console.log(`Hello, I'm ${this.name}`);
+// };
+
+// Person.prototype.fullName = user1.name + " " + "Haciyev" 
+
+// user1.sayHello();
+// console.log(user1);
+// console.log(user1.__proto__ === Person.prototype);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// class Liver {
+//     pi = 3.14;
+
+//     constructor (name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     counter() {
+//         return this.pi += 1;
+//     }
+
+//     getCounter() {
+//         return this.pi;
+//     }
+// }
+
+// class Person extends Liver {
+//     constructor (name, age, surname, gender) {
+//         super(name, age);
+//         this.surname = surname;
+//         this.gender = gender;
+//     }
+
+//     getInfo() {
+//         return `My name is ${this.name} ${this.surname}. I am ${this.age} years old. My gender is ${this.gender}.`; 
+//     }
+// }
+
+// const person1 = new Person('Ilkin', 30, 'Haciyev', 'Male');
+// console.log(person1.getInfo());
+
+// const liver = new Liver('Haciyev', 34);
+// liver.counter();
+// liver.counter();
+
+// console.log(liver.getCounter());
+// console.log(document.URL);
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = {
+//     name: 'Ilk',
+//     age: 23,
+//     surname: 'sadsa'
+// };
+
+// const { name, ...rest } = obj;
+
+// function Person(surname) {
+//     this.name = 'Ilkin';
+//     this.surname = surname;
+// }
+
+// Person.prototype.getFullName = function() {
+//     return `${this.name} ${this.surname}`;
+// }
+
+// const person1 = new Person('Haciyev');
+
+// console.log(Person.name);
+
+
+// class Animal {
+//     static surname = "Haciyev";
+
+//     constructor(name, gender) {
+//         this.name = name;
+//         this.gender = gender;
+//     }
+
+//     getAnimalNameGender() {
+//         return `${this.name} is a ${this.gender} animal`;
+//     }
+// }
+
+// class Tiger extends Animal {
+    
+
+//     constructor(name,gender, biteForce, color) {
+//         super(name, gender);
+//         this.biteForce = biteForce;
+//         this.color = color;
+//     }
+
+
+// }
+
+// const tiger = new Tiger('Tiger', 'Male', '1200PS', 'orange');
+
+// console.log(tiger.getAnimalNameGender());
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+const outerFunc = () => {
+    const password = "hilkin";
+    return {
+        innerFunc(enteredPass) {
+            return enteredPass === password;
+        }
+    }
+};
+
+const user = outerFunc();
+console.log(user.innerFunc("asdasas"));
+>>>>>>> parent of 11501ba (Revert "aaa")
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
