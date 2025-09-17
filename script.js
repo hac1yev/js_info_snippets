@@ -4737,6 +4737,7 @@ console.log(b);
 console.log(test());
 
 let abi = "sadasdasdsa";
+let babat = "asdasdas";
 
 test(10);
 
