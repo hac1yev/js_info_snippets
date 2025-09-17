@@ -1,3 +1,5 @@
+
+
 // const data = [
 //     { id: 'e1', title: 'wre', description: "adas", age: 21 },
 //     { id: 'e2', title: 'lorem', description: "adas asdasd asdasdas", age: 21 },
@@ -2112,7 +2114,6 @@
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
 // const students = [
 //     { name: "Alice", grades: [85, 92, 88], city: "New York" },
 //     { name: "Bob", grades: [70, 75, 78], city: "Los Angeles" },
@@ -2120,7 +2121,7 @@
 //     { name: "Dave", grades: [60, 58, 65], city: "Los Angeles" },
 //     { name: "Eve", grades: [88, 85, 91], city: "New York" }
 // ];
-  
+
 // const threshold = 80;
 
 // const filteredStudents = students.filter((student) => {
@@ -2149,9 +2150,7 @@
 
 // console.log(obj);
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const people = [
 //     { name: "Alice", age: 25, city: "New York" },
@@ -2161,12 +2160,10 @@
 //     { name: "Eve", age: 28, city: "Paris" },
 // ];
 
-
-// SOLUTION 1 
+// SOLUTION 1
 // const obj = Object.groupBy(people, (item) => item.city);
 
 // console.log(obj);
-
 
 // SOLUTION 2
 // const obj = people.reduce((acc,item) => {
@@ -2180,9 +2177,7 @@
 
 // console.log(obj);
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const findLongestString = (str) => {
 //     const chars = [];
@@ -2209,16 +2204,14 @@
 
 //     chars.forEach((char) => {
 //         if(char.length > longestChar.length) longestChar = char;
-//     }); 
-    
+//     });
+
 //     return longestChar;
 // };
 
 // console.log(findLongestString("pwwkew"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const arr = [2,7,11,15];
 // const target = 17;
@@ -2235,9 +2228,7 @@
 
 // console.log(getArrayIndex(arr,target));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const isValid = (s) => {
 //     let parantheses = {
@@ -2274,9 +2265,7 @@
 
 // console.log(isValid("([]){}(]"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var divide = function(dividend, divisor) {
 //     if(dividend < 0 || divisor < 0) {
@@ -2288,9 +2277,7 @@
 
 // console.log(divide(-2147483648, -1));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const arrayProducts = (arr) => {
 //     const newArr = arr.map((item,index) => {
@@ -2298,20 +2285,18 @@
 //         arr.forEach((element,i) => {
 //             if(index !== i ) {
 //                 result *= element;
-//             } 
+//             }
 //         });
 
 //         return result;
 //     });
 
 //     return newArr;
-// };  
+// };
 
 // console.log(arrayProducts([1,2,3,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function addTwoNumbers(l1, l2) {
 //     const dummy = { val: 0, next: null }; // Dummy head node
@@ -2357,16 +2342,14 @@
 //     console.log(result.join(" -> "));
 // }
 
-// const l1 = createLinkedList([2, 4, 3]); 
-// const l2 = createLinkedList([5, 6, 4]); 
+// const l1 = createLinkedList([2, 4, 3]);
+// const l2 = createLinkedList([5, 6, 4]);
 
 // const result = addTwoNumbers(l1, l2);
 
 // console.log(printLinkedList(result));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function isPalindrome(str) {
 //     const reversedStr = str.split("").toReversed().join("");
@@ -2394,18 +2377,16 @@
 
 // console.log(longestPalindrome("cbbd"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var lengthOfLongestSubstring = function(s) {
 //     let longestStr = "";
 //     let str = "";
-    
+
 //     for(let i=0; i<s.length; i++) {
 //         if(!str.includes(s[i])) {
 //             str += s[i];
-//         }else if(str.includes(s[i])){                        
+//         }else if(str.includes(s[i])){
 //             str = str.split(s[i]).at(-1) + s[i];
 //         }else if(str.includes(s[i]) && (s.length - i) < str.length) break;
 //         if(str.length > longestStr.length) longestStr = str;
@@ -2416,9 +2397,7 @@
 
 // console.log(lengthOfLongestSubstring("ghdanviaj"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var myAtoi = function(s) {
 //     let str = s.trim();
@@ -2426,28 +2405,26 @@
 //     if (!str || (!/^[0-9+-]/.test(str[0]))) {
 //         return 0;
 //     }
-    
+
 //     const num = parseInt(str, 10);
 
 //     if (isNaN(num)) {
 //         return 0;
 //     }
 
-//     if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31); 
-//     if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1; 
+//     if(num < 0 && Math.abs(num) > Math.pow(2, 31)) return Math.pow(-2, 31);
+//     if(num > 0 && num > Math.pow(2, 31)) return Math.pow(2, 31) - 1;
 
 //     return parseInt(str);
 // };
 
 // console.log(myAtoi("-987654323456765432"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var countAndSay = function(n) {
 //     let str = "1";
-    
+
 //     if(n === 1) return str;
 
 //     for(let i=2; i<=n; i++) {
@@ -2459,7 +2436,7 @@
 //             else {
 //                 str += `${count}${copy[j]}`;
 //                 count = 1;
-//             }        
+//             }
 //         }
 
 //     }
@@ -2469,17 +2446,15 @@
 
 // console.log(countAndSay(6));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var rotate = function(matrix) {
 //     const result = [];
 
-//     matrix.reverse().forEach(element => {        
+//     matrix.reverse().forEach(element => {
 //         for(let i=0; i<element.length; i++) {
 //             if(!result[i]) result[i] = [element[i]];
-//             else result[i].push(element[i])         
+//             else result[i].push(element[i])
 //         }
 //     });
 
@@ -2488,9 +2463,7 @@
 
 // console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var maxSubArray = function(nums) {
 //     let current_sum = 0;
@@ -2501,16 +2474,14 @@
 //         if(current_sum > max_sum) {
 //             max_sum = Math.max(current_sum, element);
 //         }
-//     });  
-    
+//     });
+
 //     return max_sum;
 // };
 
 // console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var sortColors = function(nums) {
 //     let n = nums.length;
@@ -2525,9 +2496,7 @@
 
 // console.log(sortColors([2,0,2,1,1,0]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var uniquePaths = function(m, n) {
 //     let count = 0;
@@ -2553,9 +2522,7 @@
 
 // console.log(uniquePaths(23, 12));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var findKthLargest = function(nums, k) {
 //     const sortedNums = nums.toSorted((a,b) => a-b);
@@ -2569,9 +2536,7 @@
 
 // console.log(findKthLargest([3,2,3,1,2,4,5,5,6], 4));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var missingNumber = function(nums) {
 //     let len = nums.length;
@@ -2584,9 +2549,7 @@
 
 // console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var moveZeroes = function(nums) {
 //     for(let i=nums.length-1; i>=0; i--) {
@@ -2597,13 +2560,11 @@
 //     }
 
 //     return nums;
-// };      
+// };
 
 // console.log(moveZeroes([0,0,0,0,1,1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var threeSumClosest = function(nums, target) {
 //     let difference = Infinity;
@@ -2613,7 +2574,7 @@
 //         for(let j=i+1; j<nums.length; j++) {
 //             for(let k=j+1; k<nums.length; k++) {
 //                 let currentSum = nums[i] + nums[j] + nums[k];
-                
+
 //                 if(Math.abs(target - currentSum) < difference) {
 //                     difference = Math.abs(target - currentSum);
 //                     sum = currentSum;
@@ -2627,9 +2588,7 @@
 
 // console.log(threeSumClosest([1,1,1,0], -100));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var removeElement = function(nums, val) {
 //     for(let i=0; i<nums.length; i++) {
@@ -2644,15 +2603,13 @@
 
 // console.log(removeElement([0,1,2,2,3,0,4,2], 2));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var permute = function(nums) {
 //     if (nums.length === 1) {
 //         return [nums];
 //     }
-    
+
 //     var res = [];
 
 //     for (var i = 0; i < nums.length; i++) {
@@ -2663,18 +2620,16 @@
 //             p.push(n);
 //         }
 
-//         res.push(...perms); 
-//         nums.push(n); 
+//         res.push(...perms);
+//         nums.push(n);
 //     }
-    
-//     return res;  
+
+//     return res;
 // };
 
 // console.log(permute([1,2,3]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var permute = function(nums) {
 //     if (nums.length === 0) return [];
@@ -2699,16 +2654,14 @@
 //             used[i] = false;
 //         }
 //     }
-    
+
 //     backtrack();
 //     return result;
 // };
 
 // console.log(permute([1, 2, 3]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var removeNthFromEnd = function(head, n) {
 //     head.splice(head.length-n, 1);
@@ -2718,9 +2671,7 @@
 
 // console.log(removeNthFromEnd([1,4,2,3,4,5], 2));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var countSubarrays = function(nums) {
 //     let count = 0;
@@ -2738,15 +2689,9 @@
 
 // console.log(countSubarrays([1,2,1,4,1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-
-
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minimumOperations = function(nums) {
 //     let count = 0;
@@ -2754,14 +2699,12 @@
 //         nums = nums.slice(3);
 //         count++;
 //     }
-//     return count; 
+//     return count;
 // };
 
 // console.log(minimumOperations([4,5,6,4,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var maxDistinctElements = function(nums, k) {
 //     nums.sort((a,b)=>(a-b));
@@ -2769,8 +2712,8 @@
 //     let count = 0;
 
 //     for(let i=0; i<nums.length; i++) {
-//         for(let j=nums[i]-k; j<=nums[i]+k; j++) {            
-//             if(!result.includes(j)) {                
+//         for(let j=nums[i]-k; j<=nums[i]+k; j++) {
+//             if(!result.includes(j)) {
 //                 result.push(j);
 //                 count++;
 //                 break;
@@ -2783,11 +2726,9 @@
 
 // console.log(maxDistinctElements([8,7,8,7,10], 1));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// var hasMatch = function(s, p) {    
+// var hasMatch = function(s, p) {
 //     const parts = p.split("*");
 //     const indexOf = s.indexOf(parts[0]);
 //     const lastIndexOf = s.lastIndexOf(parts[1]);
@@ -2796,21 +2737,18 @@
 
 // console.log(hasMatch("jjv", "*j"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 // function hasMatch(s, p) {
 //     const [a,b] = [p.split("*")[0], p.split("*")[1]];
 //     const firstIndex = s.indexOf(p.split("*")[0]);
 //     const lastIndex = s.lastIndexOf(b);
-//     return firstIndex >= 0 && lastIndex >= firstIndex + a.length; 
+//     return firstIndex >= 0 && lastIndex >= firstIndex + a.length;
 // }
 
 // console.log(hasMatch("eetcode", "ee*e"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var jump = function(nums) {
 //     let steps = 0;
@@ -2833,7 +2771,7 @@
 //                 break;
 //             }
 //         }
-        
+
 //         steps++;
 
 //         if(current_index === nums.length - 1) {
@@ -2846,14 +2784,12 @@
 
 // console.log(jump([2,3,1,1,4,1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function jump(nums) {
 //     let steps = 0;
-//     let farthest = 0; 
-//     let current_end = 0; 
+//     let farthest = 0;
+//     let current_end = 0;
 
 //     for (let i = 0; i < nums.length - 1; i++) {
 //         farthest = Math.max(farthest, i + nums[i]);
@@ -2873,9 +2809,7 @@
 
 // console.log(jump([1, 2, 1, 3, 1, 2, 1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var isBalanced = function(num) {
 //     let sumOfEven = 0;
@@ -2894,9 +2828,7 @@
 
 // console.log(isBalanced("3234"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var smallestNumber = function(n, t) {
 //     let result;
@@ -2921,9 +2853,7 @@
 
 // console.log(smallestNumber(11,2));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var canAliceWin = function(n) {
 //     for(let i=10; i>0; i--) {
@@ -2939,9 +2869,7 @@
 
 // console.log(canAliceWin(1));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var buttonWithLongestTime = function(events) {
 //     let selectedIndex = events[0][0];
@@ -2963,9 +2891,7 @@
 
 // console.log(buttonWithLongestTime([[9,4],[19,5],[2,8],[3,11],[2,15]]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var lengthAfterTransformations = function(s, t) {
 //     const alphabeth = "abcdefghijklmnopqrstuvwxyz";
@@ -2973,7 +2899,7 @@
 
 //     for(let i=1; i<=t; i++) {
 //         const strArr = result[i-1].split("");
-                
+
 //         for(let j=0; j<strArr.length; j++) {
 //             const index = alphabeth.indexOf(strArr[j]);
 
@@ -2983,7 +2909,7 @@
 //                 strArr[j] = "ab";
 //             }
 //         }
-//         let str = strArr.join("");        
+//         let str = strArr.join("");
 //         result.push(str);
 //     }
 
@@ -2992,13 +2918,11 @@
 
 // console.log(lengthAfterTransformations("p", 16));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var stableMountains = function(height, threshold) {
 //     const result = [];
-    
+
 //     for(let i=1; i<height.length; i++) {
 //         if(height[i-1] > threshold) {
 //             result.push(i);
@@ -3010,9 +2934,7 @@
 
 // console.log(stableMountains([10,1,10,1,10],3));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var getSneakyNumbers = function(nums) {
 //     const result = [];
@@ -3035,9 +2957,7 @@
 
 // console.log(getSneakyNumbers([0,1,0,1,2]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minElement = function(nums) {
 //     let minNumber = Infinity;
@@ -3062,9 +2982,7 @@
 
 // console.log(minElement([999,19,199]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var maximumTotalSum = function(maximumHeight) {
 //     const result = [];
@@ -3084,9 +3002,7 @@
 
 // console.log(maximumTotalSum([2,3,4,3]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var canAliceWin = function(nums) {
 //     let double = 0;
@@ -3106,9 +3022,7 @@
 
 // console.log(canAliceWin([1,2,3,4,10]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var getFinalState = function(nums, k, multiplier) {
 //     while(k > 0) {
@@ -3117,7 +3031,7 @@
 //         for(let i=0; i<nums.length; i++) {
 //             if(nums[i] === min_num) {
 //                 nums[i] *= multiplier;
-//                 break; 
+//                 break;
 //             }
 //         }
 
@@ -3129,9 +3043,7 @@
 
 // console.log(getFinalState([2,1,3,5,6], 5, 2));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var generateKey = function(num1, num2, num3) {
 //     let result = "";
@@ -3157,9 +3069,7 @@
 
 // console.log(generateKey(987,879,798));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var checkTwoChessboards = function(coordinate1, coordinate2) {
 //     let letters = "abcdefgh";
@@ -3180,15 +3090,13 @@
 
 // console.log(checkTwoChessboards("a1", "c4"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var scoreOfString = function(s) {
 //     let sum = 0;
 
 //     for(let i=1; i<s.length; i++) {
-//         sum += Math.abs(s.charCodeAt(i) - s.charCodeAt(i-1))                
+//         sum += Math.abs(s.charCodeAt(i) - s.charCodeAt(i-1))
 //     }
 
 //     return sum;
@@ -3196,9 +3104,7 @@
 
 // console.log(scoreOfString("hello"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var isArraySpecial = function(nums, queries) {
 //     const result = [];
@@ -3211,8 +3117,8 @@
 //         for(let j=start+1; j<=end; j++) {
 //             if(nums[j-1] % 2 !== nums[j] % 2) {
 //                 arr.push(true);
-//             }else arr.push(false);            
-//         }        
+//             }else arr.push(false);
+//         }
 //         result.push(arr);
 //     }
 
@@ -3226,9 +3132,7 @@
 
 // console.log(isArraySpecial([1, 4, 7, 6, 2], [[0, 3], [1, 4], [3, 4]]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function countSpecialLetters(word) {
 //     const lowercase = new Set([...word].filter(c => c >= 'a' && c <= 'z'));
@@ -3244,11 +3148,9 @@
 //     return specialCount;
 // }
 
-// console.log(countSpecialLetters("aaAbcBC")); 
-
+// console.log(countSpecialLetters("aaAbcBC"));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var addedInteger = function(nums1, nums2) {
 //     nums1.sort((a,b) => a-b);
@@ -3259,9 +3161,7 @@
 
 // console.log(addedInteger([2,6,4], [9,7,5]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var jump = function(nums) {
 //     if (nums.length <= 1) return 0;
@@ -3284,13 +3184,11 @@
 //     return jumps;
 // };
 
-// console.log(jump([1, 2, 3, 1, 4, 2, 2, 3, 1])); 
-
+// console.log(jump([1, 2, 3, 1, 4, 2, 2, 3, 1]));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// var wordBreak = function(s, wordDict) {    
+// var wordBreak = function(s, wordDict) {
 //     for(let i=0; i<wordDict.length; i++) {
 //         if(s.includes(wordDict[i])) {
 //             s = s.replace(wordDict[i], "");
@@ -3304,9 +3202,7 @@
 
 // console.log(wordBreak("applepenapple", ["apple","pen"]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var singleNumber = function(nums) {
 //     let result;
@@ -3329,9 +3225,7 @@
 
 // console.log(singleNumber([2,2,3,2]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var fib = function(n) {
 //     let previous = 0
@@ -3351,9 +3245,7 @@
 
 // console.log(fib(5))
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var detectCapitalUse = function(word) {
 //     if(word === word.toUpperCase()) return true;
@@ -3362,7 +3254,7 @@
 //         if(index === 0) return letter.toUpperCase();
 //         else return letter.toLowerCase();
 //     });
-        
+
 //     if(word === arr.join("")) return true;
 //     if(word === word.toLowerCase()) return true;
 
@@ -3371,9 +3263,7 @@
 
 // console.log(detectCapitalUse("UsA"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var maxProfit = function(prices) {
 //     let sum = 0;
@@ -3389,13 +3279,11 @@
 
 // console.log(maxProfit([7,1,5,3,6,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var combinationSum = function(candidates, target) {
 //     const result = [];
-    
+
 //     function backtrack(arr = [], sum = 0, start = 0) {
 //         if(sum === target) {
 //             result.push([...arr]);
@@ -3405,21 +3293,19 @@
 //         for(let i=start; i<candidates.length; i++) {
 //             if (sum + candidates[i] > target) continue;
 //             arr.push(candidates[i]);
-//             backtrack(arr, sum + candidates[i], i); 
+//             backtrack(arr, sum + candidates[i], i);
 //             arr.pop();
 //         }
 //     }
 
 //     backtrack();
-    
+
 //     return result;
 // };
 
 // console.log(combinationSum([2,3,6,7], 7));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var generate = function(numRows) {
 //     const result = [];
@@ -3436,7 +3322,7 @@
 //             }else{
 //                 arr.push(i);
 //             }
-//         } 
+//         }
 
 //         result.push(arr);
 //     }
@@ -3446,9 +3332,7 @@
 
 // console.log(generate(5));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const splitArr = (arr) => {
 //     const freq = {};
@@ -3467,9 +3351,7 @@
 
 // console.log(splitArr([1,1,1,1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minOperations = function(nums, k) {
 //     let minNum = Math.min(...nums);
@@ -3487,9 +3369,7 @@
 
 // console.log(minOperations([2,11,10,1,3], 10));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minimumBoxes = function(apple, capacity) {
 //     let allApples = 0;
@@ -3514,9 +3394,7 @@
 
 // console.log(minimumBoxes([9,8,8,2,3,1,6], [10,1,4,10,8,5]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var sumOfEncryptedInt = function(nums) {
 //     let sum = 0;
@@ -3540,9 +3418,7 @@
 
 // console.log((sumOfEncryptedInt([10,20,30])));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var isSubstringPresent = function(s) {
 //     const reverseString = str => str.split('').reverse().join('');
@@ -3555,9 +3431,7 @@
 //     return false;
 // };
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var exist = function(board, word) {
 //     const arr = board.map((item) => {
@@ -3568,7 +3442,7 @@
 
 //     for(let i=0; i<arr.length; i++) {
 //         for(let j=0; j<arr[i].length; j++) {
-            
+
 //         }
 //     }
 
@@ -3577,11 +3451,9 @@
 
 // console.log(exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "ABCCED"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// var firstUniqChar = function(s) {    
+// var firstUniqChar = function(s) {
 //     const arr = s.split("");
 //     const strs = [];
 
@@ -3600,9 +3472,7 @@
 
 // console.log(firstUniqChar("aabb"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const decodeString = (s) => {
 //     let nums = [];
@@ -3612,22 +3482,20 @@
 
 //     for(let i=0; i<s.length; i++) {
 //         if(s[i] === "[") {
-            
+
 //         }else if(s[i] === "]") {
-            
+
 //         }else if(!isNaN(parseInt(s[i]))) {
-            
+
 //         }else if(isNaN(parseInt(s[i]))) {
-            
+
 //         }
 //     }
 // };
 
 // console.log(decodeString("3[a2[c]]"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var removeDuplicateLetters = function(s) {
 //     const arr = [];
@@ -3648,9 +3516,7 @@
 
 // console.log(removeDuplicateLetters("cbacdcbc"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var reversePrefix = function(word, ch) {
 //     if(new Set(word).size === 1) return word;
@@ -3662,7 +3528,7 @@
 
 //         if(word[i] === ch) {
 //             break;
-//         }    
+//         }
 //     }
 
 //     if(arr.join("") === word && !arr.includes(ch)) {
@@ -3678,9 +3544,7 @@
 
 // console.log(reversePrefix("xxxxxxxxxxxxxxxxx", "x"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minimumOperations = function(nums) {
 //     let count = 0;
@@ -3702,9 +3566,7 @@
 
 // console.log(minimumOperations([1,2,3,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var minimumChairs = function(s) {
 //     let count = 0;
@@ -3726,9 +3588,7 @@
 
 // console.log(minimumChairs("ELELELELEEL"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function chocolateFeast(n, c, m) {
 //     let remain = Math.trunc(n / c);
@@ -3744,11 +3604,9 @@
 //     return sum;
 // }
 
-// console.log(chocolateFeast(15,3,2)); 
-
+// console.log(chocolateFeast(15,3,2));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function serviceLane(width, cases) {
 //     const result = [];
@@ -3771,9 +3629,7 @@
 
 // console.log(serviceLane([2, 3, 1, 2, 3, 2, 3, 3], [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function equalizeArray(arr) {
 //     let max = 0;
@@ -3793,9 +3649,7 @@
 
 // console.log(equalizeArray([1,2,3,3,3,2]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function permutationEquation(p) {
 //     let n = p.length;
@@ -3803,9 +3657,9 @@
 
 //     for (let x = 1; x <= n; x++) {
 //         let index1 = p.indexOf(x) + 1;
-        
+
 //         let index2 = p.indexOf(index1) + 1;
-        
+
 //         result.push(index2);
 //     }
 
@@ -3814,9 +3668,7 @@
 
 // console.log(permutationEquation([5,2,1,3,4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function climbingLeaderboard(ranked, player) {
 //     const setRankedArray = Array.from(new Set([...ranked]));
@@ -3839,9 +3691,7 @@
 
 // console.log(climbingLeaderboard([100,90,90,80], [70,80,105]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function encryption(s) {
 //     const str = s.split(" ").join("");
@@ -3863,15 +3713,13 @@
 //         })
 //         result.push(myResultStr);
 //     }
-    
+
 //     return result.join(" ");
-// }   
+// }
 
 // console.log(encryption("chill out"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function nonDivisibleSubset(k, s) {
 //     const allArr = [];
@@ -3904,31 +3752,29 @@
 // }
 
 // function getResultArr(arr, s) {
-//     let maxSubset = [];  
+//     let maxSubset = [];
 
 //     function backtrack(start, subset) {
 //         const sum = subset.reduce((acc, num) => acc + num, 0);
-        
+
 //         if (sum % s === 0 && subset.length > maxSubset.length) {
 //             maxSubset = [...subset];
 //         }
 
 //         for (let i = start; i < arr.length; i++) {
-//             subset.push(arr[i]);       
-//             backtrack(i + 1, subset);  
-//             subset.pop();              
+//             subset.push(arr[i]);
+//             backtrack(i + 1, subset);
+//             subset.pop();
 //         }
 //     }
 
 //     backtrack(0, []);
-//     return maxSubset;  
+//     return maxSubset;
 // }
 
 // console.log(nonDivisibleSubset([2,5,7,9,3], 3));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function libraryFine(d1, m1, y1, d2, m2, y2) {
 //     const date1 = new Date(y1, m1 - 1, d1).getTime();
@@ -3941,9 +3787,7 @@
 
 // console.log(libraryFine(9,6,2015,6,6,2015));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function lilysHomework(arr) {
 //     let count = 0;
@@ -3953,7 +3797,7 @@
 //         if(sortedArr[i] !== arr[i]) {
 //             const index = arr.indexOf(sortedArr[i]);
 //             [arr[i], arr[index]] = [arr[index], arr[i]];
-//             count++;            
+//             count++;
 //         }
 //     }
 
@@ -3962,9 +3806,7 @@
 
 // console.log(lilysHomework([3, 4, 2, 5, 1]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function steadyGene(gene) {
 //     const letters = "GATC";
@@ -3992,7 +3834,7 @@
 //                 if(!newStr.includes(letters[i]) || !isGreaterThanN) {
 //                     newStr += letters[i];
 //                     break;
-//                 } 
+//                 }
 //             }
 //             changes += 1;
 //         }else{
@@ -4005,20 +3847,18 @@
 
 // console.log(steadyGene("GAAATAAA"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // HELL EDILMEYIB
 
-// function MinWindowSubstring(strArr) { 
+// function MinWindowSubstring(strArr) {
 //     const N = strArr[0];
 //     const K = strArr[1];
 //     let objK = {};
 //     for (let char of K) objK[char] = (objK[char] || 0) + 1;
 
 //     let smallestSubStrArr = [];
-  
+
 //     for(let i=0; i<N.length; i++) {
 //         if(!smallestSubStrArr.includes(N[i])) {
 //             smallestSubStrArr.push(N[i]);
@@ -4030,33 +3870,31 @@
 
 //             if(countOfLetter >= objK[N[i]]) {
 //                 let isThere = false;
-                
+
 //                 for(let key in objK) {
 //                     if(key !== N[i]) {
 //                         if(smallestSubStrArr.includes(key)) {
 //                             isThere = true;
 //                             break;
-//                         } 
+//                         }
 //                     }
 //                 }
 
 //                 if(!isThere) {
 //                     smallestSubStrArr.push(N[i]);
 //                     let lastIndex = smallestSubStrArr.lastIndexOf(N[i]);
-//                     smallestSubStrArr = smallestSubStrArr.slice(lastIndex);                       
+//                     smallestSubStrArr = smallestSubStrArr.slice(lastIndex);
 //                 }
 //             }
 //         }
 //     }
-  
-//     return smallestSubStrArr; 
+
+//     return smallestSubStrArr;
 // }
-     
+
 // console.log(MinWindowSubstring(["aaabsaaddae", "aesd"]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function jumpingOnClouds(c, k) {
 //     let current = 100;
@@ -4076,11 +3914,9 @@
 //     return current;
 // }
 
-// console.log(jumpingOnClouds([1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1], 19)); 
-
+// console.log(jumpingOnClouds([1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,1,1], 19));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function repeatedString(s, n) {
 //     let strLength = s.length;
@@ -4094,18 +3930,16 @@
 
 // console.log(repeatedString("a", 1000000));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function cutTheSticks(arr) {
 //     const result = [];
 
-//     while (arr.some(num => num !== 0)) { 
-//         result.push(arr.filter(num => num !== 0).length); 
+//     while (arr.some(num => num !== 0)) {
+//         result.push(arr.filter(num => num !== 0).length);
 
-//         let minNum = Math.min(...arr.filter(num => num !== 0)); 
-//         arr = arr.map(num => (num !== 0 ? num - minNum : 0)); 
+//         let minNum = Math.min(...arr.filter(num => num !== 0));
+//         arr = arr.map(num => (num !== 0 ? num - minNum : 0));
 //     }
 
 //     return result;
@@ -4113,16 +3947,14 @@
 
 // console.log(cutTheSticks([5, 4, 4, 2, 2, 8]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// function LongestWord(sen) { 
+// function LongestWord(sen) {
 //     let longestWord = "";
 //     let arr = [];
 //     let maxStr = "";
 
-//     for(let i=0; i<sen.length; i++) {        
+//     for(let i=0; i<sen.length; i++) {
 //         if((sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122)) {
 //             longestWord += sen[i];
 //         }else{
@@ -4146,68 +3978,60 @@
 
 // console.log(LongestWord("fun&!! time"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// function FirstFactorial(num) { 
+// function FirstFactorial(num) {
 //     if(num === 1) return 1;
-  
+
 //     let result = 0;
-  
+
 //     if(num > 1) {
 //       result += (num * FirstFactorial(num - 1));
 //     }
-  
-//     return result; 
+
+//     return result;
 // }
 
 // console.log(FirstFactorial(4));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// function CodelandUsernameValidation(str) { 
+// function CodelandUsernameValidation(str) {
 //     for(let i=0; i<str.length; i++) {
 //       if(
-//             (sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) || 
-//             (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122) || 
+//             (sen[i].charCodeAt(0) >= 65 && sen[i].charCodeAt(0) <= 90) ||
+//             (sen[i].charCodeAt(0) >= 97 && sen[i].charCodeAt(0) <= 122) ||
 //             (sen[i].charCodeAt(0) >= 48 && sen[i].charCodeAt(0) <= 57) ||
 //             (sen[i].charCodeAt(0) === 95)){
-                
+
 //         }
 //     console.log("_".charCodeAt(0));
-  
-//     return str; 
-  
-//   }
-     
-// console.log(CodelandUsernameValidation("aa_"));
 
+//     return str;
+
+//   }
+
+// console.log(CodelandUsernameValidation("aa_"));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
-// function FirstReverse(str) { 
+// function FirstReverse(str) {
 //   const newArr = str.split(" ").toReversed().map((item) => {
 //     const arr = item.split("").toReversed();
 
 //     return arr.join("");
 //   })
-  
+
 //   return newArr.join(" ");
 // }
 
 // console.log(FirstReverse("I Love Coding"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function hackerrankInString(s) {
 //   const word = "hackerrank";
-  
+
 //   for(let i=0; i<word.length; i++) {
 //       if(!s.includes(word[i])) {
 //           return "NO"
@@ -4215,39 +4039,35 @@
 //       const index = s.indexOf(word[i]);
 //       s = s.slice(index + 1);
 //       console.log(index,s);
-//   }   
-  
+//   }
+
 //   return "YES";
 // }
 
 // console.log(hackerrankInString("rhackerank"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-
 // const secondBiggest = (arr) => {
-//     const uniqueArr = [...new Set(arr)]; 
+//     const uniqueArr = [...new Set(arr)];
 
-//     if (uniqueArr.length < 2) return null; 
+//     if (uniqueArr.length < 2) return null;
 
-//     uniqueArr.sort((a, b) => b - a); 
+//     uniqueArr.sort((a, b) => b - a);
 //     return uniqueArr[1];
 // };
 
 // console.log(secondBiggest([10, 5, 8, 20, 3]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // function howManyGames(p, d, m, s) {
 //     let count = 0;
 
-//     while (s >= p) { 
-//         s -= p;    
-//         count++;   
-//         p = Math.max(p - d, m);  
+//     while (s >= p) {
+//         s -= p;
+//         count++;
+//         p = Math.max(p - d, m);
 //     }
 
 //     return count;
@@ -4255,13 +4075,11 @@
 
 // console.log(howManyGames(20,3,6,80));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const containDuplicate = (arr) => {
 //     const result =  [];
-    
+
 //     arr.forEach((element,index) => {
 //         if(!result.includes(element) && (index !== arr.lastIndexOf(element))) {
 //             result.push(element);
@@ -4273,9 +4091,7 @@
 
 // console.log(containDuplicate([2,2,3,4,55,55,6,7,2,3,9,8]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const buyAndSell = (prices) => {
 //     let maximumProfit = 0;
@@ -4283,7 +4099,7 @@
 //     for(let i=0; i<prices.length; i++) {
 //         for(let j=i+1; j<prices.length; j++) {
 //             if(prices[j] - prices[i] > maximumProfit) {
-//                 maximumProfit = prices[j] - prices[i]; 
+//                 maximumProfit = prices[j] - prices[i];
 //             }
 //         }
 //     }
@@ -4293,14 +4109,12 @@
 
 // console.log(buyAndSell([7, 1, 5, 3, 6, 4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const productOfArray = (arr) => {
 //     return arr.map(item => {
 //         let max = 1;
-        
+
 //         for(let i=0; i<arr.length; i++) {
 //             if(arr[i] === item) continue;
 //             max *= arr[i];
@@ -4312,9 +4126,7 @@
 
 // console.log(productOfArray([1, 2, 3, 4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var maxSubArray = function(nums) {
 //     let current_sum = 0;
@@ -4332,9 +4144,7 @@
 
 // console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const data = [
 //     { id: 'e1', title: 'wre', description: "adas", age: 21 },
@@ -4379,9 +4189,7 @@
 
 // console.log(result);
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const rotateArray = (arr,k) => {
 //     k = k % arr.length;
@@ -4395,9 +4203,7 @@
 
 // console.log(rotateArray([1, 2, 3, 4, 5, 6, 7], 3));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // Array Destruction
 
@@ -4407,9 +4213,7 @@
 
 // console.log(arr);
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var isValid = function(s) {
 //     if(s.length % 2 === 1) return false;
@@ -4447,9 +4251,7 @@
 
 // console.log(isValid("[]{}()"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var sortPeople = function(names, heights) {
 //     const combinedArr = names.map((name, index) => {
@@ -4466,9 +4268,7 @@
 
 // console.log(sortPeople(["Mary","John","Emma"],[180,165,170]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var removeAnagrams = function(words) {
 //     const result = [words[0]];
@@ -4476,7 +4276,7 @@
 //     for(let i=1; i<words.length; i++) {
 //         const str = words[i].split("").sort().join("");
 //         const isNotThere = result.every((item) => item.split("").toSorted().join("") !== str);
-        
+
 //         if(isNotThere) {
 //             result.push(words[i]);
 //         }
@@ -4487,9 +4287,7 @@
 
 // console.log(removeAnagrams(["abba","cd","bbaa","cd","cd","baba"]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var largestNumber = function(nums) {
 //     const sorted = nums.map(String).sort((a, b) => (b + a) - (a + b));
@@ -4499,9 +4297,7 @@
 
 // console.log(largestNumber([34323, 3432]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const removeDuplicates = (arr) => {
 //     return arr.reduce((acc,el) => {
@@ -4512,23 +4308,21 @@
 
 // console.log(removeDuplicates([1,1,2]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const longestWord = (sentence) => {
 //     let max = 0;
 //     let selectedWord = "";
-//     const arr = sentence.split(" "); 
+//     const arr = sentence.split(" ");
 
 //     arr.forEach(element => {
 //         const letters = element.split("");
 //         let count = 0;
-//         let isHave = false; 
+//         let isHave = false;
 
 //         letters.forEach((letter) => {
 //             if ((letter >= "a" && letter <= "z") || (letter >= "A" && letter <= "Z")) {
-//                 count++;        
+//                 count++;
 //             }else{
 //                 isHave = true;
 //             }
@@ -4551,9 +4345,7 @@
 
 // console.log(longestWord("The quick brown fox jumps over the lazy dogasdsa!"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const targetSum = (nums,target) => {
 //     for(var i=0;i<nums.length;i++){
@@ -4572,9 +4364,7 @@
 
 // console.log(targetSum([2,7,11,15], 9));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const capitalizeWord = (str) => {
 //     const arr = str.split(" ");
@@ -4598,19 +4388,17 @@
 
 // console.log(capitalizeWord("hello world"));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const groupAnagram = (arr) => {
 //     const result = [];
 //     arr.forEach((element,index1) => {
 //         const a = [element];
 //         const sortedEl = element.split("").toSorted((a,b) => a.localeCompare(b)).join("");
-        
+
 //         arr.forEach((el2,index2) => {
 //             const sortedEl2 = el2.split("").toSorted((a,b) => a.localeCompare(b)).join("");
-            
+
 //             if(index1 !== index2) {
 //                 if(sortedEl === sortedEl2) {
 //                     a.push(el2);
@@ -4629,9 +4417,7 @@
 
 // console.log(groupAnagram(["eat","tea","tan","ate","nat","bat"]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var generate = function(numRows) {
 //     const triangle = [];
@@ -4655,9 +4441,7 @@
 
 // console.log(generate(5));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const repetitions = (str) => {
 //     if (!str) return 0;
@@ -4674,17 +4458,15 @@
 //         }
 //     }
 
-//     result.push(arr); 
+//     result.push(arr);
 
 //     const countArr = result.map(item => item.length);
 //     return Math.max(...countArr);
 // }
 
-// console.log(repetitions("ATTCGGGA")); 
-
+// console.log(repetitions("ATTCGGGA"));
 
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // const increaseArray = (arr) => {
 //     let result = 0;
@@ -4701,9 +4483,7 @@
 
 // console.log(increaseArray([3,2,5,1,7]));
 
-
 /* ------------------------------------------------------------------------------------------------------------------- */
-
 
 // var convert = function(s, numRows) {
 //     const resultArr = [];
@@ -4747,7 +4527,7 @@
 //             a.push(item[i]);
 //             arr.push(str);
 //         }
-        
+
 //         return arr;
 //     }, []);
 
@@ -4756,15 +4536,201 @@
 
 // console.log(convert("PAYPALISHIRING", 4));
 
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// const obj = {}
+
+// Object.defineProperties(obj, {
+//   firstName: {
+//     value: "Alice",
+//     writable: true,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   lastName: {
+//     value: "Wayne",
+//     writable: true,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   age: {
+//     value: 25,
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   },
+//   fullName: {
+//     get() {
+//       return `${this.firstName} ${this.lastName}`;
+//     },
+//     set(name) {
+//       [this.firstName, this.lastName] = name.split(" ");
+//     },
+//     enumerable: true,
+//     configurable: true
+//   }
+// });
+
+// console.log(obj);
+
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 
-let str = "hello";
-let boxed = new String(str);      
-let upper = boxed.toUpperCase(); 
+// const obj = {
+//   firstName: "Alice",
+//   lastName: "Smith",
 
-boxed = null;                     
+//   get fullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+
+//   set fullName(name) {
+//     const parts = name.split(" ");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   }
+// };
+
+// console.log(obj.fullName); 
+
+// obj.fullName = "Bob Brown";   
+// console.log(obj.firstName);    
+// console.log(obj.lastName);     
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// console.log("1");
+
+// // Macrotask 1
+// setTimeout(() => {
+//   console.log("7");
+
+//   Promise.resolve().then(() => {
+//     console.log("9");
+
+//     // Nested async function with awaited promise
+//     (async function nestedAsync() {
+//       console.log("10");
+//       try {
+//         await Promise.reject("Error in nested async without catch");
+//       } catch (err) {
+//         console.log("11", err);
+//       }
+//       console.log("12");
+//     })();
+//   });
+
+//   console.log("8");
+// }, 0);
+
+// // Microtask in main script
+// Promise.resolve().then(() => {
+//   console.log("4");
+
+//   setTimeout(() => {
+//     console.log("13");
+//   }, 0);
+
+//   // Async function without try/catch
+//   (async function asyncNoCatch() {
+//     console.log("5");
+//     await Promise.reject("Uncaught error in asyncNoCatch");
+//     console.log("this will not logged");
+//   })();
+// });
+
+// // Async function in main script
+// async function asyncTask() {
+//   console.log("2");
+//   await Promise.resolve();
+//   console.log("6");
+// }
+
+// asyncTask();
+
+// console.log("3");
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+// console.log("Script start");
+
+// // Macrotask 1
+// setTimeout(() => {
+//   console.log("Macrotask 1 start");
+
+//   Promise.resolve()
+//     .then(() => {
+//       console.log("Microtask inside Macrotask 1");
+
+//       // Nested async function with error
+//       (async function nestedAsyncError() {
+//         try {
+//           console.log("Nested async start inside microtask");
+//           await Promise.reject("Error in nested async");
+//         } catch (err) {
+//           console.log("Caught error:", err);
+//         }
+//         console.log("Nested async end inside microtask");
+//       })();
+//     })
+//     .catch((err) => {
+//       console.log("Caught promise error:", err);
+//     });
+
+//   console.log("Macrotask 1 end");
+// }, 0);
+
+// // Microtask in main script
+// Promise.resolve().then(() => {
+//   console.log("Microtask 1 in main script");
+
+//   setTimeout(() => {
+//     console.log("Macrotask 2");
+//   }, 0);
+
+//   // Async function with try/catch in main microtask
+//   (async function asyncInMicrotask() {
+//     try {
+//       console.log("Async in microtask start");
+//       await Promise.reject("Error in asyncInMicrotask");
+//     } catch (err) {
+//       console.log("Caught error in asyncInMicrotask:", err);
+//     }
+//     console.log("Async in microtask end");
+//   })();
+// });
+
+// // Async function in main script
+// async function asyncTask() {
+//   try {
+//     console.log("Async function start");
+//     await Promise.resolve();
+//     console.log("Async function end");
+//   } catch (err) {
+//     console.log("Error in async function:", err);
+//   }
+// }
+
+// asyncTask();
+
+// console.log("Script end");
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+function test(a) {
+  return a;
+  var a;
+}
+console.log(test(10));
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
