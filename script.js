@@ -4734,7 +4734,7 @@ function test(a) {
 
 const b = 20;
 console.log(b);
-
+console.log(test());
 
 test(10);
 
