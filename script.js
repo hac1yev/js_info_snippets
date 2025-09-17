@@ -4735,6 +4735,8 @@ function test(a) {
 const b = 20;
 console.log(b);
 
+let abi = "sadasdasdsa";
+let babat = "asdasdas";
 
 test(10);
 
