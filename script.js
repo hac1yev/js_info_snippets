@@ -4729,7 +4729,7 @@
 function test(a) {
   console.log(a);
   return a;
-  var a;
+  var a;git 
 }
 
 test(10);
